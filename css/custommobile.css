@@ -1,0 +1,618 @@
+/********************************************************************************/
+/* GENERAL
+/********************************************************************************/
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.row {
+    align-items: center;
+}
+
+.view-first:hover .mask {
+    display: flex;
+    align-items: center;
+}
+
+.view-first .view-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.row.short {
+    max-width: 800px;
+    margin: auto;
+}
+
+.box-text.note {
+    background-color: #fff;
+}
+
+.text_tooltip {
+    line-height: 18px;
+}
+
+#expand_image_content {
+    background-color: #fff;
+}
+
+.expand-image {
+    margin: 20px auto;
+}
+
+.horizontal-menu.estructura-cables >.chalkboard_content{
+    height: auto;
+}
+/********************************************************************************/
+/* Fibra óptica - Gráfico 1
+/********************************************************************************/
+#graf1 {
+    background: url(../content/modulo_1-2_grafica1-fibra-optica.png) no-repeat;
+    width: 100%;
+    padding-top: 30%;
+    position: relative;
+    background-size: 100%;
+}
+
+#graf1 .tooltip {
+    position: absolute;
+    width: auto;
+    height: auto;
+    color: transparent;
+}
+
+#graf1 .tooltip.coating {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 23%;
+}
+
+#graf1 .tooltip.cladding {
+    top: 14%;
+    bottom: 17%;
+    left: 3%;
+    right: 11%;
+}
+
+#graf1 .tooltip.core {
+    top: 30%;
+    bottom: 38%;
+    left: 10%;
+    right: 0;
+}
+/********************************************************************************/
+/* Fibra óptica - Gráfico 2
+/********************************************************************************/
+#graf2 {
+    background: url(../content/modulo_1-2_grafica2.png) no-repeat;
+    width: 100%;
+    padding-top: 34%;
+    position: relative;
+    background-size: 100%;
+}
+
+#graf2 .tooltip {
+    position: absolute;
+    width: auto;
+    color: transparent;
+    left: 47.7%;
+    right: 26.5%;
+    height: 19%;
+    border-radius: 5px;
+}
+
+#graf2 .tooltip.monomodo {
+    top: 8%;
+}
+
+#graf2 .tooltip.multi-escalon {
+    top: 40.5%;
+}
+
+#graf2 .tooltip.multi-gradual {
+    top: 66.5%;
+}
+/********************************************************************************/
+/* Cable de estructura holgada - Imagen 7
+/********************************************************************************/
+#imagen7 {
+    background: url(../content/modulo_1-2_imagen7.png) no-repeat;
+    width: 100%;
+    padding-top: 65%;
+    position: relative;
+    background-size: 100%;
+}
+
+#imagen7 .tooltip {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 5%;
+    border: 1px solid;
+    border-radius: 50%;
+}
+
+#imagen7 .tooltip:hover {
+    color: #fff;
+    background-color: #337acc;
+    transform: scale(1.2);
+}
+
+#imagen7 .tooltip.e1 {
+    top: 19%;
+}
+
+#imagen7 .tooltip.e2 {
+    top: 35%;
+}
+
+#imagen7 .tooltip.e3 {
+    top: 42.5%;
+    right: 0;
+}
+
+#imagen7 .tooltip.e4 {
+    top: 48%;
+}
+
+#imagen7 .tooltip.e5 {
+    top: 54%;
+    right: 0;
+}
+
+#imagen7 .tooltip.e6 {
+    top: 65%;
+}
+
+#imagen7 .tooltip.e7 {
+    top: 74%;
+    right: 0;
+}
+/********************************************************************************/
+/* Cable de estructura ajustada - Imagen 8
+/********************************************************************************/
+#imagen8 {
+    background: url(../content/modulo_1-2_imagen8.png) no-repeat;
+    width: 100%;
+    padding-top: 72%;
+    position: relative;
+    background-size: 100%;
+}
+
+#imagen8 .tooltip {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 50%;
+}
+
+#imagen8 .tooltip:hover {
+    color: #fff;
+    background-color: #337acc;
+    transform: scale(1.2);
+}
+
+#imagen8 .tooltip.e1 {
+    top: 27%;
+    left: 0;
+}
+
+#imagen8 .tooltip.e2 {
+    top: 63%;
+    left: 0;
+}
+
+#imagen8 .tooltip.e3 {
+    top: 82.5%;
+    right: 9%;
+}
+
+#imagen8 .tooltip.e4 {
+    top: 60%;
+    right: -2%;
+}
+
+#imagen8 .tooltip.e5 {
+    top: 50%;
+    right: 3%;
+}
+
+#imagen8 .tooltip.e6 {
+    top: 9%;
+    right: 4%;
+}
+/********************************************************************************/
+/* Tipos de tecnologías de divisores - Imagen 18
+/********************************************************************************/
+#imagen18 {
+    background: url(../content/modulo_1-2_imagen18.png) no-repeat;
+    width: 100%;
+    padding-top: 45%;
+    position: relative;
+    background-size: 100%;
+}
+
+#imagen18 .tooltip {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    color: transparent;
+}
+
+#imagen18 .tooltip.plc {
+    left: 0;
+}
+
+#imagen18 .tooltip.fbt {
+    right: 0
+}
+/********************************************************************************/
+/* Tipos de tecnologías de divisores - Imagen 15
+/********************************************************************************/
+#imagen15 {
+    background: url(../content/modulo_1-2_esquema.png) no-repeat;
+    width: 100%;
+    padding-top: 51%;
+    position: relative;
+    background-size: 100%;
+}
+
+#imagen15 .tooltip {
+    position: absolute;
+    width: 40%;
+    height: 25.4%;
+    left: 56%;
+    color: transparent;
+}
+
+#imagen15 .tooltip.flat {
+    top: 31.7%;
+    left: unset;
+    right: 56%;
+}
+
+#imagen15 .tooltip.pc {
+    top: 64.5%;
+    left: unset;
+    right: 56%;
+}
+
+#imagen15 .tooltip.spc {
+    top: 6.3%;
+}
+
+#imagen15 .tooltip.upc {
+    top: 38.7%;
+}
+
+#imagen15 .tooltip.apc {
+    top: 71%;
+}
+/********************************************************************************/
+/* Partes fibra óptica
+/********************************************************************************/
+#partes-fibra .botones {
+    background: url(../content/modulo_1-2_imagen6.png) no-repeat;
+    background-size: 100%;
+    width: 100%;
+    padding-top: 35%;
+    position: relative;
+}
+
+#partes-fibra .botones .button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+#partes-fibra .botones .button.b1 {
+    right: 0;
+    width: 10%;
+}
+
+#partes-fibra .botones .button.b2 {
+    right: 10%;
+    width: 22%;
+}
+
+#partes-fibra .botones .button.b3 {
+    right: 32%;
+    width: 9%;
+}
+
+#partes-fibra .botones .button.b4 {
+    right: 41%;
+    width: 8%;
+}
+
+#partes-fibra .botones .button.b5 {
+    right: 49%;
+    width: 9%;
+}
+
+#partes-fibra .botones .button.b6 {
+    right: 58%;
+    left: 0;
+}
+
+#partes-fibra .col-2.globo div {
+    border: 3px solid;
+    border-radius: 20px;
+    padding: 0 10px;
+}
+
+#partes-fibra .col-2.globo div#fibra {
+    border-color: #e2c29b;
+}
+
+#partes-fibra .col-2.globo div#proteccion {
+    border-color: #efb0a2;
+}
+
+#partes-fibra .col-2.globo div#traccion {
+    border-color: #e6c271;
+}
+
+#partes-fibra .col-2.globo div#interna {
+    border-color: #7e9bba;
+}
+
+#partes-fibra .col-2.globo div#coraza {
+    border-color: #8e8e8e;
+}
+
+#partes-fibra .col-2.globo div#exterior {
+    border-color: #3880d9;
+}
+/********************************************************************************/
+/* Conectores
+/********************************************************************************/
+#conectores {
+    position: relative;
+    background: url(../content/modulo_1-2_imagen_14.png) no-repeat;
+    background-size: 100%;
+    width: 100%;
+    padding-top: 63%;
+}
+
+#conectores .tooltip {
+    position: absolute;
+    color: transparent;
+    transform: rotate(30deg);
+}
+
+#conectores .tooltip.c1 {
+    width: 20%;
+    height: 14%;
+    top: 6%;
+    left: 0;
+}
+
+#conectores .tooltip.c2 {
+    width: 16%;
+    height: 11%;
+    top: 27%;
+    left: 22%;
+}
+
+#conectores .tooltip.c3 {
+    width: 16%;
+    height: 13%;
+    top: 41%;
+    left: 38%;
+}
+
+#conectores .tooltip.c4 {
+    width: 9%;
+    height: 13%;
+    top: 50%;
+    left: 51%;
+}
+
+#conectores .tooltip.c5 {
+    width: 23%;
+    height: 14%;
+    top: 64%;
+    left: 61%;
+}
+
+#conectores .tooltip.c6 {
+    width: 10%;
+    height: 5%;
+    top: 92%;
+    left: 90%;
+}
+/********************************************************************************/
+/* Tabla 2
+/********************************************************************************/
+.datatable .aire {
+    background: url(../content/modulo_1-2_tabla2-1.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    width: 100%;
+    padding-top: 28%;
+}
+
+.datatable .tooltip {
+    position: absolute;
+    width: 12%;
+    height: 30%;
+}
+
+.datatable .aire .tooltip.pi {
+    top: 5%;
+    left: 7%;
+}
+
+.datatable .aire .tooltip.pr {
+    top: 46%;
+    left: 9%;
+}
+
+.datatable .aire .tooltip.pt {
+    top: 5%;
+    right: 0;
+}
+
+.datatable .sin_contacto {
+    background: url(../content/modulo_1-2_tabla2-2.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    width: 100%;
+    padding-top: 28%;
+}
+
+.datatable .sin_contacto .tooltip.pi {
+    top: 0;
+    left: 13%;
+}
+
+.datatable .sin_contacto .tooltip.pr1 {
+    top: 31%;
+    left: 13%;
+}
+
+.datatable .sin_contacto .tooltip.pr2 {
+    top: 60%;
+    left: 13%;
+}
+
+.datatable .sin_contacto .tooltip.pt {
+    top: 0;
+    right: 12%;
+}
+
+.datatable .contacto {
+    background: url(../content/modulo_1-2_tabla2-3.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    width: 100%;
+    padding-top: 28%;
+}
+
+.datatable .contacto .tooltip.pi {
+    top: 31%;
+    left: 15%;
+}
+
+.datatable .contacto .tooltip.pr3 {
+    top: 5%;
+    left: 24%;
+    height: 83%;
+}
+
+.datatable .contacto .tooltip.pt {
+    top: 30%;
+    right: 12%;
+}
+
+.datatable .fisico_angular {
+    background: url(../content/modulo_1-2_tabla2-4.png) no-repeat;
+    background-size: 100%;
+    position: relative;
+    width: 100%;
+    padding-top: 43%;
+}
+
+.datatable .fisico_angular .tooltip.pi {
+    top: 29%;
+    left: 10%;
+}
+
+.datatable .fisico_angular .tooltip.pr3 {
+    top: 16%;
+    left: 23%;
+    height: 57%;
+}
+
+.datatable .fisico_angular .tooltip.pt {
+    top: 30%;
+    right: 5%;
+}
+/********************************************************************************/
+/* Tipos de conectores - Foto 3
+/********************************************************************************/
+#foto3 {
+    background: url(../content/modulo_1-2_foto3-conectores.png) no-repeat;
+    width: 230px;
+    padding-top: 300px;
+    position: relative;
+    background-size: 100%;
+    margin: auto;
+}
+
+#foto3 .tooltip {
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    color: transparent;
+}
+
+#foto3 .tooltip.lc {
+    top: 25%;
+}
+
+#foto3 .tooltip.sc {
+    top: 0%;
+}
+
+#foto3 .tooltip.fc {
+    top: 75%;
+}
+
+#foto3 .tooltip.st {
+    top: 50%;
+}
+/********************************************************************************/
+/* Tipos de adaptadores - Foto 4
+/********************************************************************************/
+#foto4 {
+    background: url(../content/modulo_1-2_foto4-adaptadores.png) no-repeat;
+    width: 100%;
+    padding-top: 62%;
+    position: relative;
+    background-size: 100%;
+    margin: auto;
+}
+
+#foto4 .tooltip {
+    position: absolute;
+    width: auto;
+    height: 50%;
+    color: transparent;
+}
+
+#foto4 .tooltip.fcfc {
+    top: 50%;
+    left: 0;
+    width: 50%;
+}
+
+#foto4 .tooltip.fcsc {
+    top: 0%;
+    right: 0;
+    width: 33%;
+}
+
+#foto4 .tooltip.fcst {
+    top: 50%;
+    right: 0;
+    width: 50%;
+}
+
+#foto4 .tooltip.lclc {
+    top: 0%;
+    left: 0;
+    width: 36%;
+}
+
+#foto4 .tooltip.scsc {
+    top: 0%;
+    left: 36%;
+    width: 30%;
+}

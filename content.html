@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Descripción de los componentes</title>
+    <link href="components/jquery/css/custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="components/ionicons/css/ionicons.min.css" rel="stylesheet" type="text/css">
+
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="components/jquery-mobile/jquery.ui.touch-punch.min.js"></script>
+
+<!--jQuery components -->
+    <script src="components/twentytwenty/js/jquery.event.move.js" type="text/javascript"></script>
+    <script src="components/twentytwenty/js/jquery.twentytwenty.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/twentytwenty/css/twentytwenty.css" type="text/css" media="screen" />
+
+    <script src="components/mediaelementjs/mediaelement-and-player.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/mediaelementjs/mediaelementplayer.css" type="text/css" />
+
+    <script src="components/maphilight/jquery.maphilight.min.js" type="text/javascript"></script>
+<!--End jQuery components -->
+
+    <script src="components/interact/interact.min.js"></script>
+    <script src="components/pit/jpit_api.js"></script>
+    <script src="components/pit/utilities/jpit_utilities.js"></script>
+    <script src="components/pit/activity/jpit_activity.js"></script>
+    <script src="components/pit/resources/jpit_resource.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/lang.es.js"></script>
+    <script src="js/lib.js"></script>
+    <script src="js/mobilelib.js"></script>
+    <script src="components/scorm/SCORM_12_APIWrapper.js"> </script>
+    <script src="components/scorm/scorm_api.js"> </script>
+
+    <style type='text/css'>
+
+        body {
+            background-color: rgba(242, 242, 242, 0.7);
+        }
+
+        body.loading {
+            text-align: center;
+        }
+
+        body.loading:after {
+            content: "";
+            background: url(img/loading.gif) no-repeat bottom center;
+            width: 130px;
+            height: 30px;
+            display: block;
+            margin: auto;
+            padding-bottom: 20px;
+        }
+
+        body.loading #body {
+            display: none;
+        }
+    </style>
+
+</head>
+<body class="loading" data-debug="true" data-model="scorm" data-display-mode="onlypages" data-approve-limit="70" data-activities-percentaje="60" data-mobile-mode="512">
+    <div id="body" class="not_print">
+        <div id="not_scorm_msg" style="display: none;"></div>
+
+        <header>
+            <div class="logo">
+                <img src="img/logo.png" alt="Fyco learning" />
+            </div>
+            <nav label="Principal" class="horizontal main" data-offset="true">
+                <menu>
+                    <menuitem label="Contenido">
+                        <menu>
+                            <menuitem label="1. Fibras ópticas">
+                                <menu>
+                                    <menuitem label="1.1. Qué es la fibra óptica" data-page="pag-1-1"></menuitem>
+                                    <menuitem label="1.2. Propagación de la luz en las fibras ópticas" data-page="pag-1-2"></menuitem>
+                                    <menuitem label="1.3. Cables de fibra óptica" data-page="pag-1-3"></menuitem>
+                                </menu>
+                            </menuitem>
+                            <menuitem label="2. Conectores y elementos pasivos">
+                                <menu>
+                                    <menuitem label="2.1. Conectores" data-page="pag-2-1"></menuitem>
+                                    <menuitem label="2.2. Divisores o splitters ópticos" data-page="pag-2-2"></menuitem>
+                                    <menuitem label="2.3. Multiplexores" data-page="pag-2-3"></menuitem>
+                                </menu>
+                            </menuitem>
+                        </menu>
+                    </menuitem>
+                    <menuitem label="Bibliografía" data-page="pag-bibliografia"></menuitem>
+                    <menuitem label="Créditos" data-page="pag-creditos"></menuitem>
+                </menu>
+            </nav>
+            <h2 class="page-title"></h2>
+        </header>
+
+        <main style="display: none;">
+
+            <!-- pag 1-1 -->
+            <section id="pag-1-1" ptitle="1. Fibras ópticas">
+                <div class="subpage">
+                    <h3>1.1. Qué es la fibra óptica</h3>
+                    <div class="instruction">
+                        <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                        <span class="onlymobile">Toca </span>
+                        cada elemento para conocer su descripción.
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <div id="graf1">
+                                <div class="tooltip coating" title="Color (coating)">.</div>
+                                <div class="tooltip cladding" title="Revestimiento (cladding)">.</div>
+                                <div class="tooltip core" title="Núcleo (core)">.</div>
+                            </div>
+                            <div class="about"><strong>Gráfica 1.</strong> Fibra óptica.</div>
+                            <div class="box-text important" label="Recuerda que:">
+                                El índice de refracción mide la relación de la velocidad de la luz en el aire/ velocidad de la luz en el medio.
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <p>La fibra óptica es un hilo construido en vidrio o plástico, sirve de guía de onda y a través de él se puede propagar la luz. Está conformado por dos cilindros concéntricos, el interno se llama núcleo y el más externo revestimiento. El índice de refracción es el parámetro que los caracteriza, siendo el índice de refracción del núcleo (n<sub>1</sub>) mayor que el del revestimiento (n<sub>2</sub>).</p>
+                            <p>La geometría y composición de la fibra determinan el conjunto discreto de campos electromagnéticos, o <cite>modos</cite>, que pueden propagarse en la fibra.</p>
+                            <p>Los modos que son guiados se limitan a la propagación a través del núcleo, transportando información y energía a lo largo de la fibra. Si el núcleo de la fibra es lo suficientemente grande, puede admitir muchos modos guiados simultáneos. Cada modo guiado tiene su propia velocidad de propagación, lo que dará origen a un fenómeno llamado dispersión.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <h4>Antecedentes</h4>
+                            <p>En 1870, John Tyndal demostró que los rayos de luz podían seguir y propagarse por un chorro de agua que salía de un contenedor y dio origen a la teoría de la guía de ondas. Referente a la fibra, los antecedentes nos llevan a Charles Kao, quien publicó los primeros trabajos de propagación de la luz sobre una fibra óptica, en 1966. Estos trabajos y el impacto de la fibra óptica en el desarrollo de las telecomunicaciones, le merecieron el premio Nobel de Física en 2009. En 1970, Corning Glass desarrolló fibras ópticas con pérdidas menores a 2dB/Km. Entre los años 1970 y 1980 se refinaron las fibras, se desarrollaron las fuentes de luz y los detectores fueron accesibles económicamente.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="row">
+                                <div class="col-2">
+                                    <div class="box_media">
+                                        <img src="content/modulo_1-2_foto-1-john-tyndall.png" alt="John Tyndall" />
+                                        <div class="about"><strong>Foto 1.</strong> John Tyndall.</div>
+                                    </div>
+                                    <div class="box_media">
+                                        <img src="content/modulo_1-2_Foto 2_charles_kao.png" alt="Charles Kao" />
+                                        <div class="about"><strong>Foto 2.</strong> Charles Kao.</div>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="box_media">
+                                        <img src="content/modulo_1-2_imagen1.png" alt="Luz guiada a través de un chorro de agua" />
+                                        <div class="about"><strong>Imagen 1.</strong> Luz guiada a través de un chorro de agua.</div>
+                                    </div>
+                                    <div class="box_media">
+                                        <img src="content/modulo_1-2_imagen2.png" alt="Fibra óptica" />
+                                        <div class="about"><strong>Imagen 2.</strong> Fibra óptica.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>Conceptos preliminares que debes saber antes de estudiar este contenido</h4>
+                    <p>Cuando hablamos de la palabra <strong>propagación</strong> es inevitable que tengamos que hablar de las <strong>ondas</strong>. Cuando la propagación es de señales eléctricas que llevan información a través del espacio o de algún medio como los cables, hay que hablar de <strong>ondas electromagnéticas.</strong></p>
+                    <div class="box-text connection">
+                        <p>Si parámetros como <em>amplitud</em>, <em>frecuencia</em> y <em>longitud de onda</em> te son conocidos, pasa a la sección siguiente. De lo contrario, revisa cómo caracterizamos una señal con el siguiente repaso:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_1-RepasoOndas.pdf" target="_blank"><button class="general">Abrir Repaso Ondas Electromagnéticas
+                        </button></a>
+                        <p>Una vez entendido que la luz es una onda electromagnética y que tiene parámetros como amplitud y longitud de onda, conviene ahora analizar los efectos de la fibra como canal de comunicación sobre las señales ópticas transmitidas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- pag 1-2 -->
+            <section id="pag-1-2" ptitle="1. Fibras ópticas">
+                <div class="subpage">
+                    <h3>1.2. Propagación de la luz en las fibras ópticas</h3>
+                    <p>Comencemos por conocer los tipos de fibra, para luego entender cómo cada una presenta condiciones de propagación muy diferentes.</p>
+                    <p>En general se tienen tres tipos de fibras ópticas:</p>
+                    <div class="instruction">
+                        <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                        <span class="onlymobile">Toca </span>
+                        cada uno de los botones del centro para conocer su descripción.
+                    </div>
+                    <div style="max-width: 900px; margin: auto">
+                        
+                        <div id="graf2">
+                            <div class="tooltip monomodo" title="<strong>Fibra monomodo índice escalón (SMF). </strong>El diámetro del núcleo es muy reducido, de 8 a 10 micras, y 125 micras en el revestimiento. En general, estas fibras solo transmiten un único modo, denominado fundamental, y de allí su nombre. Es la fibra utilizada para transmisiones a grandes distancias y altas tasas de transmisión.">.</div>
+                            <div class="tooltip multi-escalon" title="<strong>Fibra multimodo índice escalón (SI). </strong>En este tipo de fibras el índice de refracción es constante en el núcleo y en el revestimiento. Son de núcleo con diámetro, típicamente, del orden de 50 y 62,5 micras y revestimiento de 125 micras. Pueden transmitir múltiples modos (rayos de luz) simultáneamente, de allí su nombre. Son indicadas para redes de área local, de corto alcance y tasas de transmisión moderadas.">.</div>
+                            <div class="tooltip multi-gradual" title="<strong>Fibras multimodo de Índice gradual (GRIN). </strong>Su índice de refracción tiene su valor más alto en el centro del núcleo y va disminuyendo gradualmente conforme se acerca al revestimiento. Con este método de manufactura, se logra tener un mejor desempeño en tasa de transmisión y distancia que las fibras multimodo de índice escalonado.">.</div>
+                        </div>
+                    </div>
+                    <div class="about"><strong>Gráfica 2.</strong> Fibras monomodo y multimodo.</div>
+                    <p>Comencemos por entender qué significa “modo” en una fibra óptica. Una primera aproximación que permite intuitivamente entender los modos se refiere a las distintas trayectorias que sigue la luz al ingresar en las fibras. Los conceptos de ángulo crítico, reflexión interna total y apertura numérica nos sirven para describir aquellos rayos que al entrar en el núcleo de la fibra son guiados a través de ella por distintos caminos.  Esta aproximación nos permite entender muy bien el <strong>comportamiento de la fibra multimodo.</strong></p>
+                    <div class="box-text connection">
+                        <p>Veamos los principios básicos de propagación, usando la teoría de rayos y la ley de Snell:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_2A-LeySnell.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Principios básicos para entender la propagación, siguiendo la teoría de rayos y la ley de Snell
+                            </button>
+                        </a>
+                    </div>
+                    <p>Sin embargo, cuando se hace un análisis más riguroso, basándonos en la teoría electromagnética, los modos pueden entenderse como las distintas formas de distribución transversal de las líneas de campo eléctrico y magnético, que satisfacen las condiciones de frontera que impone el medio de transmisión. Este concepto permite entender el <strong>comportamiento en las fibras monomodo</strong>. Bajo este modelo, aparecen dos parámetros muy relevantes: la longitud de onda de corte y el parámetro V denominado frecuencia normalizada. El parámetro V marca un límite para que solo se tenga un modo de propagación, que es una condición muy deseable en las fibras ópticas monomodo. Si al calcular este parámetro con la longitud de onda que emite la fuente de luz, con el radio del núcleo de la fibra y con la apertura numérica este es V< 2.405, tendremos la condición de fibra monomodo.</p>
+                    <div class="box-text connection">
+                        <p>Veamos los principios básicos de propagación usando la teoría electromagnética:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_2B-TeoriaElectromag.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Principios básicos para entender la propagación siguiendo la teoría electromagnética
+                            </button>
+                        </a>
+                    </div>
+                    <p>Ahora que ya se tiene claro los principios básicos de propagación en las fibras, entremos en una descripción de los parámetros básicos de las fibras ópticas.</p>
+                    <div class="box-text important" label="¡Punto importante!">
+                        El caso ideal es que se transmita un único modo dentro de las fibras, el modo fundamental o LP01, de esta manera se incrementa la capacidad de las fibras.
+                    </div>
+                    <div class="row short">
+                        <div class="col-2">
+                            <p>En la gráfica se puede observar el esquema de estos tipos de fibras y los efectos sobre las señales de cada una de ellas.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/modulo_1-2_grafica3.png" alt="Tipos de fibras ópticas" />
+                                <div class="about"><strong>Gráfica 3.</strong> Tipos de fibras ópticas.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Volveremos a estas fibras ópticas para describir un poco más en detalle los efectos de sus parámetros en la propagación de las señales ópticas.</p>
+                </div>
+                <div class="subpage">
+                    <h4>1.2.1. Parámetros de las fibras ópticas</h4>
+                    <p>Tenemos dos familias de parámetros:</p>
+                    <div class="horizontal-menu notscroll">
+                        <dl>
+                            <dt>PARÁMETROS ESTÁTICOS</dt>
+                            <dd>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <h5>PARÁMETROS ESTÁTICOS</h5>
+                                        <p>Son idealmente constantes a lo largo de la fibra y vienen definidos por el fabricante a partir de su proceso de elaboración. Ya hemos introducido varios de ellos: la apertura numérica, el perfil del índice de refracción, los diámetros del núcleo y el revestimiento. Los parámetros de excentricidad y circularidad indican las tolerancias en el proceso de fabricación.</p>
+                                    </div>
+                                    <div class="col-2">
+                                        <h5>Ópticos:</h5>
+                                        <ul class="data_list">
+                                            <li>Apertura numérica</li>
+                                            <li>Perfil del índice de refracción</li>
+                                        </ul>
+                                        <h5>Geométricos:</h5>
+                                        <ul class="data_list">
+                                            <li>Diámetro del núcleo</li>
+                                            <li>Diámetro del revestimiento</li>
+                                            <li>Excentricidad</li>
+                                            <li>No circularidad del núcleo</li>
+                                            <li>No circularidad del revestimiento</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>PARÁMETROS DINÁMICOS</dt>
+                            <dd>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <h5>PARÁMETROS DINÁMICOS</h5>
+                                        <p>Son aquellos que afectan la señal conforme se propaga por la fibra. Son realmente muy importantes para encontrar la capacidad y alcance de los sistemas de comunicaciones por fibra y se tratan con detalle en el ítem siguiente.</p>
+                                    </div>
+                                    <div class="col-2">
+                                        <h5>Atenuación:</h5>
+                                        <ul class="data_list">
+                                            <li>Intrínseca a la fibra</li>
+                                            <li>Por causas extrínsecas</li>
+                                        </ul>
+                                        <h5>Dispersión temporal:</h5>
+                                        <ul class="data_list">
+                                            <li>Dispersión modal</li>
+                                            <li>Dispersión del material</li>
+                                            <li>Dispersión por efecto guiaondas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h4>1.2.2. Parámetros dinámicos que limitan la transmisión por las fibras ópticas</h4>
+                    <p>Los parámetros relativos a la propagación en las fibras ópticas son básicamente dos: <em>atenuación</em> y <em>dispersión</em>, los cuales causan distorsiones a las señales que se transmiten a través de ellas. Ambos parámetros varían de acuerdo con la longitud de onda. Existen otros fenómenos denominados <cite>no lineales</cite>, que igualmente causan distorsiones en las señales, y son evitados cuando se opera a unos niveles de potencia moderados (unos pocos mW).</p>
+                    <div class="row">
+                        <div class="col-2">
+                            <h5>Atenuación</h5>
+                            <p>es la reducción de la potencia a lo largo de un tramo de fibra y se expresa en decibelio por kilómetro. Esta pérdida de potencia puede ser de dos tipos: intrínsecas (obedece a la misma F.O.) y extrínsecas (obedecen a factores externos como la instalación o condiciones del medio ambiente). En la animación se observa cómo va disminuyendo la potencia. Es importante tener presente que la atenuación limita el alcance de un enlace de fibra, puesto que el receptor requiere una potencia mínima para operar correctamente.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/gif1.gif" alt="Atenuación" />
+                                <div class="about"><strong>Animación 1.</strong> Atenuación.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <h5>Dispersión temporal</h5>
+                            <p>la dispersión temporal de la señal óptica genera distorsión (cambio en la forma) tanto en señales analógicas como digitales. Tiene diferentes orígenes pero el mismo efecto, por ejemplo, en señales digitales produce un ensanchamiento temporal de los pulsos conforme avanzan en la fibra óptica. Los tres tipos de dispersión temporal son: dispersión modal asociada a fibras multimodo; dispersión cromática; y dispersión por modo de polarización PMD asociadas a fibras monomodo. Una representación de esta dispersión puede observarse en la animación. Observa cómo cada pulso se va ensanchando conforme avanza por la fibra y acaba superponiéndose con sus vecinos, llegando a ser indistinguible en la recepción. Este efecto se conoce como interferencia entre símbolos (en inglés ISI, de InterSymbol Interference), y es responsable del incremento en la tasa de errores de identificación de bits.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/gif2.gif" alt="Dispersión" />
+                                <div class="about"><strong>Animación 2.</strong> Dispersión.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h4>1.2.3. Limitación en alcance por atenuación</h4>
+                    <p>La atenuación es la reducción de la potencia a lo largo de un tramo de fibra y se expresa en decibelio por kilómetro. La atenuación en la fibra cambia con la longitud de onda. La industria ha adoptado el cálculo de pérdidas en el enlace de fibra en <strong>unidades de decibelios</strong>.</p>
+                    <div class="box-text connection">
+                        <p>Si unidades como <strong>dBm o dB&mu;, dBmV o dB&mu;V</strong>, así como operaciones en decibelios, son entendidas, continúa la lectura de la sección. De lo contrario, revisa el tema de Unidades de potencia con el siguiente repaso:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_3-RepasoUnidadesPotencia.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Repaso Unidades de potencia
+                            </button>
+                        </a>
+                    </div>
+                    <p>La operación para el cálculo de potencia con la que se llega al receptor es muy sencilla:</p>
+                    <div class="box_media">
+                        <img src="content/modulo_1-2_imagen3.png" alt="Operación para el cálculo de potencia con la que se llega al receptor." />
+                        <div class="about"><strong>Imagen 3.</strong> Operación para el cálculo de potencia con la que se llega al receptor.</div>
+                    </div>
+                    <p>Es decir, la potencia que inyectamos proveniente del transmisor se ve disminuida por la atenuación en la fibra, los splitters ópticos, empalmes y conectores. La potencia neta que llega al receptor deberá ser la adecuada, según las especificaciones que proporcionan los fabricantes.</p>
+                    <div class="box-text connection">
+                        <p>Para un mayor detalle del parámetro de atenuación y la curva que se forma a partir de todos los tipos de pérdida, revisa el siguiente documento. Igualmente encontrarás una actividad de apropiación que te permitirá calcular las pérdidas de un enlace de fibra óptica.</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_4A-Atenuacion.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Limitación en alcance por Atenuación
+                            </button>
+                        </a>
+                    </div>
+                    <div class="box-text important" label="¡Punto importante!">
+                        La atenuación se relaciona directamente con el alcance que tendrá el sistema de comunicaciones, es decir, la longitud hasta la que podrían ser atendidos los clientes.
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h4>1.2.4. Limitación del ancho de banda</h4>
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/modulo_1-2_imagen4.png" alt="Dispersión" />
+                                <div class="about"><strong>Imagen 4.</strong> Dispersión. Fuente: no determinada.</div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <p>El ancho de banda de una fibra óptica determina la tasa de datos. El mecanismo que limita el ancho de banda de una fibra es conocido como dispersión. La dispersión es el ensanchamiento de los pulsos ópticos en el slot de bit a medida que viajan por la fibra. El resultado es que los pulsos comienzan a extenderse del slot de bit y comienzan a interferir entre sí, haciendo que los símbolos se vuelven indistinguibles y con ello aumentan la tasa de errores de bit BER. La dispersión mide este retardo en segundos y por ello se simboliza como &Delta;T.</p>
+                        </div>
+                    </div>
+                    <div class="box-text connection">
+                        <p>Hay tres tipos principales de dispersión: intermodal, intramodal y por modo de polarización, las cuales aportan a una dispersión total &Delta;Ttotal. Ahora, veamos cómo se relaciona la dispersión con el <strong>cálculo de la tasa de bits B, es decir, la capacidad máxima en bps dada una dispersión acumulada en el lado del receptor</strong>. Veamos la siguiente expresión:</p>
+                        <h2 style="text-align: center;">B.&Delta;T<sub>total</sub><0.25</h2>
+                        <p>Esta expresión significa que se le permite al sistema un ensanchamiento del 25% del tiempo de bit. Recordar que el tiempo de bit se calcula como 1/B.</p>
+                        <div class="box_media">
+                            <img src="content/modulo_1-2_imagen5.png" alt="Esquema de ensanchamiento de pulso por dispersión temporal." />
+                            <div class="about"><strong>Imagen 5.</strong> Esquema de ensanchamiento de pulso por dispersión temporal.</div>
+                        </div>
+                        <p>Lee el siguiente documento para conocer en qué consiste cada una y realiza la actividad de apropiación:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_4B-Dispersion.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Limitación del ancho de banda
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h4>1.2.5. Estándares de fibras ópticas</h4>
+                    <p>Existen varios organismos que proveen algunos lineamientos básicos relacionados con las fibras ópticas para su correcto uso en telecomunicaciones, tales como la ITU-T, la IEC y la ISO/IEC. Veamos un resumen de las recomendaciones que ofrece cada una en relación con las redes FTTH.</p>
+                    <div class="about"><strong>Tabla 1.</strong> Lineamientos para FTTH según ITU e IEC.</div>
+                    <table class="datatable">
+                        <thead>
+                            <th>TIPO DE CABLE</th>
+                            <th>ITU</th>
+                            <th>IEC</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CABLE DE EXTERIORES</td>
+                                <td>G.652.D</td>
+                                <td>IEC 60793-2-50 B1.3</td>
+                            </tr>
+                            <tr class="odd">
+                                <td>CABLE DE EXTERIORES</td>
+                                <td>G.657.A1/A2 con posible recubrimiento de 200µm</td>
+                                <td>IEC 60793-2-50 B6a1/a2 con posible recubrimiento de 200µm</td>
+                            </tr>
+                            <tr>
+                                <td>CABLE DEINTERIORES</td>
+                                <td>G.657.A2/B2/B3</td>
+                                <td>IEC 60793-2-50 B6a2/b2/b3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="box-text connection">
+                        <p>Para mayor información, revisemos los documentos adjuntos, en los cuales se ve en detalle cada uno de los parámetros estandarizados y aceptados internacionalmente. Allí podrás identificar varios de los parámetros vistos hasta este punto.</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_5-EstandaresFibraOptica.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Estándares de fibras ópticas
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- pag 1-3 -->
+            <section id="pag-1-3" ptitle="1. Fibras ópticas">
+                <div class="subpage">
+                    <h3>1.3. Cables de fibra óptica</h3>
+                    <p>Hemos visto la fibra como medio de transmisión, pero para su instalación (entendiendo que la fibra óptica es muy frágil) es necesario ensamblarla de tal manera que quede protegida de impactos que puedan fracturarla. Este ensamble se llama cable de fibra óptica.</p>
+                    <h4>1.3.1. Estructura de un cable de fibra óptica</h4>
+                    <p>El cable de fibra óptica está conformado por las siguientes partes:  </p>
+                    <div class="instruction">
+                        <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                        <span class="onlymobile">Toca </span>
+                        cada uno de los elementos para conocer su descripción.
+                    </div>
+                    <div class="genially">
+                        <div style="width: 100%;"><div style="position: relative; padding-bottom: 50.00%; padding-top: 0; height: 0;"><iframe frameborder="0" width="1200" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/620ea7e2df27a00011851c11" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+                    </div>
+                    <div class="about"><strong>Imagen 6.</strong> Estructura de un cable óptico.</div>
+                    <!-- <div id="partes-fibra" class="row mouse-over-one">
+                        <div class="col-2 botones">
+                            <div class="button b1" data-ref="#fibra"></div>
+                            <div class="button b2" data-ref="#proteccion"></div>
+                            <div class="button b3" data-ref="#traccion"></div>
+                            <div class="button b4" data-ref="#interna"></div>
+                            <div class="button b5" data-ref="#coraza"></div>
+                            <div class="button b6" data-ref="#exterior"></div>
+                            <div class="about"><strong>Imagen 6.</strong> Estructura de un cable óptico.</div>
+                        </div>
+                        <div class="col-2 globo">
+                            <div id="fibra">
+                                <p><strong>1. Fibra óptica:</strong> es un medio dieléctrico, de forma cilíndrica, cuya función principal es conducir la luz a ciertas frecuencias (longitudes de onda), con muy baja atenuación y gran ancho de banda. Está compuesta por un núcleo y revestimiento cilíndricos concéntricos, más una cubierta de protección para darle resistencia mecánica.</p>
+                            </div>
+                            <div id="proteccion" style="display: none;">
+                                <p><strong>2. Protección secundaria (tubo holgado o ajustado):</strong> su función principal es proteger las fibras y separarlas por grupos. Les proporciona a las fibras ópticas resistencia al impacto y las aísla de la humedad. La protección holgada trae internamente un gel. Cada tubo lleva un color para diferenciarlos en un mismo cable.</p>
+                            </div>
+                            <div id="traccion" style="display: none;">
+                                <p><strong>3. Elemento de tracción (aramida o fibra de vidrio):</strong> la función principal es proteger y dar resistencia mecánica en el momento de la instalación de la fibra óptica. Normalmente está construida de hilos de Kevlar. </p>
+                            </div>
+                            <div id="interna" style="display: none;">
+                                <p><strong>4. Cubierta interna (PVC, polietileno):</strong> es un revestimiento de protección, por lo general está fabricado en plástico y asegura la protección mecánica de la fibra.</p>
+                            </div>
+                            <div id="coraza" style="display: none;">
+                                <p><strong>5. Coraza:</strong> armadura de acero o armadura dieléctrica (hilos de fibra de vidrio) debajo de la cubierta de polietileno. Esto proporciona al cable una resistencia excelente al aplastamiento y propiedades de protección frente a roedores. Se usa frecuentemente en aplicaciones de enterrado directo o para instalaciones en entornos de industrias pesadas. </p>
+                            </div>
+                            <div id="exterior" style="display: none;">
+                                <p><strong>6. Cubierta exterior (PVC, polietileno):</strong> es la última capa de la fibra y su función es protegerla de los impactos y los rayos del sol. Puede ser de PVC o termoplástico ignífugo LSZH (Low Smoke Zero Halogen), evita la propagación del fuego en un incendio y no produce gases tóxicos halógenos en la combustión.</p>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="box-text connection">
+                        <p>Los cables de fibra óptica poseen dos estructuras básicas: cables de estructura holgada y cables de estructura ajustada.</p>
+                    </div>
+                    <div class="horizontal-menu estructura-cables">
+                        <dl>
+                            <dt>Cables de estructura holgada</dt>
+                            <dd>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <p>Se compone de varios tubos de fibra que rodean el miembro central de refuerzo. Cada tubo es de 2 a 3 mm de diámetro y lleva varias fibras holgadas. El miembro central es de acero o Kevlar, cubierta exterior de polietileno y coraza de acero y PVC.</p>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="instruction">
+                                            <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                                            <span class="onlymobile">Toca </span>
+                                            cada uno de los elementos para conocer su descripción.
+                                        </div>
+                                        <div id="imagen7">
+                                            <div class="tooltip e1" title="Tubo suelto: con fibras ópticas y gel">1</div>
+                                            <div class="tooltip e2" title="Núcleo de cable con hilos de bloqueo">2</div>
+                                            <div class="tooltip e3" title="Miembro de fuerza central">3</div>
+                                            <div class="tooltip e4" title="Material de envoltura: cinta de bloqueo de agua">4</div>
+                                            <div class="tooltip e5" title="Cinta de acero corrugado">5</div>
+                                            <div class="tooltip e6" title="Chaqueta exterior: color negro con resistencia UV">6</div>
+                                            <div class="tooltip e7" title="Hilo de rasgado (ripcords)">7</div>
+                                        </div>
+                                        <div class="about"><strong>Imagen 7.</strong> Cable de estructura holgada.</div>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>Cables de Estructura Ajustada</dt>
+                            <dd>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <p>Cada fibra posee una protección secundaria y todas rodean el miembro central. La protección consiste en una cubierta plástica de 900 µm que rodea el recubrimiento de 250 µm y permite que la fibra sea conectada directamente al distribuidor óptico.</p>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="instruction">
+                                            <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                                            <span class="onlymobile">Toca </span>
+                                            cada uno de los elementos para conocer su descripción.
+                                        </div>
+                                        <div id="imagen8">
+                                            <div class="tooltip e1" title="Cubierta de plástico">1</div>
+                                            <div class="tooltip e2" title="Cubierta de polietileno">2</div>
+                                            <div class="tooltip e3" title="Hilo de rasgado">3</div>
+                                            <div class="tooltip e4" title="Fibra óptica">4</div>
+                                            <div class="tooltip e5" title="Miembro central">5</div>
+                                            <div class="tooltip e6" title="Aramidas">6</div>
+                                        </div>
+                                        <div class="about"><strong>Imagen 8.</strong> Cable de estructura ajustada.</div>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h4>1.3.2. Cables comúnmente usados en redes FTTH</h4>
+                    <div class="box-text connection">
+                        <p>Dentro de las redes FTTH en la red de distribución óptica (ODN) tenemos tres segmentos, a saber: la red de alimentación (feeder), la red de distribucion y la red de abonado (drop). La pregunta que surge es: ¿qué tipo de cable son apropiados para cada uno de estos segmentos? Eso es lo responderemos a continuación</p>
+                    </div>
+                    <h5>Red de alimentación (feeder)</h5>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Este segmento de la red se inicia en la OLT ubicada en la oficina central y termina en el primer nivel de división. Su construcción, por lo general, es en forma de anillo y el montaje de estos cables comúnmente se realiza por canalizaciones subterráneas. Contiene los cables de mayor número de fibras o troncales, lo cual dependiendo del número de clientes y el tamaño del área de servicio a ser atendida pueden ser desde 72 en adelante, hasta 576 fibras.</p>
+                            <p>Todas las fibras son de tipo monomodo. Las redes de alimentación aérea son menos comunes.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/modulo_1-2_imagen9.png" alt="Esquema red de alimentación" />
+                                <div class="about"><strong>Imagen 9.</strong> Esquema red de alimentación.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-text connection">
+                        <p>Veamos el siguiente documento, con el cual ampliamos la información:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_6-CablesRedAlimentac.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Cables para la red de Alimentación
+                            </button>
+                        </a>
+                    </div>
+                    <h5>Red de distribución</h5>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Este segmento de la red se inicia en el punto de convergencia, o primer nivel de división, hasta el elemento de terminación de red (NAP). El montaje de estos cables generalmente se realiza por canalizaciones subterráneas, por postería o ambos. Dependiendo del área de servicio atendida, los cables pueden ser de 6, 12, 24 y 48 fibras.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/modulo_1-2_imagen10.png" alt="Esquema red de distribución" />
+                                <div class="about"><strong>Imagen 10.</strong> Esquema red de distribución.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-text connection">
+                        <p>Veamos el siguiente documento, con el cual ampliamos la información:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_7-CablesRedDistribucion.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Cables para red de distribución para FTTH
+                            </button>
+                        </a>
+                    </div>
+                    <h5>Red de acometida (drop)</h5>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Este segmento de la red se inicia en el dispositivo de terminación de red (NAP) y se extiende hasta el equipo terminal de red (ONT). El montaje de estos cables generalmente se realiza de forma subterránea o aérea. Los cables pueden ser de una (1) o dos (2) fibras.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/modulo_1-2_imagen11.png" alt="Esquema red de acometida" />
+                                <div class="about"><strong>Imagen 11.</strong> Esquema red de acometida.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-text connection">
+                        <p>Veamos el siguiente documento, con el cual ampliamos la información:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_8-CablesRedAcometida.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Cables para red de acometida al cliente
+                            </button>
+                        </a>
+                    </div>
+                    <h5>Red de acometida en edificios (vertical o riser)</h5>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Este segmento de la red generalmente se inicia en el cuarto de comunicaciones del edificio ubicado en la planta baja, sótano o parqueadero, saliendo desde la caja de terminación óptica hasta llegar a los apartamentos. Los cables que se utilizan en este segmento de red generalmente son flexibles para interiores.</p>
+                            <p>También puede ser un cable que va alimentando varias cajas de interiores, tiene un divisor en su parte interna y está ubicado en los pisos de los edificios de apartamentos.</p>
+                            <div class="box-text connection">
+                                <p>Haz clic en el botón para abrir el documento sobre los cables para redes de distribución interna en edificios:</p>
+                                <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_9-CablesRedDistribInterna.pdf" target="_blank">
+                                    <button class="general" data-content="#">
+                                        Abrir Cables para redes de distribución interna en edificios
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/modulo_1-2_imagen12.png" alt="Cables para redes de distribución interna en edificios" />
+                                <div class="about"><strong>Imagen 12.</strong> Cables para redes de distribución interna en edificios.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-text connection">
+                        <p>Puedes abrir el siguiente documento con los principales parámetros que incluye la recomendación ITU-T</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_10-CaractCablesFibra.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Características de los cables ópticos
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h4>1.3.3. Interpretación de las hojas de datos de un cable óptico</h4>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Los componentes más relevantes que traen las hojas de especificaciones de un cable de fibra óptica están relacionados con los parámetros de desempeño, aspecto físico, estructura mecánica y el comportamiento ambiental. </p>
+                            <div class="box-text connection">
+                                <p>Veamos cómo se interpretan estas hojas. Observa el documento y podrás obtener más información:</p>
+                                <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_11-InterpretacHojasDatos.pdf" target="_blank">
+                                    <button class="general" data-content="#">
+                                        Abrir Interpretación de las hojas de datos de un cable óptico
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="instruction">
+                                <span class="notmobile">Haz clic en </span>
+                                <span class="onlymobile">Toca </span>
+                                la imagen para observar el documento completo.
+                            </div>
+                            <a href="https://www.corning.com/media/worldwide/coc/documents/Fiber/PI-1463-AEN.pdf" target="_blank">
+                                <div class="box_media">
+                                    <img src="content/imagen13.png" alt="Ejemplo de una hoja de especificaciones" />
+                                </div>
+                            </a>
+                            <div class="about"><strong>Imagen 13.</strong> Ejemplo de una hoja de especificaciones.</div>
+                        </div>
+                    </div>
+                    <div class="box-text example" label="Ejemplos.">
+                        <p>Veamos un par de casos que ejemplifican estas situaciones:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_12-CasosEjemplo.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir casos que ejemplifican estas situaciones
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h4>1.3.4. Código de colores de las fibras ópticas, según norma y fabricantes</h4>
+                    <div class="box-text connection">
+                        <p>Veamos en qué consisten las tablas de colores para fibra óptica desde distintos enfoques:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_13-CodigosColoresNorma.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Código de colores de las fibras ópticas Según Norma y fabricantes
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- pag 2-1 -->
+            <section id="pag-2-1" ptitle="2. Conectores y elementos pasivos">
+                <div class="subpage">
+                    <h3>2.1. Conectores</h3>
+                    <p>Los conectores son los elementos encargados de dar continuidad a la señal hasta un destino final.</p>
+                    <div class="instruction">
+                        <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                        <span class="onlymobile">Toca </span>
+                        cada uno de los elementos para conocer su descripción.
+                    </div>
+                    <div class="genially">
+                        <div style="width: 100%;"><div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;"><iframe frameborder="0" width="1920" height="1080" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/61f18a716e49c60011d6d88f" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+                    </div>
+                    <!-- <div id="conectores">
+                        <div class="tooltip c1" title="Protector">.</div>
+                        <div class="tooltip c2" title="Anillo de crimpado">.</div>
+                        <div class="tooltip c3" title="Cuerpo interior del conector">.</div>
+                        <div class="tooltip c4" title="Ferrule">.</div>
+                        <div class="tooltip c5" title="Cuerpo del conector">.</div>
+                        <div class="tooltip c6" title="Tapón protector">.</div>
+                    </div> -->
+                    <div class="about"><strong>Imagen 14.</strong> Conectores.</div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Los conectores tienen, digamos, un nombre y un apellido. El nombre obedece a su forma: SC (conector de cabeza cuadrada) o LC (cabeza pequeña cuadrada); también están los de cabeza redonda como son los FC (conector de férula cabeza redonda) y los ST, aunque el ajuste de este último es similar al de un conector BNC o tipo bayoneta.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="instruction">
+                                <span class="notmobile">Haz clic sobre </span>
+                                <span class="onlymobile">Toca </span>
+                                cada uno de los elementos para conocer su descripción.
+                            </div>
+                            <div class="genially">
+                                <div style="width: 100%;"><div style="position: relative; padding-bottom: 100.00%; padding-top: 0; height: 0;"><iframe frameborder="0" width="1400" height="1400" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/61f18cc5e6151f001834fcc9" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+                            </div>
+                            <!-- <div id="foto3">
+                                <div class="tooltip lc" title="LC" data-position-my="left bottom">.</div>
+                                <div class="tooltip sc" title="SC" data-position-my="left bottom">.</div>
+                                <div class="tooltip fc" title="FC" data-position-my="left bottom">.</div>
+                                <div class="tooltip st" title="ST" data-position-my="left bottom">.</div>
+                            </div> -->
+                            <div class="about"><strong>Foto 3.</strong> Tipos de conectores.</div>
+                        </div>
+                    </div>
+                    <p>El apellido obedece al pulimiento de la férula o elemento de cerámica. Existen diversos tipos de pulido, haremos referencia a cinco tipos de pulido de la superficie de conexión: PC, SPC, UPC, APC y FLAT.</p>
+                    <div class="instruction">
+                        <span class="notmobile">Haz clic sobre </span>
+                        <span class="onlymobile">Toca </span>
+                        cada uno de los elementos para conocer su descripción.
+                    </div>
+                    <div class="genially">
+                        <div style="width: 100%;"><div style="position: relative; padding-bottom: 100.00%; padding-top: 0; height: 0;"><iframe frameborder="0" width="1400" height="1400" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/61f1921cb207c300116e8168" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+                    </div>
+                    <!-- <div id="imagen15">
+                        <div class="tooltip flat" title="
+                            <h5>FLAT</h5>
+                            <ul class='data_list'>
+                                <li>Tipo de conectores ópticos: pulido plano</li>
+                                <li>Tipo de pulimiento: (la imagen)</li>
+                                <li>Pérdida de retorno: -</li>
+                            </ul>
+                        ">.</div>
+                        <div class="tooltip pc" title="
+                            <h5>PC</h5>
+                            <ul class='data_list'>
+                                <li>Tipo de conectores ópticos: contacto físico</li>
+                                <li>Tipo de pulimiento: (la imagen)</li>
+                                <li>Pérdida de retorno: -40dB</li>
+                            </ul>
+                        ">.</div>
+                        <div class="tooltip spc" title="
+                            <h5>SPC</h5>
+                            <ul class='data_list'>
+                                <li>Tipo de conectores ópticos: súper contacto físico</li>
+                                <li>Tipo de pulimiento: (la imagen)</li>
+                                <li>Pérdida de retorno: -45dB</li>
+                            </ul>
+                        ">.</div>
+                        <div class="tooltip upc" title="
+                            <h5>UPC</h5>
+                            <ul class='data_list'>
+                                <li>Tipo de conectores ópticos: ultra contacto físico</li>
+                                <li>Tipo de pulimiento: (La imagen)</li>
+                                <li>Pérdida de retorno: -50dB</li>
+                            </ul>
+                        ">.</div>
+                        <div class="tooltip apc" title="
+                            <h5>APC</h5>
+                            <ul class='data_list'>
+                                <li>Tipo de conectores ópticos: contacto físico angular</li>
+                                <li>Tipo de pulimiento: (la imagen)</li>
+                                <li>Pérdida de retorno: -70dB</li>
+                            </ul>
+                        ">.</div>
+                    </div> -->
+                    <div class="about"><strong>Imagen 15.</strong> Tipos de pulido de conectores.</div>
+                </div>
+                <div class="subpage">
+                    <h4>2.1.1. Parámetros asociados</h4>
+                    <p>Son esencialmente dos: pérdidas de inserción y pérdidas de retorno. Las pérdidas de inserción en dB son las que añade el conector al paso de la potencia de luz a través de él; las pérdidas de retorno se refieren a la fracción de potencia que regresa. ¡Mientras  más  grande  este  valor menos  potencia  se  regresa!</p>
+                    <div class="about"><strong>Tabla 2.</strong> Pérdidas de inserción y retorno.</div>
+                    <table class="datatable">
+                        <thead>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>Pérdida de inserción</th>
+                            <th>ORL</th>
+                            <td>
+                                <div class="instruction">
+                                    <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                                    <span class="onlymobile">Toca </span>
+                                    cada una de las siglas para conocer su descripción.
+                                </div>
+                            </td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fibra / aire</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>= 14 dB</td>
+                                <td>
+                                    <div class="aire">
+                                        <div class="tooltip pi" title="PI: potencia incidente">.</div>
+                                        <div class="tooltip pt" title="PT: potencia transmitida">.</div>
+                                        <div class="tooltip pr" title="PR: potencia reflejada">.</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Sin contacto</td>
+                                <td></td>
+                                <td>NC</td>
+                                <td><1 dB</td>
+                                <td>= 12 dB</td>
+                                <td>
+                                    <div class="sin_contacto">
+                                        <div class="tooltip pi" title="PI: potencia incidente">.</div>
+                                        <div class="tooltip pt" title="PT: potencia transmitida">.</div>
+                                        <div class="tooltip pr1" title="PR1: potencia reflejada desde la primera cara">.</div>
+                                        <div class="tooltip pr2" title="PR2: potencia reflejada desde la segunda cara">.</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">Contacto físico</td>
+                                <td>Contacto físico</td>
+                                <td>PC</td>
+                                <td><0,7 dB</td>
+                                <td>>30 dB</td>
+                                <td rowspan="3">
+                                    <div class="contacto">
+                                        <div class="tooltip pt" title="PT: potencia transmitida">.</div>
+                                        <div class="tooltip pr3" title="PR3: leves problemas de dispersión causados por las imperfecciones de la superficie">.</div>
+                                        <div class="tooltip pi" title="PI: potencia incidente">.</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Super PC</td>
+                                <td>SPC</td>
+                                <td><0,5 dB</td>
+                                <td>>40 dB</td>
+                            </tr>
+                            <tr>
+                                <td>Ultra PC</td>
+                                <td>UPC</td>
+                                <td><0,5 dB</td>
+                                <td>>50 dB</td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Contacto físico angular</td>
+                                <td></td>
+                                <td>8° APC</td>
+                                <td><0,5 dB</td>
+                                <td>>60 dB</td>
+                                <td rowspan="2">
+                                    <div class="fisico_angular">
+                                        <div class="tooltip pt" title="PT: potencia transmitida">.</div>
+                                        <div class="tooltip pr3" title="PR3: leves problemas de dispersión causados por las imperfecciones de la superficie">.</div>
+                                        <div class="tooltip pi" title="PI: potencia incidente">.</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5">Reflexión directa de los conectores APC en el revestimiento donde es rápidamente disipada</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="box-text connection">
+                        <p>En el siguiente documento se explica con un poco más de detalle la pérdida de retorno, puesto que determina la tasa de transmisión y con ello la aplicación que podría operar correctamente:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_14A-ParametrosConectores.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Parámetros asociados a los conectores
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h4>2.1.2. Desempeño de los conectores</h4>
+                    <div class="row short">
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/modulo_1-2_imagen16.png" alt="Ejemplo de una tabla de especificaciones de conectores FC y SC" />
+                                <div class="about"><strong>Imagen 16.</strong> Ejemplo de una tabla de especificaciones de conectores FC y SC.</div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <p>Los conectores más usados en redes FTTH son SC (cuadrado). Las redes que transportan señales de televisión a 1550 nanómetros o de alta tasa de transmisión del orden de los Gbps, deben utilizar corte angular, o sea, el SC-APC o SC-UPC. Cuando se transporta solo datos los conectores pueden ser SC-PC o SC-SPC.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h4>2.1.3. Evaluación y certificación de conectores ópticos</h4>
+                    <p>Cuando se realiza la conexión de un cable de fibra óptica en campo suele ocurrir:</p>
+                    <ul>
+                        <li>Que la prueba de continuidad en el cable no garantiza que la señal sea la correcta.</li>
+                        <li>Puede ocurrir que la potencia de la luz en el conector al lado del cliente no esté dentro de los valores adecuados.</li>
+                        <li>En la ONT se requieren entre -20 y -24 dBm de potencia de luz en las premisas del cliente y es probable que no tengamos estos niveles.</li>
+                        <li>
+                            Como el diámetro del núcleo de una fibra mono modo (SM) es inferior a 10 micras, es imposible saber si una fibra está, o no, sucia, si no utilizamos la herramienta adecuada. Por tanto, es recomendable que una vez instalados los conectores en ambos lados de los cables se hagan las siguientes pruebas:
+                            <ul>
+                                <li>Prueba de continuidad de luz</li>
+                                <li>Prueba de calidad de limpieza de conectores(certificación)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="box-text example" label="Ejemplo">
+                        <p>del estado de dos conectores</p>
+                        <div class="row">
+                            <div class="col-2">
+                                <p>Conector sucio</p>
+                                <img src="content/conector-sucio.png" alt="Conector sucio" />
+                            </div>
+                            <div class="col-2">
+                                <p>Conector limpio</p>
+                                <img src="content/conector-limpio.png" alt="conector limpio" />
+                            </div>
+                        </div>
+                        <div class="about"><strong>Imagen 1.</strong> Ejemplo de estado de los conectores. Fuente: <a href="https://ielektro.es/2018/04/27/limpieza-conectores-fibra-optica/" target="_blank">https://ielektro.es/2018/04/27/limpieza-conectores-fibra-optica/</a></div>
+                    </div>
+                    <div class="box-text connection">
+                        <p>Los adaptadores de fibra óptica también llamados acopladores son elementos que aseguran el acoplamiento o unión de los conectores, reduciendo así la pérdida en la inserción. Son ampliamente utilizados en los distribuidores de fibra óptica (ODF), empalmes mecánicos, equipos de medida, etc. Veamos cuáles son:</p>
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h4>2.1.4. Adaptadores o acopladores</h4>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Un adaptador o acoplador de fibra óptica es un conector diseñado para acoplar o conectar dos extremos de un cable de fibra óptica con alta precisión.</p>
+                            <p>Los adaptadores de fibra óptica se acoplan a dos extremos de diferentes fibras, de ahí que también se denominen acopladores. Hay versiones que conectan fibras individuales entre sí (simplex), otros conectan dos fibras para el modo dúplex y algunos, incluso, conectan hasta cuatro fibras.</p>
+                            <p>El acoplamiento de precisión se realiza a través de los manguitos de alineación, que están hechos de cerámica o metal como el cobre para proporcionar un soporte rígido para los conectores, mientras que el cuerpo del conector en sí está hecho de plástico. Hay adaptadores / acopladores de fibra óptica hechos para cada tipo de conector de fibra óptica disponible.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="instruction">
+                                <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                                <span class="onlymobile">Toca </span>
+                                cada uno de los elementos para conocer su descripción.
+                            </div>
+                            <div id="foto4">
+                                <div class="tooltip fcfc" title="FC/FC">.</div>
+                                <div class="tooltip fcsc" title="FC/SC">.</div>
+                                <div class="tooltip fcst" title="FC/ST">.</div>
+                                <div class="tooltip lclc" title="LC/LC">.</div>
+                                <div class="tooltip scsc" title="SC/SC">.</div>
+                            </div>
+                            <div class="about"><strong>Foto 4.</strong> Tipos de adaptadores.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- pag 2-2 -->
+            <section id="pag-2-2" ptitle="2. Conectores y elementos pasivos">
+                <div class="subpage">
+                    <h3>2.2. Divisores o splitters ópticos</h3>
+                    <div class="box-text link" label="Extendiendo el saber">
+                        <p><strong>Documento:</strong> <a href="https://www.researchgate.net/publication/280712505_DIVISORES_OPTICOS_SPLITTERS_EN_FTTH" target="_blank">Divisores ópticos (splitters) en FTTH</a></p>
+                        <p><strong>Extensión:</strong> 12 páginas</p>
+                        <p><strong>Enunciado:</strong> Para conocer más del tema, consulta la información de este documento.</p>
+                    </div>
+                    <h4>2.2.1. Definición</h4>
+                    <p>Un divisor o splitter es un elemento de la red que permite dividir la potencia de la señal óptica entrante en varias porciones de potencia a la salida.</p>
+                    <div class="row short">
+                        <div class="col-2">
+                            <p>Es clave en la red porque permite implementar la arquitectura punto a multipunto, es decir, la comunicación entre la oficina central con múltiples clientes. Es bueno señalar que la red FTTH opera bajo la forma de medio compartido, esto significa que la señal que entrega la OLT lleva de forma agregada la información de varios clientes, esa información viaja por una única fibra y luego debe ser repartida entre múltiples fibras que terminan en los ONT de los clientes.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/modulo_1-2_imagen17.png" alt="Funcionamiento de un divisor óptico." />
+                                <div class="about"><strong>Imagen 17.</strong> Funcionamiento de un divisor óptico.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h4>2.2.2. Cálculo de pérdidas para cada salida de un splitter</h4>
+                    <p>Retomemos los conceptos vistos previamente sobre la potencia de señal. Pensemos como si tuviésemos un tubo grande de agua que entregará porciones más pequeñas de agua a tuberías conectadas a él. Si el tubo grande se le conectan dos tubos, entonces por cada uno de ellos fluirá la mitad del agua. Esto lo denominamos 1x2 (una entrada y dos salidas), y la mitad la denominamos en decibelios como 3dB. Siguiendo esta idea tenemos lo siguiente:</p>
+                    <div class="about"><strong>Tabla 4.</strong> Relación de división.</div>
+                    <table class="datatable">
+                        <thead>
+                            <th>Número de divisiones del splitter</th>
+                            <th>En cada salida se tiene la siguiente proporción de la potencia de entrada</th>
+                            <th>Equivalentemente, esta proporción en dB es:</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1x2</td>
+                                <td>1/2 = 0,5 = 50%</td>
+                                <td>3 dB</td>
+                            </tr>
+                            <tr class="odd">
+                                <td>1x4</td>
+                                <td>1/4 = 0,25 = 25%</td>
+                                <td>6 dB</td>
+                            </tr>
+                            <tr>
+                                <td>1x8</td>
+                                <td>1/8 = 0,125 = 12,5%</td>
+                                <td>9 dB</td>
+                            </tr>
+                            <tr class="odd">
+                                <td>1x16</td>
+                                <td>1/16 = 0,0625 = 6,25%</td>
+                                <td>12 dB</td>
+                            </tr>
+                            <tr>
+                                <td>1x32</td>
+                                <td>1/32 = 0,03125 = 3,125%</td>
+                                <td>15 dB</td>
+                            </tr>
+                            <tr class="odd">
+                                <td>1x64</td>
+                                <td>1/64 = 0,015625 = 1,5625%</td>
+                                <td>18 dB</td>
+                            </tr>
+                            <tr>
+                                <td>1x128</td>
+                                <td>1/128 = 0,0078125 = 0,78125%</td>
+                                <td>21 dB</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="subpage">
+                    <h4>2.2.3. Niveles de división</h4>
+                    <div class="box-text connection">
+                        <p>Cuando revisamos las partes constitutivas de una red FTTH, encontramos que la señal óptica usualmente atravesará dos divisiones en el trayecto a través de la ODN. Veamos de qué se trata cada una:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_15-NivelesDivision.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Niveles de división
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h4>2.2.4. Tecnología de los divisores ópticos</h4>
+                    <p>En general se tienen dos tipos de tecnologías:</p>
+                    <div class="instruction">
+                        <span class="notmobile">Pasa el cursor del mouse sobre cada uno de los tipos para conocer su descripción.</span>
+                        <span class="onlymobile">Toca sobre cada uno de los tipos para conocer su descripción.</span>
+                    </div>
+                    <!-- <div class="instruction">
+                        <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                        <span class="onlymobile">Toca </span>
+                        cada elemento para conocer su descripción.
+                    </div> -->
+                    <div id="imagen18">
+                        <div class="tooltip plc" data-position-at="left center" title="
+                            <ul class='data_list'>
+                                <li>Circuito de onda de luz planar (PLC)</li>
+                                <li>Sustrato de silicio</li>
+                                <li>Circuito óptico</li>
+                                <li>Normalmente, alto número de divisiones (1 x 64)</li>
+                            </ul>
+                        ">.</div>
+                        <div class="tooltip fbt" data-position-at="left center" title="
+                            <ul class='data_list'>
+                                <li>Cono biónico fundido (FBT)</li>
+                                <li>Acoplamiento de fibra</li>
+                                <li>Fundido térmicamente</li>
+                                <li>Normalmente, recuentos bajos (1 x 4)</li>
+                            </ul>
+                        ">.</div>
+                    </div>
+                    <div class="about"><strong>Imagen 18.</strong> Tipos de tecnologías de divisores.</div>
+                    <div class="box-text connection">
+                        <p>Veamos en qué consiste cada una:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_16-TecnologiaDivisores.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Tecnología de los divisores ópticos
+                            </button>
+                        </a>
+                    </div>
+                    <h5>Divisores Fused Biconical Taper (FBT)</h5>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Consisten básicamente de fibras ópticas paralelas que han sido entorchadas, elongadas y fusionadas de tal manera sus núcleos están muy cerca. La longitud de la región de acoplamiento determina la razón de acople de una fibra a la otra. El proceso de fabricación es el siguiente:  se inyecta potencia en un puerto de entrada, la potencia de salida de cada uno de los puertos de salida se monitorea. Cuando la razón de acoplamiento deseada se alcanza, se suspende el proceso de manufactura.</p>
+                            <p>Esta técnica posibilita pocas divisiones, que pueden ser asimétricas, por ejemplo, tener a la salida divisiones 5:95: por un puerto se entrega 5% de la potencia y por el otro 95% de la potencia, lo que resulta muy útil para conexión de equipos de medida. Trabajan con longitudes de onda muy determinadas en 890nm, 1310 nm y 1550 nm. Esta técnica, aunque limitada, es de muy bajo costo.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/fbt.jpg" alt="Foto 1. Divisores FBT" />
+                                <div class="about"><strong>Foto 1.</strong> Divisores FBT. Fuente: <a href="https://foconec.com/wp-content/uploads/2017/10/1x2-coupler-1.jpg" target="_blank">https://foconec.com/wp-content/uploads/2017/10/1x2-coupler-1.jpg</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h5>Divisores Planar Lightwave Circuit (PLC)</h5>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Esta técnica de fabricación se basa en tecnología de semiconductores. Se fabrican mediante tecnología de circuitos de guía de onda plana. </p>
+                            <p>El diseño del splitter PLC consiste de un chip PLC óptico y diversos arreglos ópticos dependiendo de la razón de salida. Los arreglos ópticos se acoplan a ambos extremos del chip del splitter PLC como se muestra en la figura.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/plc.png" alt="Imagen 1. Divisores PLC" />
+                                <div class="about"><strong>Imagen 1.</strong> Divisores PLC. Fuente: <a href="https://www.senko.com/es/pdf/Optical%20Splitter%20Whitepaper_Esp.pdf" target="_blank">https://www.senko.com/es/pdf/Optical%20Splitter%20Whitepaper_Esp.pdf</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>El chip PLC chip es la componente clave del splitter. Está disponible en las siguientes configuraciones:  1xN (N=2, 4, 8, 16, 32, 64) y 2xN (N=2, 4, 8, 16, 32, 64). Trabajan en un rango de longitudes de onda entre 1260 nm y 1650 nm. </p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/plc2.jpg" alt="Foto 2. PLC Chip" />
+                                <div class="about"><strong>Foto 2.</strong> PLC Chip. Fuente: <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLwzMQukjSnh3Dko2Kx6JDEjMelQR3ZUjeYA&usqp=CAU" target="_blank">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLwzMQukjSnh3Dko2Kx6JDEjMelQR3ZUjeYA&usqp=CAU</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-text connection">
+                        <p>En la siguiente tabla se resumen las características y diferencias principales de cada tecnología.</p>
+                    </div>
+                    <div class="about"><strong>Tabla 1.</strong> Comparaciones entre splitters tipo FBT y PLC. Fuente: <a href="http://www.fiberopticshare.com/fbt-splitters-vs-plc-splitters-differences.html" target="_blank">http://www.fiberopticshare.com/fbt-splitters-vs-plc-splitters-differences.html</a> </div>
+                    <table class="datatable">
+                        <thead>
+                            <th>Especificaciones</th>
+                            <th>Splitter FBT </th>
+                            <th>Splitter PLC</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fabricación</td>
+                                <td>Dos o más fibras se colocan muy juntas, típicamente entorchadas una alrededor de la otra y fusionadas mediante la aplicación de calor mientras el conjunto se alarga y estrecha.</td>
+                                <td>Un PLC (planar lightwave circuit)  se fabrica utilizando circuitos de guía de ondas de vidrio de sílice que están alineados con un chip de matriz de fibras con ranura en V que utiliza fibra tipo ribbon (cinta). Una vez que todo está alineado y unido, se empaqueta dentro de una carcasa en miniatura.</td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Longitud de onda</td>
+                                <td>850 nm, 1310 nm, 1550 nm</td>
+                                <td>1260 nm a 1650 nm</td>
+                            </tr>
+                            <tr>
+                                <td>Entrada/salida</td>
+                                <td>Una o dos entradas con una salida de máximo 32 fibras</td>
+                                <td>Una o dos entradas con una salida de máximo 64 fibras</td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Cable Entrada/salida </td>
+                                <td>Fibra óptica desnuda, 0.9 mm, 2.0 mm, 3.0 mm</td>
+                                <td>Fibra óptica desnuda, 0.9 mm, 2.0 mm, 3.0 mm</td>
+                            </tr>
+                            <tr>
+                                <td>Temperatura</td>
+                                <td>-5°C a 75°C</td>
+                                <td>-40°C a 85°C</td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Divisiones realizables</td>
+                                <td>Hasta 1:8 divisiones</td>
+                                <td>Hasta 1:64 divisiones</td>
+                            </tr>
+                            <tr>
+                                <td>Costo</td>
+                                <td>Más bajo costo</td>
+                                <td>Más alto costo </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="subpage">
+                    <h4>2.2.5. Especificaciones y características</h4>
+                    <div class="box-text connection">
+                        <p>Además, veamos cuáles son los parámetros relevantes que usualmente se encontrarán en los elementos pasivos:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_17-EspecifElementosPasivos.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Especificaciones y características de los elementos pasivos
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- pag 2-3 -->
+            <section id="pag-2-3" ptitle="2. Conectores y elementos pasivos">
+                <div class="subpage">
+                    <h3>2.3. Multiplexores</h3>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Multiplexación es la técnica de combinar dos o más señales, lo que permite tener varias comunicaciones de forma simultánea.</p>
+                            <p>Un multiplexor GPON es un dispositivo pasivo que multiplexa/demultiplexa dos entradas ópticas, una de 1310/1490 nm (GPON) y otra de 1550 nm para el servicio de televisión analógica superpuesta (RF overlay). La señal de RF obtenida desde una cabecera de TV es transportada por una red y enviada en forma analógica a través de la red de fibra óptica. La señal de RF contiene la suma de todos los canales en forma de una única señal analógica que normalmente abarca desde 80 a 862 MHz.</p>
+                            <p>Esta señal va superpuesta a la transmisión de datos, utilizando una longitud de onda diferente a la de los datos mismos.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/modulo_1-2_imagen19.png" alt="Esquema de conexión del multiplexor en la oficina central del operador" />
+                                <div class="about"><strong>Imagen 19.</strong> Esquema de conexión del multiplexor en la oficina central del operador.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-text connection">
+                        <p>Veamos a continuación más detalle sobre el proceso de multiplexación en la oficina central del operador:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo1_2/Curso1_mod1.2_18-MultiplexacionOficinaCentral.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir Detalle sobre el proceso de multiplexación en la oficina central de operador
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pag-bibliografia" ptitle="Bibliografía">
+                <div class="subpage">
+                    <ul class="data_list">
+                        <li>López, E. (2013). Divisores ópticos (splitters) en FTTH. Recuperado el 1º de diciembre de 2020 de <a href="https://www.researchgate.net/publication/280712505_DIVISORES_OPTICOS_SPLITTERS_EN_FTTH" target="_blank">https://www.researchgate.net/[...]</a></li>
+                        <li>Newport Corporation. (Technical Notes). Fiber Optics: How Fused Fiber Optic Couplers Work. Recuperado el 3 de diciembre de 2020. <a href="https://www.newport.com/medias/sys_master/images/images/h86/hb2/8797287088158/Tech-Note-26-How-Fused-Fiber-Optic-Couplers-Work.pdf" target="_blank">https://www.newport.com[...]</a></li>
+                        <li>Cárdenas, A. (2008). Fibras ópticas. Recuperado el 15 de diciembre de 2020. <a href="https://www.slideserve.com/strom/fibras-pticas" target="_blank">https://www.slideserve.com/[...]</a></li>
+                    </ul>
+                    <h4>Fuente de las gráficas</h4>
+                    <ul class="data_list">
+                        <li><strong>Gráfica 1.</strong> Schnitzler, S. (s.f.). Fibras ópticas. Adaptado el 3 de enero de 2021 de: <a href="http://www.yio.com.ar/fo/" target="_blank">http://www.yio.com.ar/fo/</a></li>
+                        <li><strong>Gráfica 2.</strong> Barroso, S. (2013). Tesis de grado Caracterización polimétrica de fibras ópticas monomodo. Centro de Investigaciones en Óptica, A.C. Adaptado el 3 de enero de 2021 de <a href="https://biblioteca.cio.mx/tesis/15937.pdf" target="_blank">https://biblioteca.cio.mx/[...]</a></li>
+                        <li><strong>Gráfica 3.</strong> Wikipedia. (2007). Tipos de fibras ópticas. Adaptado el 3 de enero de 2021 de: <a href="https://es.wikipedia.org/wiki/Archivo:Fibra_optica.svg" target="_blank">https://es.wikipedia.org/[...]</a></li>
+                    </ul>
+                    <h4>Tablas</h4>
+                    <ul class="data_list">
+                        <li><strong>Tabla 2.</strong> Exfo Expertise Reaching Out. (2018). Pérdidas de inserción y retorno. Recuperado el 4 de enero de 2021 de <a href="https://slideplayer.es/slide/12318006/" target="_blank">https://slideplayer.es/[...]</a></li>
+                    </ul>
+                    <h4>Fotografías</h4>
+                    <ul class="data_list">
+                        <li><strong>Foto 1.</strong> Wikipedia. (2020). John Tyndall. Recuperado el 20 de diciembre de 2020 de <a href="https://en.wikipedia.org/wiki/John_Tyndall" target="_blank">https://en.wikipedia.org/[...]</a></li>
+                        <li><strong>Foto 2.</strong> Wikipedia. (s.f.). Charles Kao. Recuperado el 20 de diciembre de 2020 de <a href="https://en.wikipedia.org/wiki/Charles_K._Kao" target="_blank">https://en.wikipedia.org/[...]</a></li>
+                        <li><strong>Foto 4.</strong> ETD. (s.f.). Fiber optics products. Adaptado el 28 de diciembre de 2020 de: <a href="http://www.etd.fi/media/ETD%20products_en_1.0.pdf" target="_blank">http://www.etd.fi/[...]</a></li>
+                    </ul>
+                    <h4>Imágenes</h4>
+                    <ul class="data_list">
+                        <li><strong>Imagen 6.</strong> Rodríguez, V. (s.f.). Estructura de un cable óptico. Adaptado el 5 de enero de 2021 de: <a href="https://aitzelrodriguezvazquez1114.files.wordpress.com/2014/05/wpid-image046.gif" target="_blank">https://aitzelrodriguezvazquez1114.files.wordpress.com/[...]</a></li>
+                        <li><strong>Imagen 7.</strong> Taihan Fiberoptics. (s.f.). Cable de estructura holgada. Recuperado el 5 de enero de 2021 del catálogo cable comercializados por Fyco en <a href="http://www.tfo.co.kr/shop/list.php?ca_id=202010&cate=01&sort=&sortodr=&page=1" target="_blank">http://www.tfo.co.kr/[...]</a></li>
+                        <li><strong>Imagen 8.</strong> Taihan Fiberoptics. (s.f.).Cable de estructura ajustada. Recuperado el 5 de enero de 2021 del catálogo cable comercializados por Fyco en <a href="http://www.tfo.co.kr/shop/list.php?ca_id=202010&cate=01&sort=&sortodr=&page=1" target="_blank">http://www.tfo.co.kr/[...]</a></li>
+                        <li><strong>Imagen 12.</strong> Fibre to the Home Council Europe. (2018). FTTH Handbook. Cables para redes de distribución interna en edificios. Adaptado el 8 de enero de 2021 de <a href="https://www.ftthcouncil.eu/documents/Publications/FTTH%20Handbook_2017_V8_FINAL.pdf" target="_blank">https://www.ftthcouncil.eu/[...]</a></li>
+                        <li><strong>Imagen 13.</strong> Cornign Incorporated. (2019). Ejemplo de una hoja de especificaciones. Recuperado el 10 de enero de 2021 de <a href="https://www.corning.com/media/worldwide/coc/documents/Fiber/PI-1463-AEN.pdf" target="_blank">https://www.corning.com/[...]</a></li>
+                        <li><strong>Imagen 14.</strong> Promax Test & Measurement, SLU. (2019). Tipo de conectores de fibra óptica: guía sencilla. Adaptado el 13 de enero de 2021 de: <a href="https://www.promax.es/esp/noticias/578/tipos-de-conectores-de-fibra-optica-guia-sencilla/" target="_blank">https://www.promax.es/[...]</a></li>
+                        <li><strong>Imagen 15.</strong> Cablematic. (s.f.). Tipos de pulido de conectores. Adaptado el 11 de enero de 2021 de <a href="https://cablematic.com/es/productos/extensor-hdmi-por-fibra-optica-monomodo-sc-simplex-20km-HL076/" target="_blank">https://cablematic.com/[...]</a></li>
+                        <li><strong>Imagen 16.</strong> CRT. (s.f.). Ejemplo de una tabla de especificaciones de conectores FC y SC. Recuperado el 15 de enero de 2021 de <a href="http://www.crttele.com/jumper-monomodo-sc-apc-fc-upc.html" target="_blank">http://www.crttele.com/[...]</a></li>
+                        <li><strong>Imagen 17.</strong> Pranckevicius, D. (s.f.). Funcionamiento de un divisor óptico. Adaptado el 16 de enero de 2021 de <a href="http://www.cablix.com/ws/wp-content/uploads/2020/04/Webinar-Cablix_Fttx-y-PON.pdf" target="_blank">http://www.cablix.com/[...]</a></li>
+                        <li><strong>Imagen 18.</strong> R & M. (s.f.) Technology and structure. Adaptado el 15 de diciembre de 2020 de: <a href="https://images.slideplayer.com/18/6078101/slides/slide_15.jpg" target="_blank">https://images.slideplayer.com/[...]</a></li>
+                        <li><strong>Imagen 19.</strong> Alea Shop. (2017) Esquema de conexión del multiplexor en la oficina central del operador. Adaptado el 14 de diciembre de 2020 de <a href="https://www.aleashop.es/blog/2017/09/11/edfa-gpon" target="_blank">https://www.aleashop.es/[...]</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!--Créditos-->
+            <section id="pag-creditos" ptitle="Créditos">
+                <div class="subpage" id="credits_subpage">
+                    <div>
+                        <h3>Desarrollo de contenidos</h3>
+                        <cite>John Jairo Jaramillo Rodríguez<br />
+                            <strong>Experto Temático</strong><br />
+                            Ana María Cárdenas Soto<br />
+                            <strong>Experta Temática</strong></cite>
+                    </div>
+                    <div>
+                        <h3>Asesoría pedagógica y diseño instruccional</h3>
+                        <cite>Carolina Llanos Tobón</cite>
+                    </div>
+                    <div>
+                        <h3>Corrección de estilo</h3>
+                        <cite>Felipe Sosa Vargas</cite>
+                    </div>
+                    <div>
+                        <h3>Diseño gráfico</h3>
+                        <cite>Elizabeth Hernandez González</cite>
+                    </div>
+                    <div>
+                        <h3>Integración de contenidos</h3>
+                        <cite>Santiago Bernal García</cite>
+                    </div>
+                    <div>
+                        <h3>Revisión de calidad</h3>
+                        <cite>Lorena Guarín Herrera</cite>
+                    </div>
+
+                    <div>
+                        <h3>Producción, gestión técnica y administrativa</h3>
+                        <p class="logos">
+                            <a href="http://bambuco.co/" target="_blank"><img src="img/logo_bambuco.png" alt="BambuColectivo" /></a>
+                            <a href="https://fycolearning.com/" target="_blank"><img src="img/logo_azul.png" alt="Fyco Telecomunicaciones" /></a>
+                        </p>
+                    </div>
+
+                    <div class="editions">
+                        1ª edición: marzo 2021
+                    </div>
+                    <div>
+                        <br />
+                        <!-- <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Obra publicada bajo licencia:<br />Creative Commons Atribución-Compartir Igual 4.0 Internacional<br /><br />
+                        <img src="img/cc.png" alt="Creative Commons" /></a> -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="not_print">
+            <div class="measuring-progress" data-type="horizontal"></div>
+
+            <nav label="Características globales" class="globals">
+                <menu>
+                    <menuitem data-global-id="results"><i title="Progreso" class="ion-clipboard " data-position-at="top"></i></menuitem>
+                    <menuitem data-global-id="return">
+                        <i title="Maximizar" class="ion-arrow-expand  maximize" data-position-at="top"></i>
+                        <i title="Minimizar" class="ion-arrow-shrink  minimize" data-position-at="top"></i>
+                    </menuitem>
+                    <menuitem data-global-id="close_all"><i title="Regresar" class="ion-reply " data-position-at="top"></i></menuitem>
+                </menu>
+            </nav>
+
+            <div id="subpages_menu">
+                <div class="button" previous-page></div>
+                <ul class="button" subpages-menu></ul>
+                <div id="page_number"></div>
+                <div class="button" next-page></div>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <div id="results_page" style="display:none;">
+        <h2>Resumen de su avance en la lectura del documento</h2>
+        <h3>Páginas visitadas</h3>
+        <p>En verde, aquellas páginas que ya ha visitado.</p>
+        <div id="results_page_visited" class="container"></div>
+        <br class="clear" />
+    </div>
+
+    <div id="printent_content" style="display:none;">
+        <div class="content"></div>
+        <div class="button_container">
+            <button class="general button" onclick="window.print();">Imprimir</button>
+            <button id="printent_back" class="general button" >Volver</button>
+        </div>
+    </div>
+
+</body>
+</html>
