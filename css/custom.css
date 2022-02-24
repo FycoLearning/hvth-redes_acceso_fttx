@@ -1,0 +1,209 @@
+.change { color: red; }
+
+/********************************************************************************/
+/* GENERAL
+/********************************************************************************/
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.datatable {
+    margin: 20px auto;
+}
+
+.wf-content {
+    z-index: 2;
+}
+/********************************************************************************/
+/* IMAGEN 3
+/********************************************************************************/
+#imagen3 {
+    background: url(../content/tema_2-3_imagen3.png) no-repeat;
+    width: 100%;
+    padding-top: 66%;
+    background-size: 100%;
+    position: relative;
+}
+
+#imagen3 .tooltip {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+
+#imagen3 .tooltip .plus {
+    background: url(../img/sprite.png) no-repeat;
+    background-position: -662px -51px;
+    width: 100%;
+    height: 100%;
+}
+
+#imagen3 .tooltip.quartz {
+    top: 26%;
+    left: 24%;
+}
+
+#imagen3 .tooltip.mirror {
+    top: 10%;
+    left: 23%;
+}
+
+#imagen3 .tooltip.electron {
+    top: 21%;
+    left: 34%;
+}
+
+#imagen3 .tooltip.gain {
+    top: 17%;
+    left: 43%;
+}
+
+#imagen3 .tooltip.atom {
+    top: 28.5%;
+    left: 47%;
+}
+
+#imagen3 .tooltip.photon {
+    top: 35.5%;
+    left: 59.8%;
+}
+
+#imagen3 .tooltip.reflective {
+    top: 32%;
+    left: 68%;
+}
+
+#imagen3 .tooltip.laser {
+    top: 38%;
+    left: 77%;
+}
+
+#imagen3 .botones {
+    position: absolute;
+    top: 58.6%;
+    width: 100%;
+    height: 26.2%;
+}
+
+#imagen3 button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background-color: transparent;
+    border: none;
+    color: transparent;
+    cursor: pointer;
+}
+
+#imagen3 button.la {
+    left: 19.4%;
+    width: 29.9%;
+}
+
+#imagen3 button.ser {
+    width: 35%;
+    left: 52%;
+}
+/********************************************************************************/
+/* IMAGEN 7
+/********************************************************************************/
+#imagen7 {
+    background: url(../content/tema_2-3_imagen7.png) no-repeat;
+    width: 100%;
+    padding-top: 72%;
+    background-size: 100%;
+    position: relative;
+}
+
+#imagen7 .tooltip {
+    position: absolute;
+    color: transparent;
+    border: 3px solid red;
+}
+
+#imagen7 .tooltip.bastidor {
+    top: 30%;
+    left: 22%;
+    width: 52%;
+    height: 40%;
+    border-color: yellow;
+}
+
+#imagen7 .tooltip.placa {
+    top: 33.8%;
+    left: 28%;
+    width: 46%;
+    height: 3%;
+}
+
+#imagen7 .tooltip.puerto {
+    top: 41%;
+    left: 43%;
+    width: 4%;
+    height: 3%;
+    border-radius: 50%;
+}
+/********************************************************************************/
+/* IMAGEN 9
+/********************************************************************************/
+#imagen9 {
+    align-items: center;
+}
+
+#imagen9 .ont {
+    background: url(../content/tema_2-3_imagen9.png) no-repeat;
+    width: 100%;
+    padding-top: 73%;
+    background-size: 100%;
+    position: relative;
+}
+
+#imagen9 .ont .button {
+    position: absolute;
+    color: transparent;
+    border: 2px solid red;
+    border-radius: 50%;
+}
+
+#imagen9 .ont .button:hover {
+
+}
+
+#imagen9 .ont .button.optico {
+    top: 69%;
+    left: 57.5%;
+    width: 3%;
+    height: 4%;
+}
+
+#imagen9 .ont .button.lan {
+    border-radius: 0;
+    top: 69%;
+    left: 45%;
+    height: 4%;
+    width: 10%;
+}
+
+#imagen9 .ont .button.pots {
+    top: 69%;
+    left: 40%;
+    border-radius: 0;
+    height: 4%;
+    width: 4.2%;
+}
+
+#imagen9 .ont .button.rf {
+    top: 69%;
+    left: 63%;
+    width: 3%;
+    height: 4%;
+}
+
+#imagen9 .ont .button.power {
+    top: 69%;
+    height: 4%;
+    width: 3%;
+    left: 37%;
+}

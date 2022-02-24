@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Componentes activos</title>
+    <link href="components/jquery/css/custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="components/ionicons/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_quiz.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_mark.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_wordpuzzle.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_crossword.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_zoom.css" rel="stylesheet" type="text/css">
+    <link href="components/csscircle/circle.min.css" rel="stylesheet" type="text/css">
+
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="components/jquery-mobile/jquery.ui.touch-punch.min.js"></script>
+
+<!--jQuery components -->
+    <script src="components/twentytwenty/js/jquery.event.move.js" type="text/javascript"></script>
+    <script src="components/twentytwenty/js/jquery.twentytwenty.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/twentytwenty/css/twentytwenty.css" type="text/css" media="screen" />
+
+    <script src="components/mediaelementjs/mediaelement-and-player.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/mediaelementjs/mediaelementplayer.css" type="text/css" />
+
+    <script src="components/maphilight/jquery.maphilight.min.js" type="text/javascript"></script>
+<!--End jQuery components -->
+
+    <script src="components/interact/interact.min.js"></script>
+    <script src="components/pit/jpit_api.js"></script>
+    <script src="components/pit/utilities/jpit_utilities.js"></script>
+    <script src="components/pit/activity/jpit_activity.js"></script>
+    <script src="components/pit/resources/jpit_resource.js"></script>
+    <script src="components/pit/activity/quiz/jpit_activity_quiz.js"></script>
+    <script src="components/pit/activity/mark/jpit_activity_mark.js"></script>
+    <script src="components/pit/activity/wordpuzzle/jpit_activity_wordpuzzle.js"></script>
+    <script src="components/pit/activity/droppable/jpit_activity_droppable.js"></script>
+    <script src="components/pit/activity/crossword/jpit_activity_crossword.js"></script>
+    <script src="components/pit/activity/cloze/jpit_activity_cloze.js"></script>
+    <script src="components/pit/activity/form/jpit_activity_form.js"></script>
+    <script src="components/pit/activity/sortable/jpit_activity_sortable.js"></script>
+    <script src="components/pit/activity/check/jpit_activity_check.js"></script>
+    <script src="components/pit/resources/movi/jpit_resource_movi.js"></script>
+    <script src="components/pit/resources/zoom/jpit_resource_zoom.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/lang.es.js"></script>
+    <script src="js/lib.js"></script>
+    <script src="js/mobilelib.js"></script>
+    <script src="js/stories.js"></script>
+    <script src="components/scorm/SCORM_12_APIWrapper.js"> </script>
+    <script src="components/scorm/scorm_api.js"> </script>
+
+    <style type='text/css'>
+
+        body {
+            background-color: rgba(242, 242, 242, 0.7);
+        }
+
+        body.loading {
+            text-align: center;
+        }
+
+        body.loading:after {
+            content: "";
+            background: url(img/loading.gif) no-repeat bottom center;
+            width: 130px;
+            height: 30px;
+            display: block;
+            margin: auto;
+            padding-bottom: 20px;
+        }
+
+        body.loading #body {
+            display: none;
+        }
+    </style>
+
+</head>
+<body class="loading" data-debug="true" data-model="scorm" data-display-mode="onlypages" data-approve-limit="70" data-activities-percentaje="60" data-mobile-mode="512">
+    <div id="body" class="not_print">
+        <div id="not_scorm_msg" style="display: none;"></div>
+
+        <header>
+            <div class="logo">
+                <img src="img/logo.png" alt="Fyco learning" />
+            </div>
+            <nav label="Principal" class="horizontal main" data-offset="true">
+                <menu>
+                    <menuitem label="Componentes">
+                        <menu>
+                            <menuitem label="1. Principios básicos de los elementos activos de una red GPON" data-page="pag-principios"></menuitem>
+                            <menuitem label="2. Equipo activo OLT (Optical Line Terminal), especificaciones y características" data-page="pag-olt"></menuitem>
+                            <menuitem label="3. Equipo activo ONT" data-page="pag-ont"></menuitem>
+                            <menuitem label="4. Encapsulado de los transceivers" data-page="pag-encapsulado"></menuitem>
+                            <menuitem label="5. Amplificadores ópticos" data-page="pag-amplificadores"></menuitem>
+                        </menu>
+                    </menuitem>
+                    <menuitem label="Bibliografía" data-page="pag-bibliografia"></menuitem>
+                    <menuitem label="Créditos" data-page="pag-creditos"></menuitem>
+                </menu>
+            </nav>
+            <h2 class="page-title"></h2>
+        </header>
+
+        <main style="display: none;">
+
+            <!--1. Principios básicos de los elementos activos de una red GPON-->
+            <section id="pag-principios" ptitle="1. Principios básicos de los elementos activos de una red GPON">
+
+                <div class="subpage">
+                    <h3>1.1. Fuentes utilizadas en las redes GPON</h3>
+                    <p>Cuando nos situamos en la arquitectura de las redes GPON, es posible identificar que en la transmisión <em>downstream</em>, es decir, desde la oficina central hacia el cliente, se utilizan dos longitudes de onda: una en 1490 nm para llevar los servicios de voz y datos, y otra en 1.550 nm para llevar los servicios de vídeo. Por su parte, en el sentido <em>upstream</em>, desde el usuario hasta la oficina central, los servicios de voz y datos son enviados en otra longitud de onda, en 1.310 nm (ver Imagen 1).</p>
+                    <p>Estas longitudes de onda son generadas por <strong>fuentes de luz</strong>, cuyo papel principal es convertir las señales eléctricas en señales ópticas que puedan transmitirse por la fibra óptica. Estas fuentes están ubicadas en los equipos extremos de la red: OLT con dos fuentes de luz que emiten en 1.490 nm y en 1.550 nm, y la ONT con una fuente que emite luz en 1.310 nm. Todas estas señales de luz, siendo de diferentes longitudes de onda, forman canales ópticos que pueden transmitirse por la misma fibra óptica sin interferirse.</p>
+                    <p>En el lado opuesto a las fuentes de luz, están los receptores ópticos, encargados de convertir las señales ópticas en señales eléctricas. Así, en la OLT se tendrá un receptor óptico para detectar las señales ópticas provenientes de la ONT; y a su vez, en la ONT se tendrán dos receptores para detectar las señales ópticas que provienen de la OLT. La siguiente imagen describe esta arquitectura de las redes FTTH.</p>
+                    <div class="box_media">
+                        <img src="content/tema_2-3_figura1.png" alt="Arquitectura FTTH y el sentido de propagación de las longitudes de onda." />
+                        <div class="about"><strong>Imagen 1.</strong> Arquitectura FTTH y el sentido de propagación de las longitudes de onda.</div>
+                    </div>
+                    <div class="box-text connection">
+                        <p>Entendiendo la funcionalidad de una fuente de luz y un receptor óptico, detallaremos en los siguientes puntos las características y los parámetros con los que trabajan estos.</p>
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h4>1.1.1. Tipos de fuentes de luz usadas en las redes GPON y sus características</h4>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Algunas de las características más relevantes y deseables de los transmisores o fuentes de luz para un sistema de comunicación son: potencia suficiente para recorrer la fibra y alcanzar al receptor; longitudes de onda adecuadas para operar con mínima atenuación y dispersión en el canal óptico; ancho espectral pequeño para que la dispersión cromática sea poca y así permita tasas de transmisión altas; posibilidad de modular con baja distorsión y a altas frecuencias; larga duración y, por supuesto, bajo costo.</p>
+                            <p>En el caso de las FTTH, que las longitudes de onda usadas estén muy separadas entre sí es una ventaja, ya que esta característica hace que los láseres no tengan que ser controlados rigurosamente para mantener la emisión del láser en una longitud de onda muy precisa, o lo que es lo mismo, se evita incluir un módulo para enfriamiento del láser. Esto se traduce en menos tamaño, costos y consumo de energía. Otra ventaja de la separación de las longitudes de onda es que en el proceso de manufactura hay cierta tolerancia en referencia a la longitud de onda emitida por el equipo y, con ello, una disminución de costos.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/tema_2-3_imagen2.png" alt="Redes GPON y sus características." />
+                                <div class="about"><strong>Imagen 2.</strong> Redes GPON y sus características.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-text example" label="Por ejemplo,">
+                        <p>un láser para redes FTTH puede tener un margen de tolerancia respecto a la longitud de onda nominal entre +/- 3 nm, en tanto que para un láser en redes DWDM (multiplexación de alta densidad de longitudes de onda) la tolerancia es +/- 0.1 nm.</p>
+                    </div>
+                    <p>En las redes FTTH podemos utilizar tecnologías de filtros ópticos de banda amplia para los procesos de multiplexación de longitud de onda (WDM), los cuales, al ser comparados con los filtros de banda estrecha requeridos en DWDM, resultan casi a mitad de precio.</p>
+                    <div class="box-text connection">
+                        <p>De acuerdo con las recomendaciones de la ITU-T 984.2, es posible identificar dos tipos de fuentes denominadas: Láser <cite>Fabry Perot</cite> (FP) y DFB (<cite>Distributed Feed Back</cite>). A continuación revisaremos las diferencias principales entre ellos y entenderemos cómo es el proceso de producción de luz.</p>
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h4>1.1.2. Mecanismo de emisión estimulada</h4>
+                    <p>La palabra LÁSER es un acrónimo inglés: <cite>Light Amplification by Stimulated Emission of Radiation</cite>, que traduce Amplificación de luz mediante emisión estimulada de radiación.</p>
+                    <div class="instruction">
+                        <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                        <span class="onlymobile">Toca </span>
+                        cada elemento de la imagen (incluido el acrónimo) para conocer nombres y definiciones.
+                    </div>
+                    <div class="genially" style="max-width: 700px; margin: auto;">
+                        <div style="width: 100%;"><div style="position: relative; padding-bottom: 58.33%; padding-top: 0; height: 0;"><iframe frameborder="0" width="1200" height="700" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/620d61d01f37260019a32780" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+                    </div>
+                    <!-- <div id="imagen3" class="mouse-over-one">
+                        <div class="tooltip quartz" title="Tubo de flash de cuarzo">
+                            <div class="plus"></div>
+                        </div>
+                        <div class="tooltip mirror" title="Espejo 100% reflectante">
+                            <div class="plus"></div>
+                        </div>
+                        <div class="tooltip electron" title="Electrón">
+                            <div class="plus"></div>
+                        </div>
+                        <div class="tooltip gain" title="Ganancia media">
+                            <div class="plus"></div>
+                        </div>
+                        <div class="tooltip atom" title="Átomo">
+                            <div class="plus"></div>
+                        </div>
+                        <div class="tooltip photon" title="Fotón">
+                            <div class="plus"></div>
+                        </div>
+                        <div class="tooltip reflective" title="Espejo 95% reflectante">
+                            <div class="plus"></div>
+                        </div>
+                        <div class="tooltip laser" title="Rayo láser">
+                            <div class="plus"></div>
+                        </div>
+                        <div class="botones">
+                            <button class="wf-content-controler la" data-content="#la">
+                                .
+                            </button>
+                            <button class="wf-content-controler ser" data-content="#ser">
+                                .
+                            </button>
+                            <div id="la" class="wf-content">
+                                <h5>Amplificación de luz.</h5>
+                                <p>La acción LÁSER ocurre en un medio de ganancia para que se produzca amplificación de luz. En estos dispositivos, que se basan en materiales semiconductores, este lugar es una cavidad. La cavidad es fundamental en los láseres para que los fotones emitidos pasen varias veces por su medio de ganancia hasta que las pérdidas (absorción de fotones) sean inferiores a las ganancias (emisión de fotones).</p>
+                            </div>
+                            <div id="ser" class="wf-content">
+                                <h5>Emisión estimulada.</h5>
+                                <p>La emisión estimulada es una de las interacciones de la luz con la materia, pero ¿de qué materia estamos hablando? En general, hablamos de semiconductores.</p>
+                                <p>De esta emisión, una relación que explica de dónde vienen las diferentes longitudes de onda presentes en la FTTH, es la energía óptica emitida cuando un electrón excitado cae de un nivel de energía alto E2 a un nivel bajo E1, E2- E1= hf=hc/, donde h es la constante de Plank y c es la velocidad de la luz.</p>
+                                <p>Esta diferencia de energías depende, entre otros aspectos, de los materiales utilizados para elaborar el chip semiconductor.</p>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="about"><strong>Imagen 3.</strong> Definición de láser</div>
+                    <div class="box-text connection">
+                        <p>Si quieres repasar los tipos de materiales de acuerdo con la teoría de bandas de energía en materiales sólidos, revisa el siguiente documento:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo2_3/Curso2_mod2.3_1-Revisiontiposmateriales.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir <cite>Revisión de tipos de materiales</cite>
+                            </button>
+                        </a>
+                        <p>Igualmente, acá te explicamos con más detalle los mecanismos de interacción de la luz con la materia, base de varios de los dispositivos que usamos en las redes FTTH.</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo2_3/Curso2_mod2.3_2-Interaccionluzmateria.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir <cite>Interacción de la luz con la materia</cite>
+                            </button>
+                        </a>
+                    </div>
+                    <p>Una condición importante para que se lleve a cabo la emisión estimulada, es que deba existir lo que se conoce como <em>inversión de población</em>, lo cual indica que debe haber más electrones en estado excitado o de alta energía que en los estados de baja energía o <cite>ground</cite>. El principio de mínima energía sugiere que esto no ocurra, ya que supone que los estados de menor energía tengan la mayor población de electrones. La inversión de población se produce cuando se suministra energía y los electrones pasan a estados de mayor alta energía. Esta energía extra se denomina bombeo, y puede ser de tipo óptico o eléctrico.</p>
+                    <p>En el caso de bombeo eléctrico, se consigue con el voltaje que suministra una fuente de potencia, dando una energía extra al semiconductor. Otro mecanismo consiste en aprovechar la reflectividad en las caras de la cavidad, tomando parte de los fotones emitidos y hacerlos ir y volver dentro del medio de ganancia. En cada pasada, los fotones estimulan a electrones en estado excitado emitiendo más fotones en la misma frecuencia, fase y dirección, y de allí la amplificación de la radiación.</p>
+                    <div class="box-text connection">
+                        <p>Conviene resaltar que los láseres son diodos polarizados de forma directa para hacer el bombeo eléctrico. En el siguiente documento podrás profundizar en el concepto de los diodos y entender por qué la polarización tiene mucha importancia en la generación de la luz:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo2_3/Curso2_mod2.3_3-Diodosypolarizacion.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir <cite>Diodos y polarización</cite>
+                            </button>
+                        </a>
+                        <p>Entendido el proceso de emisión de luz estimulada, veamos los dos tipos de láseres más comúnmente usados en las redes FTTH y sus características.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <h4>1.1.3. Características de los láseres FP Y DFB</h4>
+                            <p>Los láseres Fabry Perot (FP) y de retroalimentación distribuida (DFB) son muy utilizados en las redes FTTH. Su función principal es convertir las señales eléctricas en señales ópticas apropiadas para ser transmitidas por las fibras ópticas. La diferencia principal entre ellos es el ancho espectral, siendo mayor en el láser FP como se observa en la figura. El ancho espectral se refiere al rango de longitudes de onda determinado por el ancho completo del espectro tomado en el punto medio de la potencia o lo que se denomina FWHM (<cite>Full width half máximum</cite>). </p>
+                            <p>Dado que el ancho espectral es determinante para la dispersión cromática, <strong>no</strong> es recomendable usar láseres FP en enlaces de altas tasas de transmisión y largas distancias.</p>
+                            <p>En redes PON, los láseres FP se usan en el enlace <cite>upstream</cite> a 1.310 nm, y en el <cite>downstream</cite> a 1.490 nm, para envío de datos a distancias hasta 20 km y tasas hasta 1,25 Gbps. El rango de potencias típicamente está entre -10 a -3 dBm, con ancho espectral del orden de < 4 nm para 1.310 nm y <8 nm para 1.490 nm.</p>
+                            <p>Por su parte los diodos DFB tienen un ancho espectral más fino, lo cual lo hace apropiado para sistemas de altas tasas de transmisión. En los sistemas PON se usa en el enlace <cite>downstream</cite> a 1.550 nm para la transmisión del vídeo. Típicamente su ancho de línea es <1 nm y potencias en rangos de varios miliwatts.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/tema_2-3_imagen4.png" alt="Comparación del ancho espectral en láseres FP y DFB. " />
+                                <div class="about"><strong>Imagen 4.</strong> Comparación del ancho espectral en láseres FP y DFB.</div>
+                            </div>
+                            <div class="box-text connection">
+                                <p>Hemos preparado una breve reseña en el siguiente documento, para que conozcas cómo es la estructura de estos dos láseres:</p>
+                                <a href="https://info.fycolearning.com/curso1/modulo2_3/Curso2_mod2.3_4-EstructuraFPDFB.pdf" target="_blank">
+                                    <button class="general" data-content="#">
+                                        Abrir <cite>Estructura de los tipos de láseres FP y DFB</cite>
+                                    </button>
+                                </a>
+                                <p>Entendiendo cómo se produce la luz, ahora es importante saber cómo se pone información sobre ella. Para esto veremos el concepto de velocidad de modulación.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <h4>1.1.4. Velocidad de modulación</h4>
+                            <p>En las redes PON, los láseres se modulan directamente a través de la corriente con la que se alimentan para conseguir el efecto láser. Esta velocidad de modulación se refiere a qué tan rápido pueden encenderse y apagarse, para producir el patrón de potencia óptica de salida correspondiente. Aunque los láseres pueden responder a esta modulación directa bastante rápido, tiene un límite de velocidad alrededor de 2,5 Gbps para evitar un efecto llamado Chirp, el cual se refiere a una inestabilidad en la frecuencia de emisión del láser. </p>
+                            <p>Las velocidades superiores requieren implementar la modulación externa, que se consigue dejando el láser siempre encendido, y un modulador externo se encarga del proceso de modulación. Para redes GPON aplica la modulación directa, lo cual se traduce en eficiencia en costos al no requerir un dispositivo adicional.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/recurso-01.gif" alt="Velocidad de modulación" />
+                                <div class="about"><strong>Animación 1.</strong> Velocidad de modulación</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subpage">
+                    <h3>1.2. Receptores ópticos usados en las redes GPON</h3>
+                    <p>Un receptor óptico está constituido por diferentes partes, como puede verse en la figura XX, que le permiten entregar la información recibida con la mejor calidad posible. Su principal función es hacer la conversión optoeléctrica.</p>
+                    <div class="box_media">
+                        <div class="genially">
+                            <div style="width: 100%;"><div style="position: relative; padding-bottom: 50.00%; padding-top: 0; height: 0;"><iframe frameborder="0" width="1200" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/620d6b4c348c8b001184dc4e" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+                        </div>
+                        <!-- <img src="content/tema_2-3_imagen5.png" alt="Esquema de las partes constitutivas de un receptor óptico." /> -->
+                        <div class="about"><strong>Imagen 5.</strong> Esquema de las partes constitutivas de un receptor óptico.</div>
+                    </div>
+                    <p>El primer elemento que se encuentra en el receptor y que está de cara a la luz recibida es un fotodetector o fotodiodo. Dado que la señal óptica recibida no solo llega muy débil sino distorsionada por la fibra, las características deseables de un receptor son las siguientes:</p>
+                    <ul class="data_list">
+                        <li>Alta sensibilidad en el rango de longitudes de onda de la señal recibida, es decir, que le permita hacer una eficiente conversión fotón-electrón eficiente.</li>
+                        <li>Muy bajo ruido adicionado por el fotodetector a la señal recibida, al igual que los demás elementos de procesamiento de señal que contiene el receptor óptico.</li>
+                        <li>Rápida velocidad de respuesta para manejar las tasas de datos del sistema.</li>
+                    </ul>
+                    <h4>1.2.1. Tipos de receptores ópticos usados en las redes GPON y sus características</h4>
+                    <p>Hay dos tipos de receptores ópticos ampliamente utilizados en las redes FTTH: PIN y APD. La diferencia para resaltar entre ellos es una mayor sensibilidad de los APD sobre los PIN, haciéndolos muy útiles cuando se requiere operar con potencia baja.</p>
+                    <p>La mayor sensibilidad la consigue con un efecto de avalancha que ocurre en su estructura. Los APD tienen varias desventajas: el alto nivel de ruido, menor velocidad de respuesta y para conseguir el efecto de avalancha deben polarizarse inversamente con un voltaje muy alto, con lo cual presentan un alto consumo de energía.</p>
+                    <div class="box-text connection">
+                        <p>Para profundizar un poco más en cómo están hechos estos dispositivos, y sus características principales, te dejamos el siguiente documento:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo2_3/Curso2_mod2.3_5-FotodiodosPINyAPD.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir <cite>Fotodiodos PIN y APD</cite>
+                            </button>
+                        </a>
+                    </div>
+                    <h4>1.2.2. Velocidad de respuesta</h4>
+                    <p>Es necesario que los fotodetectores sigan los cambios de la potencia óptica que llega, exactamente como sea posible, con el fin de no generar distorsiones que afecten la detección de la información. Esto se mide con un parámetro denominado <strong>tiempo de subida</strong>, es decir, el tiempo que le toma a la señal de salida pasar del 10% al 90% del valor. Similarmente, puede medirse el <strong>tiempo bajada</strong>, el cual es el tiempo que toma a la salida pasar el 90% al 10% de su valor. El ancho de banda de los fotodetectores se relaciona con este parámetro de la siguiente manera: </p>
+                    <p style="text-align: center;"><em>Ancho de banda (MHz)= 350 / tiempo de subida (ns)</em></p>
+                    <h4>1.2.3. Ruido en fotodetectores</h4>
+                    <p>El ruido es un aspecto relevante en el desempeño de los sistemas de telecomunicaciones. Como ruido se considera toda variación a la señal ingresada al sistema. En los sistemas de comunicaciones ópticas, los principales ruidos los aportan tanto el fotodetector (ruido shot y ruido térmico) en sí mismo, como la etapa de amplificación posterior. Dependiendo de estos ruidos, hay dos parámetros cruciales para la calidad del sistema, la relación señal a ruido (SNR) y la tasa de error de bit (BER).</p>
+                    <div class="box-text connection">
+                        <p>En el siguiente documento ampliaremos la información sobre los ruidos de estos fotodetectores:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo2_3/Curso2_mod2.3_6-Ruidosenfotodetectores.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir <cite>Ruidos en fotodetectores</cite>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="subpage">
+                    <h3>1.3. SNR y BER</h3>
+                    <p>El compendio de muchos conceptos vistos en los receptores ópticos y la calidad de la señal que percibirá el cliente se concentran en estos dos parámetros. Por ejemplo, las señales de vídeo analógico requieren al menos 43 dB de SNR, o las señales digitales para el servicio de internet residencial es 10 <sup>-7</sup> de BER.</p>
+                    <div class="box-text connection">
+                        <p>Para entrar en mayor detalle sobre estos parámetros, tenemos un breve resumen de ellos en el siguiente documento:</p>
+                        <a href="https://info.fycolearning.com/curso1/modulo2_3/Curso2_mod2.3_7-SNRyBER.pdf" target="_blank">
+                            <button class="general" data-content="#">
+                                Abrir <cite>SNR y BER</cite>
+                            </button>
+                        </a>
+                        <p>Ya que hemos hecho un recorrido por los fundamentos de los elementos activos, ahora vamos a entrarnos en los aspectos más prácticos y a entender cómo se integran los láseres y los fotodetectores en los equipos activos de las redes GPON, es decir, en los OLT y las ONU.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--2.  Equipo activo OLT: Optical Line Terminal-->
+            <section id="pag-olt" ptitle="2. Equipo activo OLT: Optical Line Terminal">
+                <div class="subpage">
+                    <p>La OLT (<cite>Optical Line Terminal</cite>) se ubica en la oficina central. Es un transceptor -Transmisor/Receptor- capaz de controlar la transmisión de hasta 128 ONT (<cite>Optical Network Terminal</cite>) por puerto. Es el elemento de la red que sirve de frontera entre la nube de internet y la red multipunto que se conecta con los usuarios a través de las ONT.</p>
+                    <div class="row">
+                        <div class="col-2">
+                            <h3>2.1. Funciones</h3>
+                            <p>Dentro de sus funciones básicas está:</p>
+                            <div class="instruction">
+                                <span class="notmobile">Haz clic sobre las flechas para pasar entre páginas</span>
+                                <span class="onlymobile">Toca sobre las flechas para pasar entre páginas</span>
+                            </div>
+                            <div class="ctrl-pagination" data-layer-height="auto" data-labelcurrent="false">
+                                <li>
+                                    Identificar pertenencia a la red mediante el ID de la ONT.
+                                </li>
+                                <li>Pasada la identificación, entregar los servicios al cliente, lo que se denomina aprovisionamiento.</li>
+                                <li>Cumplir funciones de transmisión. La OLT entrega la información (<cite>downstream</cite>) y servicios a la ONT. Esta información se entrega en forma óptica. El ancho de banda que se transmite es compartido a las múltiples ONT. La técnica de envío de información es en difusión ancha o <cite>broadcast</cite>, y es la ONT la que selecciona la información específica con destino a ese cliente. La voz y los datos son enviados a través de la longitud de onda en 1.490 nm; el vídeo es enviado a través de la 1.550 nm.</li>
+                                <li>Además, la OLT cumple funciones de recepción. La información proveniente desde la ONT (<cite>upstream</cite>) es recibida a una tasa de transmisión de 1,24 Gbps. La técnica de acceso al medio en sentido ascendente es TDMA. La señal es recibida en 1.310 nm.</li>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/tema_2-3_imagen6.png" alt="OLT marca ALT" />
+                                <div class="about"><strong>Imagen 6.</strong> OLT marca ALT</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <h3>2.2. Conformación física del OLT</h3>
+                            <p>Partamos del bastidor al puerto:</p>
+                            <p><strong>BASTIDOR OLT.</strong></p>
+                            <p>Tiene tres partes principales: las placas OLT, las tarjetas de control y alimentación de potencia y la interfaz con la red de transporte. En la figura se observa un bastidor que tiene 6 placas OLT, cada placa tiene 8 puertos y cada puerto podría atender máximo a 128 usuarios, dando en total 6.144 usuarios (6x8x128).</p>
+                            <p><strong>Placa OLT.</strong></p>
+                            <p>Cada placa OLT posee 4 u 8 puertos independientes entre sí. De acuerdo con el diseño de la red, cada uno de los puertos puede dar cobertura a grupos de 64 o 128 clientes. Así, la placa de OLT podría dar una cobertura de hasta 8 puertos con 128 clientes por puerto, para un total de 1.024 clientes.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="instruction">
+                                <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                                <span class="onlymobile">Toca </span>
+                                cada elemento de la imagen para conocer su nombre.
+                            </div>
+                            <div id="imagen7">
+                                <div class="tooltip bastidor" data-position-at="center" title="Bastidor"></div>
+                                <div class="tooltip placa" data-position-at="center" title="Placa"></div>
+                                <div class="tooltip puerto" data-position-at="center" title="Puerto"></div>
+                            </div>
+                            <div class="about"><strong>Imagen 7.</strong> Conformación física del OLT.</div>
+                        </div>
+                    </div>
+                    <div class="box-text connection">
+                        <p>Una vez conocidas las partes de la OLT y una idea de la capacidad de usuarios que podemos atender con este equipo activo, pasaremos a conocer las funcionalidades y partes constitutivas de la ONT. La ONT es el equipo que lleva a cabo el proceso de decodificación de la información proveniente de la oficina central. Va instalado dentro de la casa de los usuarios y es capaz de brindar los servicios de internet, televisión y telefonía.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--3.  Equipo activo ONT: Optical Network Terminal-->
+            <section id="pag-ont" ptitle="3. Equipo activo ONT: Optical Network Terminal">
+                <div class="subpage">
+                    <p>Es el equipo terminal de red óptico, ONT por sus siglas en inglés (<cite>Optical Network Terminal</cite>). Está situado en las premisas del cliente y actúa como modem en las redes GPON. Aquí termina la fibra óptica y se inicia la conexión de los equipos de los clientes, a través de la red interna.</p>
+                    <div class="row">
+                        <div class="col-2">
+                            <h3>3.1. Funciones</h3>
+                            <p>Dentro de sus funciones básicas está:</p>
+                            <div class="instruction">
+                                <span class="notmobile">Haz clic sobre las flechas para pasar entre páginas</span>
+                                <span class="onlymobile">Toca sobre las flechas para pasar entre páginas</span>
+                            </div>
+                            <div class="ctrl-pagination" data-layer-height="100px" data-labelcurrent="false">
+                                <li>
+                                    Es responsable de establecer comunicación con la OLT y proveer acceso a los servicios de banda ancha.
+                                </li>
+                                <li>
+                                    La ONT coopera con la OLT para el control de potencia a ser transmitida desde el usuario al operador.
+                                </li>
+                                <li>
+                                    Tiene capacidad de corrección de errores y procesado de señal para tolerancia a degradaciones o fallos en la red.
+                                </li>
+                                <li>
+                                    En cooperación con el OLT permite arbitrar el ancho de banda para el enlace de subida a través del control del acceso al medio MAC.
+                                </li>
+                                <li>
+                                    Acopla la ODN a la red interna del cliente, por ejemplo, con fibras plásticas o cables UTP de redes de datos, suministrando para ello protocolos para manejo de velocidades, almacenamiento y encapsulamiento.
+                                </li>
+                                <li>
+                                    La ONT, al igual que el OLT, es un transceptor (transmisor/receptor). La ONT, como receptor, convierte la señal óptica proveniente de la OLT en impulsos eléctricos, para que los equipos en nuestro hogar (PC, teléfono, TV, etc.) lo puedan entender. Debe contener dos receptores para recibir las señales en 1.490 nm y en 1.550 nm.
+                                </li>
+                                <li>
+                                    En transmisión, realiza el proceso inverso, convierte los impulsos eléctricos de una señal de datos en luz para poder transmitirlos por la fibra hacia la OLT. Utiliza un transmisor en 1.310 nm para enviar la información.
+                                </li>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/tema_2-3_imagen8.png" alt="ONT marca ALT- vista frontal" />
+                                <div class="about"><strong>Imagen 8.</strong> ONT marca ALT- vista frontal</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="imagen9" class="row mouse-over-one">
+                        <div class="col-2">
+                            <h3>3.2. Conformación física del ONT</h3>
+                            <div class="instruction">
+                                <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                                <span class="onlymobile">Toca </span>
+                                cada elemento de la imagen para conocer su nombre y definición.
+                            </div>
+                            <div class="ont">
+                                <div class="button optico" data-ref=".contenido_over .optico">.</div>
+                                <div class="button lan" data-ref=".contenido_over .lan">.</div>
+                                <div class="button pots" data-ref=".contenido_over .pots">.</div>
+                                <div class="button rf" data-ref=".contenido_over .rf">.</div>
+                                <div class="button power" data-ref=".contenido_over .power">.</div>
+                            </div>
+                            <div class="about"><strong>Imagen 9.</strong> Partes de una ONT marca ALT</div>
+                        </div>
+                        <div class="col-2 contenido_over">
+                            <div class="optico">
+                                <p><strong>Óptico (<cite>optical</cite>):</strong> indica el puerto óptico. Aquí se conecta la fibra para la recepción y transmisión. En este caso, el tipo de conector que se une al puerto optical es SC/APC.</p>
+                            </div>
+                            <div class="lan" style="display: none;">
+                                <p><strong>LAN1 a LAN4:</strong> indica la conexión LAN de 10/100/1.000M Base-T y puertos Ethernet (RJ-45) usados para conectar el computador o a un equipo terminal de usuario IP (IP STB).</p>
+                            </div>
+                            <div class="pots" style="display: none;">
+                                <p><strong>POTS:</strong> puertos para conectar los teléfonos IP (RJ-11).</p>
+                            </div>
+                            <div class="rf" style="display: none;">
+                                <p><strong>Conector RF OUT:</strong> permite conectar otro dispositivo con una entrada de antena como la de la televisión.</p>
+                            </div>
+                            <div class="power" style="display: none;">
+                                <p><strong>Power:</strong> puerto de conexión del adaptador de energía.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-text connection">
+                        <p>Conociendo las principales características de la OLT y ONT, debemos tocar también el hecho de que estos equipos utilizan módulos de fibra óptica compactos para lograr los servicios de triple play (Internet + TV + telefonía). Dichos módulos, que a continuación detallaremos, son conocidos como transceptores o transceivers SFP (<cite>Smart Factor Pluggable</cite>). Entre sus funciones principales está controlar la información en ambas direcciones, ascendente y descendente, desempeñando así un papel vital en la transmisión.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--4.  Encapsulado de los transceivers-->
+            <section id="pag-encapsulado" ptitle="4. Encapsulado de los transceivers">
+                <div class="subpage">
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Debido a que las redes PON usan enlaces bidireccionales, los fabricantes han desarrollado configuraciones especiales de transceivers que incluyen fuentes de luz, receptores ópticos y multiplexores de longitudes de onda en un único empaque.</p>
+                            <p>Las configuraciones más usadas son SFP (<cite>Smart Factor Pluggable</cite>), SFF (<cite>Small Form Factor</cite>) y triple-play. Estos formatos compactos permiten ahorro de espacio en chasis y posibilitan densidad de puerto altas. Proporcionan diferentes opciones de velocidad, tipo de fuente (DFB o FP), potencias de salida y tipo de conector.</p>
+                            <p>Los SFP tienen conectores ópticos por un lado y, del otro lado, un conector eléctrico para la conexión a los equipos que proveen o a los cuales se entregan los servicios de telefonía, acceso a internet y vídeo. Una característica relevante es que son <cite>hot pluggable</cite>, es decir, pueden ser instalados o removidos sin tener que apagar el suministro de energía. Esto asegura que el equipo nunca para de operar.</p>
+                            <p>Los transceptores SFP GPON se clasifican en SFP OLT GPON y SFP ONT GPON, según los dispositivos en los que se utilizan. Existen dos clases de transceptores SFP GPON: transceptores clase B y transceptores clase C. Las principales diferencias entre estos dos son la potencia de transmisión y la sensibilidad de recepción. La siguiente tabla resume algunas de sus características, que cumplen con la recomendación ITU-T 984.2</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/tema_2-3_imagen10.png" alt="Módulos SFP para Gpon" />
+                                <div class="about"><strong>Imagen 10.</strong> Módulos SFP para Gpon.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="datatable">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">Tipo de transceptor</th>
+                                <th colspan="2">Class B+<br />Clase B+</th>
+                                <th colspan="2">Class C+<br />Clase C+</th>
+                            </tr>
+                            <tr>
+                                <th>Potencia de transmisión</th>
+                                <th>Máxima sensibilidad de resistencia</th>
+                                <th>Potencia de transmisión</th>
+                                <th>Máxima sensibilidad de resistencia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SP OLT GPON</td>
+                                <td>1,5-5 DbM</td>
+                                <td>-28 DbM</td>
+                                <td>3-7 DbM</td>
+                                <td>-32 DbM</td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Rango de longitud de onda de SFP OLT</td>
+                                <td>1.480 – 1.500 nm</td>
+                                <td>1.260 – 1.360 nm</td>
+                                <td>1.480 – 1.500 nm</td>
+                                <td>1.290 – 1.330 nm</td>
+                            </tr>
+                            <tr>
+                                <td>SP ONT GPON</td>
+                                <td>0,5-5 DbM</td>
+                                <td>-27 DbM</td>
+                                <td>0,5-5 DbM</td>
+                                <td>-30 DbM</td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Rango de longitud de onda de SFP ONT</td>
+                                <td>1.260 – 1.360 nm</td>
+                                <td>1.480 – 1.500 nm</td>
+                                <td>1.290 – 1.330 nm</td>
+                                <td>1.480 – 1.500 nm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="about"><strong>Tabla 1.</strong> Potencias ópticas GPON por clase.</div>
+                    <p>Es posible combinar las dos clases de transceptores siempre y cuando el presupuesto de pérdida del enlace sea apropiado.</p>
+                    <div class="box-text connection">
+                        <p>Una vez recorridos los equipos principales de las redes PON, no podríamos dejar de revisar los equipos que nos sirven para extender el alcance de la red, siguiendo la recomendación ITU-T 984.6: los amplificadores ópticos.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--5.  Amplificadores ópticos-->
+            <section id="pag-amplificadores" ptitle="5. Amplificadores ópticos">
+                <div class="subpage">
+                    <p>Son los equipos encargados de amplificar las señales ópticas, sin realizar una conversión eléctrica. Existen tres tipos de amplificadores:</p>
+                    <table class="datatable">
+                        <tbody>
+                            <tr>
+                                <th rowspan="3">Amplificadores ópticos</th>
+                                <td rowspan="2"><strong>Amplificadores basados en fibras ópticas</strong></td>
+                                <td>EDFA (<cite>Erbium Doped Fiber Amplifier</cite>)</td>
+                            </tr>
+                            <tr>
+                                <td>FRA (<cite>Fiber Raman Amplifier</cite>)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" align="center"><strong>SOA (Semiconductor Optical Amplifier)</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="about"><strong>Tabla 2.</strong> Tipos de amplificadores ópticos.</div>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Los más utilizados son los EDFA, por su facilidad de <cite>acople</cite> a la fibra y la posibilidad de amplificar varias frecuencias en la banda C. Dado que produce un ruido de emisión espontánea, usualmente se pone un filtro óptico para disminuir su impacto en la relación señal a ruido óptica.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box-text connection">
+                                <p>Para ver más detalle de estos equipos, los tipos principales que existen y una comparación entre ellos, revisa el siguiente documento.</p>
+                                <a href="https://info.fycolearning.com/curso1/modulo2_3/Curso2_mod2.3_8-Amplificadores.pdf" target="_blank">
+                                    <button class="general" data-content="#">
+                                        Abrir <cite>Amplificadores</cite>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--Bibliografía-->
+            <section id="pag-bibliografia" ptitle="Bibliografía">
+                <div class="subpage">
+                    <ul class="data_list">
+                        <li>Fibre To The Home Council Europe, (2018). FTTH Handbook. Recuperado el 1 de marzo 2021 de <a href="https://www.ftthcouncil.eu/documents/Publications/FTTH%20Handbook_2017_V8_FINAL.pdf" target="_blank">https://www.ftthcouncil.eu/[...]</a></li>
+                        <li>Cisco, (2020). Understand GPON Technology. Recuperado el 1 de marzo 2021 de <a href="https://www.cisco.com/c/en/us/support/docs/switches/catalyst-pon-series/216230-understand-gpon-technology.html" target="_blank">https://www.cisco.com/[...]</a></li>
+                    </ul>
+                    <h4>Imágenes</h4>
+                    <ul class="data_list">
+                        <li><strong>Imagen 1.</strong> Arquitectura FTTH y el sentido de propagación de las longitudes de onda. [Imagen]. Adaptada el 1 de marzo 2021 de <a href="https://xxxamin1314.medium.com/una-visi%C3%B3n-general-de-la-red-de-acceso-ftth-con-gpon-104bc8973d65" target="_blank">https://xxxamin1314.medium.com/[...]</a></li>
+                        <li><strong>Imagen 4.</strong> Comparación del ancho espectral en láseres FP y DFB. [Imagen]. Adaptada el 1 de marzo 2021 de <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thefoa.org%2Ftech%2Fref%2Ftesting%2Ftest%2FCD_PMD.html&psig=AOvVaw2oWli5heYTzCMOP_Tgj6xP&ust=1616960976187000&source=images&cd=vfe& " target="_blank">https://www.google.com/[...]</a></li>
+                        <li><strong>Imagen 5.</strong> Agrawal, G. (2016). Esquema de las partes constitutivas de un receptor óptico [Imagen]. En <cite>Esquema de las partes constitutivas de un receptor óptico</cite> (4a ed., p. 626).</li>
+                        <li><strong>Imagen 7.</strong> Conformación física del OLT. [Imagen]. Recuperada el 1 de marzo 2021 de <a href="https://sc04.alicdn.com/kf/H7fea86b945b040d281981fcfc243de498.jpg" target="_blank">https://sc04.alicdn.com/[...]</a></li>
+                    </ul>
+                    <h4>Tablas</h4>
+                    <ul class="data_list">
+                        <li><strong>Tabla 1.</strong> Potencias ópticas GPON por clase. Tomada de <a href="https://xxxamin1314.medium.com/fundamentos-del-transceptor-sfp-gpon-3ef4d5eebad8" target="_blank">https://xxxamin1314.medium.com/[...]</a></li>
+                        <li><strong>Tabla 2.</strong> Tipos de amplificadores ópticos. Adaptada de <a href="https://www.anritsu.com/ru-ru/sensing-devices/guide/optical-amplifier" target="_blank">https://www.anritsu.com/[...]</a></li>
+                    </ul>
+                </div>
+            </section>  
+
+            <!--Créditos-->
+            <section id="pag-creditos" ptitle="Créditos">
+                <div class="subpage" id="credits_subpage">
+                    <div>
+                        <h3>Desarrollo de contenidos</h3>
+                        <cite>John Jairo Jaramillo Rodríguez<br />
+                            <strong>Experto Temático</strong><br />
+                            Ana María Cárdenas Soto<br />
+                            <strong>Experta Temática</strong></cite>
+                    </div>
+                    <div>
+                        <h3>Asesoría pedagógica y diseño instruccional</h3>
+                        <cite>Carolina Llanos Tobón</cite>
+                    </div>
+                    <div>
+                        <h3>Corrección de estilo</h3>
+                        <cite>Felipe Sosa Vargas</cite>
+                    </div>
+                    <div>
+                        <h3>Diseño gráfico</h3>
+                        <cite>Elizabeth Hernandez González</cite>
+                    </div>
+                    <div>
+                        <h3>Integración de contenidos</h3>
+                        <cite>Santiago Bernal García</cite>
+                    </div>
+                    <div>
+                        <h3>Revisión de calidad</h3>
+                        <cite>Lorena Guarín Herrera</cite>
+                    </div>
+
+                    <div>
+                        <h3>Producción, gestión técnica y administrativa</h3>
+                        <p class="logos">
+                            <a href="http://bambuco.co/" target="_blank"><img src="img/logo_bambuco.png" alt="BambuColectivo" /></a>
+                            <a href="https://fycolearning.com/" target="_blank"><img src="img/logo_azul.png" alt="Fyco Telecomunicaciones" /></a>
+                        </p>
+                    </div>
+
+                    <div class="editions">
+                        1ª edición: mayo 2021
+                    </div>
+                    <div>
+                        <br />
+                        <!-- <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Obra publicada bajo licencia:<br />Creative Commons Atribución-Compartir Igual 4.0 Internacional<br /><br />
+                        <img src="img/cc.png" alt="Creative Commons" /></a> -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="not_print">
+            <div class="measuring-progress" data-type="horizontal"></div>
+
+            <nav label="Características globales" class="globals">
+                <menu>
+                    <menuitem data-global-id="results"><i title="Progreso" class="ion-clipboard " data-position-at="top"></i></menuitem>
+                    <menuitem data-global-id="return">
+                        <i title="Maximizar" class="ion-arrow-expand  maximize" data-position-at="top"></i>
+                        <i title="Minimizar" class="ion-arrow-shrink  minimize" data-position-at="top"></i>
+                    </menuitem>
+                    <menuitem data-global-id="close_all"><i title="Regresar" class="ion-reply " data-position-at="top"></i></menuitem>
+                </menu>
+            </nav>
+
+            <div id="subpages_menu">
+                <div class="button" previous-page></div>
+                <ul class="button" subpages-menu></ul>
+                <div id="page_number"></div>
+                <div class="button" next-page></div>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <div id="results_page" style="display:none;">
+        <h2>Resumen de su avance en la lectura del documento</h2>
+        <h3>Páginas visitadas</h3>
+        <p>En verde, aquellas páginas que ya ha visitado.</p>
+        <div id="results_page_visited" class="container"></div>
+        <br class="clear" />
+        <h3>Actividades de aprendizaje</h3>
+        <div id="results_page_activities"></div>
+    </div>
+
+    <div id="printent_content" style="display:none;">
+        <div class="content"></div>
+        <div class="button_container">
+            <button class="general button" onclick="window.print();">Imprimir</button>
+            <button id="printent_back" class="general button" >Volver</button>
+        </div>
+    </div>
+
+</body>
+</html>
