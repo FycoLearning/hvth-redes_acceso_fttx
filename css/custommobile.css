@@ -1,0 +1,534 @@
+.change { color: red; }
+
+.jpit-activities-droppable .droppable {
+    padding-bottom: 0;
+}
+
+/********************************************************************************/
+/* GENERAL
+/********************************************************************************/
+table.datatable ul.data_list {
+    padding-left: 5px;
+}
+
+table.datatable {
+    margin: auto;
+}
+
+.text_tooltip {
+    line-height: 18px;
+}
+
+.row {
+    align-items: center;
+}
+
+.short {
+    max-width: 700px;
+    margin: auto;
+}
+
+.view-first img {
+    max-width: 100%;
+}
+
+.view-first .mask {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+.box-text.important {
+    overflow: scroll;
+}
+/********************************************************************************/
+/* GRAFICA 1
+/********************************************************************************/
+#grafica1 {
+    background: url(../content/tema_2-1_grafica1.png) no-repeat;
+    width: 100%;
+    padding-top: 54%;
+    background-size: 100%;
+    position: relative;
+}
+
+#grafica1 .tooltip {
+    width: 2%;
+    height: 3.5%;
+    position: absolute;
+    border-radius: 50%;
+}
+
+#grafica1 .tooltip.t1 {
+    top: 8%;
+    right: 16%;
+}
+
+#grafica1 .tooltip.t2 {
+    top: 8%;
+    right: 18.7%;
+}
+
+#grafica1 .tooltip.t3 {
+    top: 27.5%;
+    right: 17.8%;
+}
+
+#grafica1 .tooltip.t4 {
+    top: 27.5%;
+    right: 23.4%;
+}
+
+#grafica1 .tooltip.t5 {
+    top: 22.5%;
+    right: 29.6%;
+}
+
+#grafica1 .tooltip.t6 {
+    top: 28.7%;
+    right: 35.4%;
+}
+
+#grafica1 .tooltip.t7 {
+    top: 41.8%;
+    right: 32.4%;
+}
+
+#grafica1 .tooltip.t8 {
+    top: 41.8%;
+    right: 47.1%;
+}
+
+#grafica1 .tooltip.t9 {
+    top: 41.8%;
+    right: 50.5%;
+}
+
+#grafica1 .tooltip.t10 {
+    top: 56.5%;
+    right: 61.3%;
+}
+
+#grafica1 .tooltip.t11 {
+    top: 64.2%;
+    right: 59.2%;
+}
+
+#grafica1 .tooltip.t12 {
+    top: 70.2%;
+    right: 74.1%;
+}
+/********************************************************************************/
+/* IMAGEN 1
+/********************************************************************************/
+#imagen1 {
+    background: url(../content/tema_2-1_grafica2.png) no-repeat;
+    width: 100%;
+    padding-top: 31%;
+    background-size: 100%;
+    position: relative;
+}
+
+#imagen1 .w-content-controler {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 20.5%;
+    width: 16.7%;
+    height: 20%;
+    border-radius: 5px;
+    cursor: pointer;
+    color: transparent;
+}
+
+#imagen1 .w-content-controler:hover {
+    background-color: #3880d970;
+}
+
+#imagen1 .w-content-controler.g984-4 {
+    top: 10.8%;
+}
+
+#imagen1 .w-content-controler.g984-3 {
+    top: 42.3%;
+}
+
+#imagen1 .w-content-controler.g984-2 {
+    top: 74.7%;
+}
+/********************************************************************************/
+/* IMAGEN 2
+/********************************************************************************/
+#imagen2 {
+    background: url(../content/tema_2-1_grafica3.png) no-repeat;
+    width: 100%;
+    padding-top: 75%;
+    background-size: 100%;
+    position: relative;
+}
+
+#imagen2 .tooltip {
+    left: 21%;
+    width: 13%;
+    height: 6%;
+    position: absolute;
+}
+
+#imagen2 .tooltip.rojo {
+    top: 52%;
+}
+
+#imagen2 .tooltip.verde {
+    top: 59%;
+}
+
+#imagen2 .tooltip.azul {
+    top: 67%;
+}
+/********************************************************************************/
+/* FOTO 1
+/********************************************************************************/
+#foto1 {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#foto1 .view-first {
+    max-width: 300px;
+}
+
+#foto1 .view-first img {
+    max-width: 100%;
+}
+/********************************************************************************/
+/* IMAGEN 3
+/********************************************************************************/
+#imagen3 {
+    background: url(../content/tema_2-1_grafica4.png) no-repeat;
+    width: 100%;
+    padding-top: 31%;
+    background-size: 100%;
+    position: relative;
+}
+
+#imagen3 .tooltip {
+    position: absolute;
+    color: transparent;
+}
+
+#imagen3 .tooltip.onu {
+    top: 23%;
+    left: 17%;
+    width: 5%;
+    height: 6%;
+}
+
+#imagen3 .tooltip.ont {
+    top: 30%;
+    left: 17%;
+    width: 5%;
+    height: 6%;
+}
+
+#imagen3 .tooltip.odn {
+    top: 9%;
+    left: 44%;
+    width: 5%;
+    height: 6%;
+}
+
+#imagen3 .tooltip.olt {
+    top: 26%;
+    left: 72%;
+    width: 5%;
+    height: 6%;
+}
+
+#imagen3 .tooltip.wdm1 {
+    top: 50%;
+    left: 34%;
+    width: 5%;
+    height: 6%;
+}
+
+#imagen3 .tooltip.wdm2 {
+    top: 50%;
+    left: 54%;
+    width: 5%;
+    height: 6%;
+}
+
+#imagen3 .tooltip.ne1 {
+    top: 78%;
+    left: 17%;
+    width: 5%;
+    height: 6%;
+}
+
+#imagen3 .tooltip.ne2 {
+    top: 78%;
+    left: 72%;
+    width: 5%;
+    height: 6%;
+}
+
+#imagen3 .tooltip.sni {
+    top: 5%;
+    left: 80%;
+    width: 5%;
+    height: 6%;
+}
+
+#imagen3 .tooltip.uni {
+    top: 5%;
+    left: 4%;
+    width: 5%;
+    height: 6%;
+}
+
+#imagen3 .tooltip.s2 {
+    top: 5%;
+    left: 66%;
+    width: 2%;
+    height: 6%;
+}
+
+#imagen3 .tooltip.s1 {
+    top: 5%;
+    left: 26.5%;
+    width: 2%;
+    height: 6%;
+}
+
+#imagen3 .tooltip.r1 {
+    top: 5%;
+    left: 68%;
+    width: 2%;
+    height: 6%;
+}
+
+#imagen3 .tooltip.r2 {
+    top: 5%;
+    left: 24%;
+    width: 2%;
+    height: 6%;
+}
+/********************************************************************************/
+/* IMAGEN 6
+/********************************************************************************/
+#imagen6 {
+    background: url(../content/tema_2-1_grafica7.png) no-repeat;
+    width: 100%;
+    padding-top: 130%;
+    background-size: 100%;
+    position: relative;
+}
+
+#imagen6 .tooltip {
+    position: absolute;
+    color: transparent;
+    top: 10%;
+    height: 80%;
+}
+
+#imagen6 .tooltip.onu {
+    left: 56%;
+    width: 14%;
+}
+
+#imagen6 .tooltip.cont {
+    left: 70%;
+    width: 15%;
+}
+
+#imagen6 .tooltip.port {
+    left: 85%;
+    width: 12%;
+}
+/********************************************************************************/
+/* IMAGEN 8
+/********************************************************************************/
+#imagen8 {
+    background: url(../content/tema_2-1_grafica9.png) no-repeat;
+    width: 100%;
+    padding-top: 62%;
+    background-size: 100%;
+    position: relative;
+}
+
+#imagen8 .tooltip {
+    position: absolute;
+    color: transparent;
+}
+
+#imagen8 .tooltip.ru {
+    top: 22%;
+    left: 6%;
+    width: 67%;
+    height: 32%;
+}
+
+#imagen8 .tooltip .light {
+    z-index: 2;
+}
+
+#imagen8 .tooltip.ru .light {
+    width: 1%;
+    position: absolute;
+}
+
+#imagen8 .tooltip.ru:hover > .light {
+    background-color: #FFBA49;
+}
+
+#imagen8 .tooltip.ru .light.fst {
+    height: 80%;
+    left: 4.4%;
+    top: 9%;
+    transform: rotate(-20deg);
+}
+
+#imagen8 .tooltip.ru .light.snd {
+    height: 84%;
+    left: 9.6%;
+    top: 2%;
+}
+
+#imagen8 .tooltip.ru .light.trd {
+    height: 80%;
+    left: 14.8%;
+    top: 9%;
+    transform: rotate(20deg);
+}
+
+#imagen8 .tooltip.ru .light.fth {
+    height: 80%;
+    left: 84.4%;
+    top: 20%;
+    transform: rotate(-20deg);
+}
+
+#imagen8 .tooltip.ru .light.ffth {
+    height: 84%;
+    left: 89.5%;
+    top: 12%;
+}
+
+#imagen8 .tooltip.ru .light.sth {
+    height: 80%;
+    left: 94.5%;
+    top: 19%;
+    transform: rotate(20deg);
+}
+
+#imagen8 .gpon.tooltip .light {
+    width: 1%;
+    position: absolute;
+}
+
+#imagen8 .tooltip.gpon:hover > .light {
+    background-color: #3880D9;
+}
+
+#imagen8 .gpon.tooltip {
+    height: 60%;
+    width: 73%;
+    left: 14%;
+    top: 35%;
+}
+
+#imagen8 .gpon.tooltip .light.fst {
+    height: 17%;
+    left: 3.8%;
+    top: 15%;
+    transform: rotate(68deg);
+}
+
+#imagen8 .gpon.tooltip .light.snd {
+    height: 24%;
+    left: 16.5%;
+    top: -3.8%;
+    transform: rotate(52deg);
+}
+
+#imagen8 .gpon.tooltip .light.trd {
+    height: 22%;
+    left: 17%;
+    top: 15%;
+    transform: rotate(118deg);
+}
+
+#imagen8 .gpon.tooltip .light.fth {
+    height: 41%;
+    left: 59.5%;
+    transform: rotate(114deg);
+    top: 3%;
+}
+
+#imagen8 .gpon.tooltip .light.ffth {
+    height: 53%;
+    left: 86%;
+    top: -3%;
+    transform: rotate(-109deg);
+}
+
+#imagen8 .gpon.tooltip .light.sth {
+    height: 5%;
+    bottom: -2%;
+    left: 57.9%;
+}
+
+#imagen8 .gpon.tooltip .light.ssth {
+    height: 13%;
+    bottom: -8%;
+    left: 60.8%;
+    transform: rotate(90deg);
+} 
+
+#imagen8 .tooltip.pon {
+    top: 52.5%;
+    left: 13.5%;
+    width: 52%;
+    height: 35%;
+}
+
+#imagen8 .tooltip.pon .light {
+    width: 1%;
+    position: absolute;
+}
+
+#imagen8 .tooltip.pon .light.fst {
+    height: 138%;
+    transform: rotate(-62deg);
+    left: 25.5%;
+    top: -34%;
+}
+
+#imagen8 .tooltip.pon .light.snd {
+    height: 114%;
+    transform: rotate(61deg);
+    left: 77.5%;
+    top: -19%;
+}
+
+#imagen8 .tooltip.pon .light.trd {
+    height: 55%;
+    transform: rotate(-62deg);
+    left: 66.5%;
+    top: 60%;
+}
+
+#imagen8 .tooltip.pon:hover > .light {
+    background-color: #1F263D;
+}
+
+#imagen8 .mask {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}

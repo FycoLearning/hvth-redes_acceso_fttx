@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="img/icon.svg">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Estándares y recomendaciones para redes FTTH</title>
+	<link href="components/jquery/css/custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
+	<link href="components/ionicons/css/ionicons.min.css" rel="stylesheet" type="text/css">
+
+	<script src="components/jquery/jquery.min.js"></script>
+	<script src="components/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="components/jquery-mobile/jquery.ui.touch-punch.min.js"></script>
+
+<!--jQuery components -->
+	<script src="components/twentytwenty/js/jquery.event.move.js" type="text/javascript"></script>
+	<script src="components/twentytwenty/js/jquery.twentytwenty.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="components/twentytwenty/css/twentytwenty.css" type="text/css" media="screen" />
+
+	<script src="components/mediaelementjs/mediaelement-and-player.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="components/mediaelementjs/mediaelementplayer.css" type="text/css" />
+<!--End jQuery components -->
+
+	<script src="components/interact/interact.min.js"></script>
+	<script src="components/pit/jpit_api.js"></script>
+	<script src="components/pit/utilities/jpit_utilities.js"></script>
+	<script src="components/pit/activity/jpit_activity.js"></script>
+	<script src="components/pit/resources/jpit_resource.js"></script>
+
+	<script src="js/app.js"></script>
+	<script src="js/init.js"></script>
+	<script src="js/lang.es.js"></script>
+	<script src="js/lib.js"></script>
+	<script src="js/mobilelib.js"></script>
+	<script src="components/scorm/SCORM_12_APIWrapper.js"> </script>
+	<script src="components/scorm/scorm_api.js"> </script>
+
+	<style type='text/css'>
+
+		body {
+			background-color: rgba(242, 242, 242, 0.7);
+		}
+
+		body.loading {
+			text-align: center;
+		}
+
+		body.loading:after {
+			content: "";
+			background: url(img/loading.gif) no-repeat bottom center;
+			width: 130px;
+			height: 30px;
+			display: block;
+			margin: auto;
+			padding-bottom: 20px;
+		}
+
+		body.loading #body {
+			display: none;
+		}
+	</style>
+
+</head>
+<body class="loading" data-debug="true" data-model="scorm" data-display-mode="onlypages" data-approve-limit="70" data-activities-percentaje="60" data-mobile-mode="512">
+	<div id="body" class="not_print">
+		<div id="not_scorm_msg" style="display: none;"></div>
+
+		<header>
+			<div class="logo">
+				<img src="img/logo.png" alt="Fyco learning" />
+			</div>
+			<nav label="Principal" class="horizontal main" data-offset="true">
+				<menu>
+					<menuitem label="Contenido">
+						<menu>
+							<menuitem label="1. Recomendaciones y estandarización para FTTH" data-page="pag-recomendaciones"></menuitem>
+							<menuitem label="2. Características de las redes GPON" data-page="pag-caracteristicas"></menuitem>
+							<menuitem label="3. Ampliaciones y mejoras de las redes GPON" data-page="pag-ampliaciones"></menuitem>
+							<menuitem label="4. Tendencias a futuro" data-page="pag-tendencias"></menuitem>
+						</menu>
+					</menuitem>
+					<menuitem label="Bibliografía" data-page="pag-bibliografia"></menuitem>
+					<menuitem label="Créditos" data-page="pag-creditos"></menuitem>
+				</menu>
+			</nav>
+			<h2 class="page-title"></h2>
+		</header>
+
+		<main style="display: none;">
+
+			<section id="pag-recomendaciones" ptitle="1. Recomendaciones y estandarización para FTTH">
+
+				<div class="subpage">
+					<div class="row">
+						<div class="col-2">
+							<p>Este espacio de formación contiene los principales elementos que nos indican cómo nacieron las redes FTTX, cómo han ido evolucionando, en qué nivel de madurez se encuentran y cuál es el futuro de estas redes.</p>
+							<p>Las redes PON tienen sus antecedentes en una iniciativa del FSAN (<cite>Full Service Access Network Group</cite>), foro actualmente conformado por proveedores de servicios de telecomunicaciones, laboratorios de pruebas independientes y proveedores de equipos del mundo, quienes desde 1995 promueven la implementación de redes de acceso ópticas de banda ancha. Sin embargo, no siendo FSAN un organismo estandarizador, trabaja con organismos de esta naturaleza como la Unión Internacional de Telecomunicaciones (ITU por la sigla en inglés de <cite>International Telecommunication Union</cite>), para documentar y establecer recomendaciones globales que reflejen los acuerdos del FSAN.</p>
+							<p>En paralelo, el Instituto de Ingenieros Eléctricos y Electrónicos (IEEE por la sigla en inglés de <cite>Institute of Electrical and Electronics Engineers</cite>) ha desarrollado estándares que introducen la tecnología Ethernet para el tráfico de datos sobre redes de acceso ópticas. Veamos una línea de tiempo con los momentos en los que han aparecido los estándares de las redes PON bajo ambos organismos, su tasa de transmisión en sentido operador-cliente (downstream) y su proyección futura.</p>
+						</div>
+						<div class="col-2">
+							<div class="instruction">
+								<span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+								<span class="onlymobile">Toca </span>
+								cada elemento de la línea de tiempo para conocer su descripción.
+							</div>
+							<div id="grafica1">
+								<div class="tooltip t1" title="Super-PON<br>10Gb/s per <br>G.9807.3"></div>
+								<div class="tooltip t2" title="Super-PON<br>10Gb/s per <br>(802.3cs)"></div>
+								<div class="tooltip t3" title="Higher-Speed PON<br>G.9804.x"></div>
+								<div class="tooltip t4" title="50G-EPON<br>25Gb/s per <br>Clause 141-144<br>(802.3ca)"></div>
+								<div class="tooltip t5" title="NG-PON2 Am1<br>10Gb/s per <br>G.989.x Am1"></div>
+								<div class="tooltip t6" title="NG-PON2<br>10Gb/s per <br>G.989.x"></div>
+								<div class="tooltip t7" title="XGS-PON<br>G.9807.x"></div>
+								<div class="tooltip t8" title="XG-PON<br>G.987.x"></div>
+								<div class="tooltip t9" title="10G-EPON<br>Clause 75-77<br>(802.3av)"></div>
+								<div class="tooltip t10" title="G-PON<br>G.984.x"></div>
+								<div class="tooltip t11" title="E-PON<br>Clause 60 & 64<br>(802.3ah)"></div>
+								<div class="tooltip t12" title="B-PON<br>G.983.x"></div>
+							</div>
+							<div class="about"><strong>Gráfica 1.</strong> Línea de tiempo de la evolución de los estándares de redes PON, asociada al ancho de banda downstream (DS).</div>
+						</div>
+					</div>
+					<div class="box-text connection">
+						<p>Como es posible notar, las recomendaciones se pueden distribuir en varias familias de acuerdo con su tasa de transmisión:</p>
+					</div>
+					<h3>1.1. ITU-T G.983.x</h3>
+					<p>El conjunto de especificaciones ITU-T G.983.x hace referencia a las primeras redes denominadas APON y su mejora posterior, la BPON, sistemas que van hasta 1,244 Gbps en canal descendente y hasta 622 Mbps en canal ascendente.</p>
+					<div class="box-text connection">
+						<p>Para tener un mayor detalle de las recomendaciones, haz clic en el siguiente botón:</p>
+						<a href="https://info.fycolearning.com/curso1/modulo2_1/Curso2_mod2.1_1-Recomendacione983x.pdf" target="_blank">
+							<button class="general" data-content="#">
+								Abrir Detalle de la familia de recomendaciones ITU-T G.983.x
+							</button>
+						</a>
+					</div>
+
+					<h3>1.2. ITU-T G.984.x</h3>
+					<p>Las recomendaciones de la ITU-T G.984.x están dedicadas a las redes GPON. Las velocidades de transmisión recomendadas para estas redes en el downstream (sentido operador/cliente) son 1,244 o 2,488 Gbps, y en el upstream (sentido cliente/operador) son 155, 622, 1.244 o 2.488 Mbps.</p>
+					<div class="box-text connection">
+						<p>Para tener un mayor detalle de las recomendaciones, haz clic en el siguiente botón:</p>
+						<a href="https://info.fycolearning.com/curso1/modulo2_1/Curso2_mod2.1_2-Recomendaciones984x.pdf" target="_blank">
+							<button class="general" data-content="#">
+								Abrir Detalle de la familia de recomendaciones ITU-T G 984.x
+							</button>
+						</a>
+					</div>
+
+					<div class="box-text connection">
+						<p>Los siguientes dos estándares ITU -T 987.x e ITU -T 989.x, representan la evolución de GPON hacia tasas de 10 Gbps y 40 Gbps, respectivamente.</p>
+					</div>
+					<h3>1.3. ITU-T G.987.x</h3>
+					<p>Las recomendaciones ITU-T G.987 están orientadas hacia los sistemas XG PON. En cuanto a tasas de transmisión se pueden distinguir dos versiones: XG-PON1 con downstream a 10 Gbps y upstream a 2,488 Gbps. Por su parte, la XG-PON2 propone tasas de transmisión en downstream a 10 Gbps y en upstream a 10 Gbps, es decir una red simétrica conocida como XGS-PON.</p>
+					<div class="box-text connection">
+						<p>Para tener un mayor detalle de las recomendaciones, haz clic en el siguiente botón:</p>
+						<a href="https://info.fycolearning.com/curso1/modulo2_1/Curso2_mod2.1_3-Recomendaciones987x.pdf" target="_blank">
+							<button class="general" data-content="#">
+								Abrir Detalle de la familia de recomendaciones ITU-T G.987.x
+							</button>
+						</a>
+					</div>
+
+					<h3>1.4. ITU-T G.989.x</h3>
+					<p>Las recomendaciones ITU-T G 989 están orientadas hacia los sistemas NG-PON2. La línea base de estos sistemas TWDM-PON hace uso de cuatro canales ópticos bidireccionales, cada uno llevando tasas de 10 Gbps en downstream y 2,5 Gbps en upstream, resultando en una tasa agregada de 40 Gbps en downstream y 10 Gbps en upstream.</p>
+					<div class="box-text connection">
+						<p>Para tener un mayor detalle de las recomendaciones, haz clic en el siguiente botón:</p>
+						<a href="https://info.fycolearning.com/curso1/modulo2_1/Curso2_mod2.1_4-Recomendaciones989x.pdf" target="_blank">
+							<button class="general" data-content="#">
+								Abrir Detalle de la familia de recomendaciones ITU-T G.989.x   
+							</button>
+						</a>
+					</div>
+
+					<div class="box-text note" label="Nota">
+						<p>Cada una de las recomendaciones puede ser consultada en: <a href="https://www.itu.int/rec/T-REC-G/es" target="_blank">www.itu.int/[...]</a></p>
+					</div>
+					<h3>1.5. IEEE (Instituto de Ingenieros Eléctricos y Electrónicos)</h3>
+					<p>Paralelamente a la evolución de las redes PON estandarizadas por la ITU-T, y que tienen su origen en la FSAN, surge el estándar EPON impulsado por el grupo de trabajo EFM (<cite>Ethernet in the First Mile o Ethernet en última milla</cite>), constituido por la IEEE. La mayor diferencia con las recomendaciones ITU-T es la técnica para transporte de datos realizada sobre Ethernet, en lugar de ATM usada por BPON.</p>
+					<div class="box-text connection">
+						<p>Los estándares definidos por la IEEE 802.3 (EPON) engloban tres áreas:</p>
+					</div>
+					<div class="row">
+						<div class="col-2">
+							<ul class="data_list">
+								<li>Punto-a-punto sobre cable de cobre a 10 Mbps hasta 750 m.</li>
+								<li>Punto-a-punto sobre fibra a 1 Gbps y hasta 10 km.</li>
+								<li>Punto-a-multipunto sobre fibra a 1 Gbps hasta 20 km (EPON). Incluye también procedimientos de operación, administración y mantenimiento (OAM).</li>
+							</ul>
+						</div>
+						<div class="col-2">
+							<div class="box-text note" label="Nota">
+								<p>La IEEE 802.3av (GEPON: Gigabit Ethernet PON): provee tasas downstream: 10 Gbps y upstream: 1 Gbps o 10 Gbps.</p>
+							</div>
+						</div>
+					</div>
+					<div class="box-text important" label="Resumen">
+						<p>Un resumen de algunos parámetros relevantes de las distintas recomendaciones PON se muestra en la siguiente tabla:</p>
+						<table class="datatable">
+							<thead>
+								<th>Estándar / Recomendación</th>
+								<th>APON</th>
+								<th>BPON</th>
+								<th>GPON</th>
+								<th>XG-PON</th>
+								<th>NG-PON2</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Fecha de aprobación</td>
+									<td>1998</td>
+									<td>2001</td>
+									<td>2003</td>
+									<td>2010</td>
+									<td>2013</td>
+								</tr>
+								<tr class="odd">
+									<td>Familia ITU</td>
+									<td>G.983</td>
+									<td>G.983</td>
+									<td>G.984</td>
+									<td>G.987</td>
+									<td>G.989</td>
+								</tr>
+								<tr>
+									<td>Código de línea</td>
+									<td>NRZ (OOK)</td>
+									<td>NRZ (OOK)</td>
+									<td>NRZ (OOK)</td>
+									<td>NRZ (OOK)</td>
+									<td>NRZ (OOK)</td>
+								</tr>
+								<tr class="odd">
+									<td>Modo de tráfico</td>
+									<td>ATM</td>
+									<td>ATM</td>
+									<td>GEM</td>
+									<td>X-GEM</td>
+									<td>X-GEM</td>
+								</tr>
+								<tr>
+									<td>Medio de transmisión</td>
+									<td>G.652</td>
+									<td>G.652</td>
+									<td>G.652</td>
+									<td>G.652/G.657</td>
+									<td>G.652/G.657</td>
+								</tr>
+								<tr class="odd">
+									<td>Rango de longitud de onda para descarga</td>
+									<td>1480–1580 nm</td>
+									<td>1480–1580 nm</td>
+									<td>1480–1500 nm</td>
+									<td>1575–1580 nm</td>
+									<td>1596–1603 nm</td>
+								</tr>
+								<tr>
+									<td>Rango de longitud de onda para carga</td>
+									<td>1260–1360 nm</td>
+									<td>1260–1360 nm</td>
+									<td>1260–1360 nm</td>
+									<td>1260–1280 nm</td>
+									<td>1524–1544 nm<br />
+										(opción de banda ancha)<br />
+										1528–1540 nm<br />
+										(opción de banda corta)<br />
+										1532–1540 nm <br />
+										(opción de banda estrecha)</td>
+								</tr>
+								<tr class="odd">
+									<td>Velocidad de transmisión para descarga</td>
+									<td>622 Mb/s</td>
+									<td>hasta 1244.16 Mb/s</td>
+									<td>hasta 2488.32 Mb/s</td>
+									<td>hasta 9953.28 Mb/s</td>
+									<td>hasta 9953.28 Mb/s</td>
+								</tr>
+								<tr>
+									<td>Velocidad de transmisión para carga</td>
+									<td>155 Mb/s</td>
+									<td>hasta 622 Mb/s</td>
+									<td>hasta 1244.16 Mb/s</td>
+									<td>hasta 2488.32 Mb/s</td>
+									<td>hasta 9953.28 Mb/s</td>
+								</tr>
+								<tr class="odd">
+									<td>Rango de división</td>
+									<td>hasta 1:32</td>
+									<td>hasta 1:32</td>
+									<td>hasta 1:64</td>
+									<td>hasta 1:256</td>
+									<td>sobre 1:256</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="about"><strong>Tabla 1.</strong> Recomendación PON</div>
+					</div>
+					<div class="box-text connection">
+						<p>A continuación, nos dedicaremos a conocer aspectos relevantes de las redes GPON, los cuales nos proporcionan un marco de referencia y entendimiento de cómo funcionan. Conviene mencionar que dichos aspectos, como la capa física, las arquitecturas, la transmisión y los servicios, están descritos a través de las recomendaciones ITU T 984.x.</p>
+					</div> 
+				</div>
+			</section>
+
+			<section id="pag-caracteristicas" ptitle="2. Características de las redes GPON">
+				<div class="subpage">
+					<p>Como hemos dicho, el detalle de las distintas características de las redes GPON se encuentra en las recomendaciones G.984.x. La siguiente tabla muestra un resumen del contenido de esta familia de recomendaciones.</p>
+					<table class="datatable">
+						<thead>
+							<th>ITU-T 984.1</th>
+							<th>ITU-T 984.2</th>
+							<th>ITU-T 984.3</th>
+							<th>ITU-T 984.4</th>
+							<th>ITU-T 984.5</th>
+							<th>ITU-T 984.6</th>
+							<th>ITU-T 984.7</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<ul class="data_list">
+										<li>Define la configuración general del sistema en tres aspectos: arquitecturas, servicios y protección de red.</li>
+										<li>Tipos de interfaz: servicio/usuario.</li>
+										<li>Alcance físico y lógico.</li>
+										<li>Tipos de servicio.</li>
+										<li>Tasa física de transmisión y recepción.</li>
+										<li>Rendimiento del sistema.</li>
+										<li>Relación de división.</li>
+										<li>Video Overlay</li>
+									</ul>
+								</td>
+								<td>
+									<ul class="data_list">
+										<li>Estándares en cuanto a la capa física (OSI) y parámetros de funcionamiento.</li>
+										<li>Medios físicos dependientes.</li>
+										<li>Parámetros clase B+.</li>
+									</ul>
+									<h5>Potencia máxima - mínima</h5>
+									<p>ONT +5dBm    +0,5dBm<br />OLT +5dBm     +1,5dBm</p>
+									<h5>Sensibilidad</h5>
+									<p>ONT - 27dBm<br />OLT - 28dBm</p>
+									<h5>Potencia mínima de sobre carga</h5>
+									<p>ONT - 8 dBm<br />OLT - 8 dBm</p>
+								</td>
+								<td>
+									<ul class="data_list">
+										<li>Capa de enlace.</li>
+										<li>Convergencia de transmisión.</li>
+										<li>Subcapas GPON y convergencia de transmisión TC.</li>
+										<li>Rango.</li>
+										<li>Formato de seguridad.</li>
+										<li>Ancho de banda dinámico.</li>
+										<li>Operación, administración y mantenimiento.</li>
+									</ul>
+								</td>
+								<td>
+									<ul class="data_list">
+										<li>Administración, parámetros OAM, autoconfiguración.</li>
+									</ul>
+								</td>
+								<td>
+									<ul class="data_list">
+										<li>Descripción de longitud de onda reservada para señales de servicio adicionales utilizando multiplexación WDM, para mejora de capacidad.</li>
+										<li>Requisitos técnicos para la aplicación de filtros de la longitud de onda en la ONT. </li>
+										<li>Qué viene a futuro en GPON, las reservas que se dejan para coexistencia con nuevas xPON.</li>
+									</ul>
+								</td>
+								<td>
+									<ul class="data_list">
+										<li>Mayor alcance o cobertura </li>
+										<li>Describe las configuraciones para lograr mayor alcance mediante amplificación o regeneración.</li>
+										<li>Especifica la arquitectura y nuevas interfaces para la inserción de los nuevos elementos de red que permiten la mayor cobertura.</li>
+									</ul>
+								</td>
+								<td>
+									<ul class="data_list">
+										<li>GPON con mayor alcance.</li>
+										<li>Identifica los parámetros que deberán modificarse para lograr una mayor extensión, tanto en atenuación como en ancho espectral.</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="about"><strong>Tabla 2.</strong> Recomendaciones para GPON</div>
+					<h3>2.1. Arquitectura de las redes GPON</h3>
+					<p>La recomendación ITU-T 984.1 está relacionada con las características generales sobre la configuración de la red GPON. En ella podemos encontrar la arquitectura, las partes constitutivas y los lineamientos generales para este tipo de redes.</p>
+					<p>La arquitectura de las redes GPON viene definida por tres capas, como se muestra en la figura 1: la capa física, la capa de convergencia de transmisión y la capa para control y administración de las ONT. Cada una de ellas está descrita por las recomendaciones G.984.2, G.984.3 y G.984.4, respectivamente.</p>
+					<div class="box-text connection">
+						<p>Para estudiar esta arquitectura y comprender cómo operan estas redes, estudiaremos los aspectos relevantes de cada una de las recomendaciones. Pasemos al siguiente esquema para conocer su descripción:</p>
+					</div>
+					<div class="instruction">
+						<span class="notmobile">Haz clic sobre </span>
+						<span class="onlymobile">Toca </span>
+						cada elemento interactivo del esquema para conocer su descripción.
+					</div>
+					<div id="imagen1">
+						<button class="w-content-controler g984-4" data-content="#g984-4">
+							G 984 4
+						</button>
+						<button class="w-content-controler g984-3" data-content="#g984-3">
+							G 984 3
+						</button>
+						<button class="w-content-controler g984-2" data-content="#g984-2">
+							G 984 2
+						</button>
+						<div id="g984-4" class="w-content" right>
+							<ul class='data_list'>
+								<li>MIB (Management Information Base) definidas como entidades OMCI.</li>
+								<li>Gestión ONT.</li>
+								<li>Configuración y Gestión de servicios.</li>
+								<li>Configuración y gestión del subnivel adaptación GTC.</li>
+							</ul>
+						</div>
+						<div id="g984-3" class="w-content" data-position-my="right">
+							<ul class='data_list'>
+								<li>Definición y multiplexación de tramas GTC.</li>
+								<li>Asignación de ancho de banda.</li>
+								<li>Acceso al medio en canal ascendente.</li>
+								<li>FEC.</li>
+								<li>Seguridad.</li>
+								<li>Activación de la ONT.</li>
+								<li>PLOAM (Physical layer OAM messaging channel).</li>
+							</ul>
+						</div>
+						<div id="g984-2" class="w-content">
+							<ul class='data_list'>
+								<li>Velocidades de transmission.</li>
+								<li>Sensibilidad y potencia óptica.</li>
+								<li>Codificación NRZ.</li>
+								<li>Longitudes de onda up y down.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="about"><strong>Imagen 1.</strong> Esquema de Arquitectura del sistema G-PON.</div>
+					<p>La arquitectura también hace referencia a la forma como están conectados los equipos y componentes de las redes GPON. La imagen 2 muestra de manera sencilla la conexión de las componentes de estas redes. Podemos distinguir los siguientes componentes principales: el terminal de línea óptico (OLT) en el lado del operador; la red de distribución óptica (ODN) que incluye un splitter óptico pasivo; y el terminal óptico de red (ONT) en el lado del usuario. También es posible observar el sentido bidireccional de las comunicaciones en estas redes.</p>
+
+					<div class="instruction">
+						<span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+						<span class="onlymobile">Toca </span>
+						cada servicio del esquema para conocer su descripción.
+					</div>
+					<div class="short">
+						<div id="imagen2">
+							<div class="tooltip rojo" title="voz y datos 1490 nm"></div>
+							<div class="tooltip verde" title="voz y datos 1310 nm"></div>
+							<div class="tooltip azul" title="video 1550 nm"></div>
+						</div>
+					</div>
+					<div class="about"><strong>Imagen 2.</strong> Esquema de arquitectura y componentes de una red GPON.</div>
+					<p>En la figura se presentan los servicios de voz, datos y vídeo, siendo este último servicio enviado por una longitud de onda diferente. Por ello, igualmente notamos que se adiciona un multiplexor de longitud de onda WDM que permite combinar o sumar dos longitudes de onda diferentes, para ser enviadas a través de un único hilo de fibra.</p>
+					<div class="box-text connection">
+						<p>Teniendo ya una perspectiva general de cómo está constituida una red GPON, vale la pena explorar qué servicios de red se ofrecen, tal que se posibilite la prestación de servicios de voz, datos y vídeo. Ampliemos la información de dichos servicios.</p>
+					</div>
+				</div>
+				<div class="subpage">
+					<h3>2.2. Servicios soportados por las redes GPON</h3>
+					<p>Dada la capacidad de banda ancha de la red GPON, tiene posibilidad de soportar varios servicios para clientes comerciales y residencias de manera simétrica (difusión de contenidos, correo electrónico, intercambio de archivos, enseñanza a distancia, telemedicina, juegos en línea, etc.) y asimétrica (servicios de difusión digital, video en demanda, descarga de archivos, telefonía IP, etc.). La recomendación G.984.1 en su apéndice I muestra algunos servicios y notas importantes sobre ellos. Aquí los resumiremos en tres tipos de servicios de datos, soportados por Ethernet:</p>
+					<div class="instruction">
+						<span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+						<span class="onlymobile">Toca </span>
+						cada foto para conocer su descripción.
+					</div>
+					<div id="foto1">
+						<div class="view-first">
+							<img src="content/tema_2-1_foto1.png" />
+							<div class="view-content">
+								<p>Servicios de la telefonía pública conmutada como: telefonía, ISDN (red de servicios digitales) tanto BRI (144 kbps) como PRI (1544 Mbit/s and 2048 Mbit/s)</p>
+							</div>
+						</div>
+						<div class="view-first">
+							<img src="content/tema_2-1_foto2.png" />
+							<div class="view-content">
+								<p>Líneas privadas: canales T1 (1544 Mbit/s), E1 (2048 Mbit/s), DS3 Bearer (44736 Mbit/s). E3 (34368 Mbit/s).</p>
+							</div>
+						</div>
+						<div class="view-first">
+							<img src="content/tema_2-1_foto3.png" />
+							<div class="view-content">
+								<p>Video digital: enfocado en video over IP, con calidad del servicio suficiente para una experiencia de visualización comparable a métodos tradicionales de transporte.</p>
+							</div>
+						</div>
+					</div>
+					<div class="about"><strong>Foto 1.</strong> Servicios soportados por las redes GPON.</div>
+					<p>En la <strong>interfaz de red de usuario (UNI)</strong> se ofrecen servicios Ethernet de 10, 100 y 1000 Base T, esto significa -en tasas de transmisión- 10, 100 y 1000 Mbps, respectivamente.</p>
+					<p>Por otro lado, para la <strong>Interfaz de Nodo de Servicio (SNI)</strong>, es decir, desde el lado del operador, se tienen servicios como 1000 y 10000 base T (tasas de 1000 y 10000 Mbps), interfaz V5.2 para prestar todos los servicios para la PSTN (red de telefonía pública conmutada), servicios de líneas privadas incluyendo STM 1, 4 y 16, es decir tasas de 155 Mbps, 622 Mbps y 2488 Mbps, respectivamente.</p>
+					<div class="box-text connection">
+						<p>Tal como se había descrito, la arquitectura de las redes GPON viene definida por tres capas. Vamos a explorar cada una de ellas, lo que es crucial para conocer cómo trabajan estas redes, cuáles son sus restricciones y como consiguen prestar los servicios antes descritos.</p>
+					</div>
+				</div>
+				<div class="subpage">
+					<h3>2.3. Capa dependiente de los medios físico. Equipos y componentes de las redes GPON</h3>
+					<p>La recomendación G.984.1 proporciona un mayor detalle de la arquitectura, sus equipos e identifica sus diferentes interfaces, como se aprecia en el siguiente esquema:</p>
+					<div class="instruction">
+						<span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+						<span class="onlymobile">Toca </span>
+						cada elemento del esquema para conocer su descripción.
+					</div>
+					<div id="imagen3">
+						<div class="tooltip onu" title="<strong>ONU</strong> <cite>Optical Network Unit</cite> (unidad de red óptica).">ONU</div>
+						<div class="tooltip ont" title="<strong>ONT</strong> <cite>Optical Network Terminal</cite> (terminal de red óptica).">ONT</div>
+						<div class="tooltip odn" title="<strong>ODN</strong> <cite>Optical Distribution Network</cite> (red de distribución óptica).">ODN</div>
+						<div class="tooltip olt" title="<strong>OLT</strong> <cite>Optical Line Termination</cite> (terminación de línea óptica).">OLT</div>
+						<div class="tooltip wdm1" title="<strong>WDM</strong> <cite>Wavelength Division Multiplex Module</cite> (módulo de multiplexación por división de longitud de onda).">WDM</div>
+						<div class="tooltip wdm2" title="<strong>WDM</strong> <cite>Wavelength Division Multiplex Module</cite> (módulo de multiplexación por división de longitud de onda).">WDM</div>
+						<div class="tooltip ne1" title="<strong>NE</strong> <cite>Network Element</cite> (elemento de red que utiliza la longitud de onda diferente de la OLT y la ONU).">NE</div>
+						<div class="tooltip ne2" title="<strong>NE</strong> <cite>Network Element</cite> (elemento de red que utiliza la longitud de onda diferente de la OLT y la ONU).">NE</div>
+						<div class="tooltip sni" title="<strong>SNI</strong> <cite>Service Node Interface </cite>(interfaz de nodo de servicio).">SNI</div>
+						<div class="tooltip uni" title="<strong>UNI</strong> <cite>User Network Interface</cite> (interfaz de red de usuario).">UNI</div>
+						<div class="tooltip s1" title="<strong>S</strong> (punto después de la conexión óptica OLT (descendente)/ONU (ascendente).">S</div>
+						<div class="tooltip s2" title="<strong>S</strong> (punto después de la conexión óptica OLT (descendente)/ONU (ascendente).">S</div>
+						<div class="tooltip r1" title="<strong>R</strong> (punto previo al punto de conexión óptica ONU (downstream)/OLT (upstream).">R</div>
+						<div class="tooltip r2" title="<strong>R</strong> (punto previo al punto de conexión óptica ONU (downstream)/OLT (upstream).">R</div>
+					</div>
+					<div class="about"><strong>Imagen 3.</strong> Esquema de configuración de la red GPON, sus componentes e interfaces según recomendación G.984.1.</div>
+					<p>En este esquema podemos identificar los equipos principales antes mencionados: a) La unidad de red óptica (ONU), b) Terminal óptico de red (ONT), c) La red de distribución óptica (ODN), d) Terminal de línea óptico (OLT), e) Componente de multiplexación de onda (WDM) para el uso de diferentes longitudes de onda desde la OLT hasta la ONT/ONU.</p>
+					<p>También hacen parte <strong>elementos de red</strong> (NE) que usan una longitud de onda diferente de las de OLT y ONU, por ejemplo, para funciones de medición y pruebas, y las <strong>funciones de adaptación</strong> (AF) que permiten la comunicación entre las interfaces de usuario y las interfaces de red y que algunas veces está incluida en la ONT/ONU, la interfaz de nodo de servicio (SNI).</p>
+					<p>Igualmente, hacen parte las <strong>interfaces IFPON</strong> ubicadas en los puntos de referencia <strong>S/R y R/S</strong>, siendo S el punto en la fibra óptica justo después del punto de conexión óptica (conector o empalme) de OLT en sentido descendente/ ONU en sentido ascendente; y R: punto en la fibra óptica justo antes del punto de conexión de ONU en sentido descendente/OLT en sentido ascendente. IFPON es una interfaz específica de la PON que soporta todos los elementos de protocolo necesarios para permitir la transmisión entre la OLT y las ONU.</p>
+					<div class="box-text connection">
+						<p>Estos equipos y componentes conforman la capa física. En el siguiente punto haremos referencia a los requisitos de la capa dependiente de los medios físicos (recomendación G.984.2).</p>
+					</div>
+					<p>Las recomendaciones principales dedicadas a la capa dependiente de los medios físicos, tanto para EPON como para GPON, los resumimos en la tabla 3. Queremos que pongas especial atención a las restricciones en tasas de transmisión, alcance físico, la relación de división máxima y las pérdidas o sensibilidad máximas. </p>
+					<table class="datatable">
+						<thead>
+							<th></th>
+							<th>EPON</th>
+							<th>GPON</th>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Estándar</th>
+								<td>IEEE 802.3ah</td>
+								<td>ITU-T G.984</td>
+							</tr>
+							<tr class="odd">
+								<th>Velocidad de carga/descarga</th>
+								<td>1,25G/2,5G</td>
+								<td>1.25G/2.5G</td>
+							</tr>
+							<tr>
+								<th>Código de línea</th>
+								<td>8B/10B</td>
+								<td>NRZ</td>
+							</tr>
+							<tr class="odd">
+								<th>Utilizacion de ancho de banda</th>
+								<td>72%</td>
+								<td>92%</td>
+							</tr>
+							<tr>
+								<th>Máximo rango de división</th>
+								<td>1:64</td>
+								<td>1:128</td>
+							</tr>
+							<tr class="odd">
+								<th>Sensibilidad</th>
+								<td>-26 dB</td>
+								<td>Clase B+ -28 dB
+									<br />Clase C+ -30 dB</td>
+							</tr>
+							<tr>
+								<th>Distancia diferencial</th>
+								<td>20 km</td>
+								<td>20 km</td>
+							</tr>
+							<tr class="odd">
+								<th>Servicio de encasulapción</th>
+								<td>Cualquiera sobre Ethernet</td>
+								<td>Cualquiera sobre GEM</td>
+							</tr><tr>
+								<th>Algoritmo de encriptación</th>
+								<td>Triple churning, AES-128</td>
+								<td>AES-128</td>
+							</tr>
+							<tr class="odd">
+								<th>DBA</th>
+								<td>Fijo, asegurado, mejor esfuerzo</td>
+								<td>Fijo asegurado, no asegurado, mejor esfuerzo</td>
+							</tr><tr>
+								<th>Qos</th>
+								<td>LLID+IEEE 802.1P</td>
+								<td>GEM_PORT/T-Cont</td>
+							</tr>
+							<tr class="odd">
+								<th>Transporte</th>
+								<td>Ethernet</td>
+								<td>ATM.TDM</td>
+							</tr>
+							<tr>
+								<th>Tipos de SFP</th>
+								<td>Px20+/Px20++/Px20+++</td>
+								<td>B+/C+/C++</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="about">Tabla 3. Comparación entre EPON y GPON.</div>
+					<div class="box-text connection">
+						<p>Un detalle de las características y parámetros de la capa física proporcionados por la recomendación ITU -T G.984.2 se puede ver haciendo clic en el siguiente botón:</p>
+						<a href="https://info.fycolearning.com/curso1/modulo2_1/Curso2_mod2.1_5-Requisitoscapafisica984.2.pdf" target="_blank">
+							<button class="general" data-content="#">
+								Abrir Requisitos asociados a la capa física – Recomendación G.984.2
+							</button>
+						</a>
+						<p>Hasta este momento hemos tocado la arquitectura de las redes GPON (tres capas) y las restricciones de la primera de sus capas, la física. Ahora, subamos una capa más: la de convergencia de transmisión. Esta capa nos indica cómo se hace la transmisión de paquetes tanto en sentido downstream como upstream.</p>
+					</div> 
+				</div>
+				<div class="subpage">
+					<h3>2.4. Transmisión en redes PON. Restricciones de la capa de convergencia de trasmisión</h3>
+					<p>Como se describió en la arquitectura de las redes PON, la recomendación G.984.3 está relacionada con la capa de convergencia de transmisión y permite establecer cómo es el proceso de comunicación. Vamos a recordar primero las características principales de las que parte la capa de convergencia de transmisión, para ir construyendo la comunicación paso a paso.</p>
+					<h4>2.4.1. Características de la transmisión bidireccional. Parámetros de la capa de convergencia de transmisión (GTC)</h4>
+					<p>Lo primero es definir que estas recomendaciones consideran <strong>transmisión bidireccional sobre la misma fibra</strong>. Para ello, establece dos sentidos de transmisión downstream (DS), es decir, sentido operador-cliente; y sentido Upstream (US), es decir, sentido cliente – operador. Las siguientes tablas definen las características físicas para ambos sentidos de transmisión y asocian las longitudes de onda correspondientes. Cabe anotar que el vídeo se envía por una longitud de onda independiente en 1550 nm. Igualmente, cabe mencionar que se permite una relación de división lógica de fibra de hasta 1:128, una distancia diferencial de fibra de hasta 20 km y un alcance lógico hasta 60 km. </p>
+					<table class="datatable">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Downstream</th>
+								<th>Upstream</th>
+							</tr>
+							<tr>
+								<th>Transmisor</th>
+								<th>OLT</th>
+								<th>ONT</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Bit Rate</td>
+								<td>2,50 Gbps</td>
+								<td>1,25 Gbps</td>
+							</tr>
+							<tr class="odd">
+								<td>Longitud de Onda</td>
+								<td>1490 nm</td>
+								<td>1310 nm</td>
+							</tr>
+							<tr>
+								<td>Potencia mínima</td>
+								<td>1,5 dBm</td>
+								<td>0,5 dBm</td>
+							</tr>
+							<tr class="odd">
+								<td>Potencia máxima</td>
+								<td>5 dBm</td>
+								<td>5 dBm</td>
+							</tr>
+							<tr>
+								<th>Receptor</th>
+								<th>ONT</th>
+								<th>OLT</th>
+							</tr>
+							<tr class="odd">
+								<td>VER</td>
+								<td><10-10</td>
+								<td><10-10</td>
+							</tr>
+							<tr>
+								<td>Sensibilidad mínima</td>
+								<td>- 27 dBm</td>
+								<td>- 28 dBm</td>
+							</tr>
+							<tr class="odd">
+								<td>Overload mínima</td>
+								<td>- 8 dBm</td>
+								<td>- 8 dBm</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="about"><strong>Tabla 4.</strong> Características de la transmisión DS y US.</div>
+					<div class="box-text connection">
+						<p>Ahora bien, si se tiene una única fibra y las longitudes de onda del sentido DS y US, ¿cómo se organiza la comunicación para que se eviten colisiones dado que todas las ONT querrán comunicarse? Veamos entonces cómo se gestiona el acceso al medio.</p>
+					</div>
+					<h4>2.4.2. Técnicas de acceso el medio</h4>
+					<p>En dirección <strong>downstream</strong>, la información es transmitida desde la OLT hacia las diferentes ONT. Esta técnica es conocida como <strong>Broadcast and Select</strong>, es decir, todas las ONT reciben la misma información, pero seleccionará aquella que viene dirigida a ella mediante la identificación de un campo en la trama conocido como ID-ONT. La OLT envía la información para todas las ONT en frames de 125μs, en el cual se encapsulan los datos que irán a cada una de las ONT. La imagen 5 muestra esta configuración en DS.</p>
+					<p>Por su parte, en la dirección <strong>upstream</strong> (ver imagen 4), la información es transmitida desde múltiples ONT hacia la OLT en <strong>ráfagas (modo “burst”)</strong>, en una técnica de acceso denominada <strong>TDMA (Time Division Multiple Access)</strong>. En esta técnica, la OLT asigna oportunidades de transmisión (slots de tiempo). No todas las ONT transmiten, lo hacen sólo aquellas a las que la OLT les ha asignado un determinado slot de tiempo. A cada ONT se le asigna de forma dinámica el ancho de banda (DBA por sus siglas en inglés: <cite>Dynamic Bandwidth Allocation</cite>), con el fin de optimizar el uso del canal. Esta asignación se basa en la cantidad de datos que la ONT indica tener en sus contenedores T CONT. También es posible hacer la asignación mediante las tasas de envío de datos de las ONT, sin que se requiera envío de mensajes del estado de los contendedores.</p>
+					<div class="instruction">
+						<span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+						<span class="onlymobile">Toca </span>
+						cada imagen para conocer su descripción.
+					</div>
+					<div class="row">
+						<div class="col-2">
+							<div class="short">
+								<div class="view-first">
+									<img src="content/tema_2-1_grafica5.png" />
+									<div class="view-content">
+										<p>En upstream, la transmisión se realiza en ráfagas, es decir, son slots de tiempo variable que la OLT asigna a una ONT para transmitir. No todas las ONT tienen oportunidades de transmisión en un determinado frame 125 μs (por ejemplo, la ONT 48 no tiene asignación de la OLT para transmitir en este frame 125 μs); tal vez lo realice en el siguiente.</p>
+									</div>
+								</div>
+							</div>
+							<div class="about"><strong>Imagen 4.</strong> Técnicas de acceso al medio en el sentido upstream.</div>
+						</div>
+						<div class="col-2">
+							<div class="view-first">
+								<img src="content/tema_2-1_grafica6.png" />
+								<div class="view-content">
+									<p>Un frame es una cantidad de datos que emplea GPON para la transmisión de información en un medio compartido. En GPON, cada frame dura 125 μs (microsegundos)</p>
+								</div>
+							</div>
+							<div class="about"><strong>Imagen 5.</strong> Técnicas de acceso al medio en el sentido downstream.</div>
+						</div>
+					</div>
+					<div class="box-text connection">
+						<p>Para saber cómo se hace la asignación de los slots de tiempo, cómo opera el modo de transmisión por ráfagas y el proceso de asignación dinámica de ancho de banda concedido a las ONT, haz clic en el siguiente botón:</p>
+						<a href="https://info.fycolearning.com/curso1/modulo2_1/Curso2_mod2.1_6-ProcesosclavecomunOLT-ONT.pdf" target="_blank">
+							<button class="general" data-content="#">
+								Abrir Procesos clave en la comunicación OLT/ONT
+							</button>
+						</a>
+						<p>Situados en forma general en los sentidos de comunicación y cómo se accede a este medio compartido, detallemos un poco más la capa de convergencia de transmisión identificando la estructura básica de puertos, contenedores e interfaces.</p>
+					</div>
+				</div>
+				<div class="subpage">
+					<h4>2.4.3. Arquitectura de multiplexación de GPON</h4>
+					<div class="row">
+						<div class="col-2">
+							<p>Como vemos en la figura, los elementos que intervienen en la transmisión OLT/ONU son los siguientes:</p>
+							<ul class="data_list">
+								<li>Puerto GEM: la unidad mínima para llevar servicios.</li>
+								<li>T-CONT (Transmission Containers): es una especie de búfer que transporta servicios. Se utiliza principalmente para transmitir unidades de datos US. T-CONT y participa en la asignación dinámica de ancho de banda, informando el estado de ocupación del búfer.</li>
+								<li>IF pon: interfaz GPON.</li>
+							</ul>
+							<p>De acuerdo con el esquema de mapeo, el tráfico de servicios se lleva a diferentes puertos GEM y luego a diferentes T-CONT. El mapeo entre el puerto GEM y el T-CONT es flexible.</p>
+							<p>Un puerto GEM puede corresponder a un T-CONT o múltiples puertos GEM pueden corresponder al mismo T-CONT.</p>
+							<p>Una interfaz GPON de una ONU contiene uno o múltiples T-CONT.</p>
+						</div>
+						<div class="col-2">
+							<div class="instruction">
+								<span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+								<span class="onlymobile">Toca </span>
+								cada sección del esquema para conocer su descripción.
+							</div>
+							<div class="imagen6">
+								<div id="imagen6">
+									<div class="tooltip onu" data-position-at="center" title="El ONU-ID identifica a las ONU"></div>
+									<div class="tooltip cont" data-position-at="center" title="Los Alloc-IDs identifican a los T-CONT"></div>
+									<div class="tooltip port" data-position-at="center" title="El Port-ID identifica a los puertos GEM"></div>
+								</div>
+							</div>
+							<div class="about"><strong>Imagen 6.</strong> Esquema de arquitectura básica de la multiplexación en redes GPON.</div>
+						</div>
+					</div>
+					<div class="box-text connection">
+						<p>Con estos elementos básicos, ya podemos explicar algunas de las funciones básicas que realiza la OLT y que permiten establecer la conexión con la ONT, previo al envío de datos.</p>
+					</div>
+				</div>
+				<div class="subpage">
+					<h4>2.4.4. Funciones básicas de la OLT en la comunicación GPON</h4>
+					<p>La OLT tiene 4 funciones básicas de cara a la comunicación:</p>
+					<div class="instruction">
+						<span class="notmobile">Haz clic sobre las flechas para pasar entre páginas</span>
+						<span class="onlymobile">Toca sobre las flechas para pasar entre páginas</span>
+					</div>
+					<div class="ctrl-pagination" data-labelcurrent="true">
+						<li>
+							<h5>Identificación:</h5>
+							<p>a través de ID del terminal del cliente (ID-ONT).</p>
+						</li>
+						<li>
+							<h5>Aprovisionamiento:</h5>
+							<p>una vez identificada la ONT del cliente, se realiza una confrontación de la información del ID-ONT con la información enviada por la ONT. Solo si esta verificación resulta correcta, le son entregados los servicios contratados al cliente.</p>
+						</li>
+						<li>
+							<h5>Transmisión:</h5>
+							<p>descarga de información (downstream) y servicios a la ONT. El ancho de banda de 2,48 Gbps que se transmite para ser compartido por las múltiples ONT se refiere solo a uno de los puertos OLT y no a una de las placas del bastidor. Una placa puede tener 4 u 8 puertos OLT, y un bastidor puede tener múltiples placas.</p>
+						</li>
+						<li>
+							<h5>Recepción:</h5>
+							<p>carga de información (upstream) desde las ONT a una tasa de transmisión de 1,24 Gbps.</p>
+						</li>
+					</div>
+				</div>
+				<div class="subpage">
+					<h4>2.4.5. Capa de control y gestión de las ONTS - OMCI</h4>
+					<p>Esta capa está descrita por la recomendación ITU-T 984.4. Con ella hablamos principalmente de la interfaz de control y administración de la ONT/ONU por parte de la OLT. </p>
+					<p>OMCI: es la interfaz de control y administración de unidades de red óptica en GPON usada por la OLT para controlar las ONT, estableciendo y liberando conexiones, configurando y administrando los servicios de los usuarios, haciendo gestión de alarmas, encriptación, detección de averías y mejorando el rendimiento de las ONT. Los mensajes OMCI viajan encapsulados en tramas usando el método de encriptación de GPON (GEM). Para el intercambio de mensajes OMCI en la subida, entre la ONT y la OLT se habilita un canal contenedor de transmisión o T-CONT y un puerto dedicado GEM. Ambos constituyen el canal de control y administración de la ONT (OMCC). A través de mensajes Dynamic Bandwidth Report Upstream (DBRU), cada ONT informa a la OLT de sus necesidades de ancho de banda. De esta forma, la OLT tiene una visión completa del estado de todos los T-CONT existentes en la red, además, mediante mensajes Bandwidth Map (BWmap), la OLT establece tickets indicando la ubicación de la ONT (Alloc-ID) y el turno en el que cada ONT puede enviar datos empleando un T-CONT.</p>
+					<div class="box_media">
+						<img src="content/tema_2-1_grafica8.png" alt="Esquema de Comunicación OLT- ONT" />
+						<div class="about"><strong>Imagen 7.</strong> Esquema de Comunicación OLT- ONT.</div>
+					</div>
+					<div class="box-text connection">
+						<p>Nos hemos sumergido en este mundo de las redes GPON, entendiendo sus partes constitutivas, su arquitectura, la conformación de sus mensajes y revisando la capa final de control. Pero, ¿y si se quiere dejar previstas mejoras en capacidad y cobertura, tiene la ITU contemplada alguna estrategia? Revisa el siguiente punto para mostrarte qué se ha recomendado al respecto.</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="pag-ampliaciones" ptitle="3. Ampliaciones y mejoras de las redes GPON">
+				<div class="subpage">
+					<p>Las siguientes recomendaciones tienen como propósito en un caso, dejar previstas y reservadas las bandas de longitudes de onda para futuros servicios de nuevas generaciones de redes PON, y de otro lado, mejorar el alcance de estas redes.</p>
+					<h3>3.1. ITU-T 984.5 Redes ópticas pasivas con capacidad de Gigabits (GPON): banda ampliada</h3>
+					<p>Esta recomendación redefine la gama de longitudes de onda reservada y especifica la tolerancia a las señales de interferencia de las ONU GPON para permitir la coexistencia de GPON y servicios adicionales, incluidos los de las redes de acceso de próxima generación (NGA por la sigla en inglés de <cite>Next Generation Access</cite>) y servicios de vídeo, buscando maximizar la utilización de las redes de distribución ópticas (ODN por sus siglas en inglés) ya instaladas. Es importante anotar que la recomendación aplica solo para el caso de transmisión bidireccional de señales de diferentes longitudes de onda sobre una misma fibra, lo que se conoce como operación duplex.</p>
+					<p>El rango de longitud de onda de la señal GPON downstream se especifica en ITU-T G.984.2 como 1480 nm a 1500 nm y upstream como 1260 nm a 1360 nm.</p>
+					<div class="box-text connection">
+						<p>Para conocer el plan de nuevas asignaciones, haz clic en el siguiente botón:</p>
+						<a href="https://info.fycolearning.com/curso1/modulo2_1/Curso2_mod2.1_8-Asignacio%cc%81nlongitudesondapararedes-xpon.pdf" target="_blank">
+							<button class="general" data-content="#">
+								Abrir Plan de asignación de longitudes de onda para futuras generaciones de redes XPON
+							</button>
+						</a>
+					</div>
+				</div>
+				<div class="subpage">
+					<h3>3.2. ITU-T 984.6 Redes ópticas pasivas con capacidad de Gigabits- extensión de alcance</h3>
+					<p>La recomendación UIT-T G.984.6 describe la arquitectura y los parámetros de interfaz para los sistemas GPON con alcance extendido que utilizan un dispositivo de extensión de la capa física, como un regenerador consistente en una conversión óptico/eléctrico/óptico (OEO), o con un amplificador óptico en el enlace de fibra entre la terminación de línea óptica (OLT) y la terminación de la red óptica (ONT). El alcance máximo está proyectado hasta 60 km.</p>
+					<div class="box-text connection">
+						<p>Para saber un poco más, haz clic en el siguiente botón y revisa la recomendación correspondiente:</p>
+						<a href="https://info.fycolearning.com/curso1/modulo2_1/Curso2_mod2.1_9-Tiposextensoresmayorcobertura-gpon.pdf" target="_blank">
+							<button class="general" data-content="#">
+								Abrir Tipos de extensores para mayor cobertura o alcance de redes GPON
+							</button>
+						</a>
+						<p>Hemos realizado una revisión completa de las redes GPON basándonos en las recomendaciones ITU-T 984.x Vamos a culminar este módulo con una breve visión de futuro, que nos lleva a un campo de mucho interés actualmente, como es el soporte de 5G sobre redes xPON.</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="pag-tendencias" ptitle="4. Tendencias a futuro">
+				<div class="subpage">
+					<p>Aunque ya se ha mencionado, la evolución de las redes PON tiende hacia tasas más altas de 2,5 Gbps que ofrece GPON. Recientemente, ha habido mucha atención hacia el uso de redes PON como infraestructura de soporte de 5G, una tecnología de telecomunicación móvil que ofrece grandes anchos de banda. Los canales de radio de 5G usan una banda de ondas milimétricas para soportar capacidades más altas, con el gran inconveniente de reducir el radio de cobertura de la señal, pasando de 1 km en 4G a solo 100 m (o incluso menos, según el terreno). La consecuencia es que 5G requiere más puntos de acceso para la misma cobertura que 4G. Algunas estimaciones indican que se requerirá entre 20 y 50 veces más antenas para lograr una penetración completa de 5G. Una de las alternativas para la conexión de la celda 5G con la oficina central es el uso de redes PON. Sin embargo, la conexión de acceso requiere una capacidad significativamente mayor al de las actuales redes GPON y las redes XSG PON (ITU-T 987.x) son vistas como una alternativa viable. En el caso de la IEEE, ya se tiene prevista una recomendación hacia 25 Gbps (ver gráfica 1), a diferencia de ITU-T que salta directamente a 50 Gbps. WDM PON (ITU-T 989.x) está pensado para el aumento de capacidad con poca latencia, pero hay algunos retos en su implementación para que sea una solución costo-eficiente. Un aspecto clave es la coexistencia de los servicios fijos, actualmente ofrecidos por GPON, con los nuevos de transporte de señales 5G.  La siguiente imagen ilustra esta visión de futuro.</p>
+					<div class="instruction">
+						<span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+						<span class="onlymobile">Toca </span>
+						cada sección del esquema para conocer su descripción.
+					</div>
+					<div class="short">
+						<div id="imagen8">
+							<div class="tooltip ru" data-position-at="left bottom" title="
+								<img src='content/tema_2-1_grafica-amarillo.png' />">
+								<div class="light fst"></div>
+								<div class="light snd"></div>
+								<div class="light trd"></div>
+								<div class="light fth"></div>
+								<div class="light ffth"></div>
+								<div class="light sth"></div>
+							</div>
+							<div class="gpon tooltip" data-position-at="left bottom" title="
+								<img src='content/tema_2-1_grafica-cian.png' />">
+								<div class="light fst"></div>
+								<div class="light snd"></div>
+								<div class="light trd"></div>
+								<div class="light fth"></div>
+								<div class="light ffth"></div>
+								<div class="light sth"></div>
+								<div class="light ssth"></div>
+							</div>
+							<div class="pon tooltip" data-position-at="left bottom" title="
+								<img src='content/tema_2-1_grafica9azul.png' />">
+								<div class="light fst"></div>
+								<div class="light snd"></div>
+								<div class="light trd"></div>
+							</div>
+							<div class="mask"></div>
+						</div>
+					</div>
+					<div class="about"><strong>Imagen 8.</strong> Esquema de tecnologías PON para soporte de 5G.</div>
+				</div>
+			</section>
+
+			<!--Bibliografía-->
+			<section id="pag-bibliografia" ptitle="Bibliografía">
+				<div class="subpage">
+					<ul class="data_list">
+						<li>Recomendacion ITU- T G.984.1 <a href="https://www.itu.int/rec/T-REC-G.984.1" target="_blank">https://www.itu.int/[...]</a></li>
+						<li>Recomendacion ITU- T G.984.2 <a href="https://www.itu.int/rec/T-REC-G.984.2" target="_blank">https://www.itu.int/[...]</a></li>
+						<li>Recomendacion ITU- T G.984.3 <a href="https://www.itu.int/rec/T-REC-G.984.3" target="_blank">https://www.itu.int/[...]</a></li>
+						<li>Recomendacion ITU- T G.984.4 <a href="https://www.itu.int/rec/T-REC-G.984.4" target="_blank">https://www.itu.int/[...]</a></li>
+						<li>Recomendacion ITU- T G.984.5 <a href="https://www.itu.int/rec/T-REC-G.984.5" target="_blank">https://www.itu.int/[...]</a></li>
+						<li>Recomendacion ITU- T G.984.6 <a href="https://www.itu.int/rec/T-REC-G.984.6" target="_blank">https://www.itu.int/[...]</a></li>
+					</ul>
+					<h4>Gráficas</h4>
+					<ul class="data_list">
+						<li><strong>Gráfica 1.</strong> Wey 魏君珊, Jun Shan, (2019). Línea de tiempo de la evolución de los estándares de redes PON, asociada al ancho de banda downstream (DS). [Gráfica]. Recuperada el 15 de febrero de 2021 de <cite>The Outlook for PON Standardization: A Tutorial Journal of Lightwave Technology 38</cite> (1) 31-42.</li>
+					</ul>
+					<h4>Tablas</h4>
+					<ul class="data_list">
+						<li><strong>Tabla 1.</strong> Horvath, T.; Munster, P.; Oujezsky, V.; Bao, N.-H., (2020). Recomendación PON. [Tabla]. Recuperada el 16 de febrero de 2021 de Passive Optical Networks Progress: A Tutorial. Electronics 2020, 9, 1081, <a href="https://doi.org/10.3390/electronics9071081" target="_blank">https://doi.org/[...]</a></li>
+					</ul>
+					<h4>Imágenes</h4>
+					<ul class="data_list">
+						<li><strong>Imagen 2.</strong> Lacnic. (s.f.). Esquema de arquitectura y componentes de una red GPON. [Imagen]. Recuperada el 14 de febrero de 2021 de Red de Acceso GPON. Aspectos Técnicos y Despliegue IPv6. <a href="https://www.lacnic.net/innovaportal/file/4749/1/lacnic-34-jgc-parte1---gpon-intro-y-fundamentos.pdf" target="_blank">https://www.lacnic.net/[...]</a></li>
+						<li><strong>Imagen 3.</strong> Unión Internacional de Telecomunicaciones (s.f.). Esquema de Configuración de la red GPON, sus componentes e interfaces según recomendación G 984.1. [Imagen]. Recuperada el 15 de febrero de 2021 de <a href="https://www.itu.int/rec/T-REC-G.984.1-200303-S/es" target="_blank">https://www.itu.int/[...]</a></li>
+						<li><strong>Imagen 4.</strong> López, E. (2015). Técnicas de acceso al medio en el sentido Upstream. [Imagen]. Recuperada el 16 de febrero de 2021 de FTTH Course - Module 9,. <a href="https://www.researchgate.net/publication/280086738_FTTH_Course_-_Module_9)" target="_blank">https://www.researchgate.net/[...]</a></li>
+						<li><strong>Imagen 5.</strong> López, E. (2015) .Técnicas de acceso al medio en el sentido Downstream. [Imagen]. Recuperada el 16 de febrero de 2021 de FTTH Course - Module 9,. <a href="https://www.researchgate.net/publication/280086738_FTTH_Course_-_Module_9)" target="_blank">https://www.researchgate.net/[...]</a></li>
+						<li><strong>Imagen 6.</strong> Huawei Technologies Co., Ltd. (2019). Esquema de Arquitectura básica de la multiplexación en redes GPON. [Imagen]. Adaptada el 19 de febrero de 2021 de <a href="https://forum.huawei.com/enterprise/es/red-de-acceso-huawei-principios-de-gpon/thread/586574-100275" target="_blank">https://forum.huawei.com/[...]</a></li>
+						<li><strong>Imagen 8.</strong> Levi, D. (2020) Esquema de tecnologías PON para soporte de 5G (The Case for Using PON 5G Fronthaul). [Imagen]. Recuperada el 20 de febrero de 2021 de <a href="https://www.lightwaveonline.com/5g-mobile/article/14188094/the-case-for-using-pon-for-5g-fronthaul" target="_blank">https://www.lightwaveonline.com/[...]</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<!--Créditos-->
+			<section id="pag-creditos" ptitle="Créditos">
+				<div class="subpage" id="credits_subpage">
+					<div>
+						<h3>Desarrollo de contenidos</h3>
+						<cite>John Jairo Jaramillo Rodríguez<br />
+							<strong>Experto Temático</strong><br />
+							Ana María Cárdenas Soto<br />
+							<strong>Experta Temática</strong></cite>
+					</div>
+					<div>
+						<h3>Asesoría pedagógica y diseño instruccional</h3>
+						<cite>Carolina Llanos Tobón</cite>
+					</div>
+					<div>
+						<h3>Corrección de estilo</h3>
+						<cite>Felipe Sosa Vargas</cite>
+					</div>
+					<div>
+						<h3>Diseño gráfico</h3>
+						<cite>Elizabeth Hernandez González</cite>
+					</div>
+					<div>
+						<h3>Integración de contenidos</h3>
+						<cite>Santiago Bernal García</cite>
+					</div>
+					<div>
+						<h3>Revisión de calidad</h3>
+						<cite>Lorena Guarín Herrera</cite>
+					</div>
+
+					<div>
+						<h3>Producción, gestión técnica y administrativa</h3>
+						<p class="logos">
+							<a href="http://bambuco.co/" target="_blank"><img src="img/logo_bambuco.png" alt="BambuColectivo" /></a>
+							<a href="https://fycolearning.com/" target="_blank"><img src="img/logo_azul.png" alt="Fyco Telecomunicaciones" /></a>
+						</p>
+					</div>
+
+					<div class="editions">
+						1ª edición: abril 2021
+					</div>
+					<div>
+						<br />
+						<!-- <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Obra publicada bajo licencia:<br />Creative Commons Atribución-Compartir Igual 4.0 Internacional<br /><br />
+						<img src="img/cc.png" alt="Creative Commons" /></a> -->
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="not_print">
+			<div class="measuring-progress" data-type="horizontal"></div>
+
+			<nav label="Características globales" class="globals">
+				<menu>
+					<menuitem data-global-id="results"><i title="Progreso" class="ion-clipboard " data-position-at="top"></i></menuitem>
+					<menuitem data-global-id="return">
+						<i title="Maximizar" class="ion-arrow-expand  maximize" data-position-at="top"></i>
+						<i title="Minimizar" class="ion-arrow-shrink  minimize" data-position-at="top"></i>
+					</menuitem>
+					<menuitem data-global-id="close_all"><i title="Regresar" class="ion-reply " data-position-at="top"></i></menuitem>
+				</menu>
+			</nav>
+
+			<div id="subpages_menu">
+				<div class="button" previous-page></div>
+				<ul class="button" subpages-menu></ul>
+				<div id="page_number"></div>
+				<div class="button" next-page></div>
+			</div>
+
+		</footer>
+
+	</div>
+
+	<div id="results_page" style="display:none;">
+		<h2>Resumen de su avance en la lectura del documento</h2>
+		<h3>Páginas visitadas</h3>
+		<p>En verde, aquellas páginas que ya ha visitado.</p>
+		<div id="results_page_visited" class="container"></div>
+		<br class="clear" />
+	</div>
+
+	<div id="printent_content" style="display:none;">
+		<div class="content"></div>
+		<div class="button_container">
+			<button class="general button" onclick="window.print();">Imprimir</button>
+			<button id="printent_back" class="general button" >Volver</button>
+		</div>
+	</div>
+
+</body>
+</html>
