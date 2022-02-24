@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Topologías</title>
+    <link href="components/jquery/css/custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="components/ionicons/css/ionicons.min.css" rel="stylesheet" type="text/css">
+
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="components/jquery-mobile/jquery.ui.touch-punch.min.js"></script>
+
+<!--jQuery components -->
+    <script src="components/twentytwenty/js/jquery.event.move.js" type="text/javascript"></script>
+    <script src="components/twentytwenty/js/jquery.twentytwenty.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/twentytwenty/css/twentytwenty.css" type="text/css" media="screen" />
+
+    <script src="components/mediaelementjs/mediaelement-and-player.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/mediaelementjs/mediaelementplayer.css" type="text/css" />
+
+<!--End jQuery components -->
+
+    <script src="components/interact/interact.min.js"></script>
+    <script src="components/pit/jpit_api.js"></script>
+    <script src="components/pit/utilities/jpit_utilities.js"></script>
+    <script src="components/pit/activity/jpit_activity.js"></script>
+    <script src="components/pit/resources/jpit_resource.js"></script>
+    <script src="components/pit/resources/movi/jpit_resource_movi.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/lang.es.js"></script>
+    <script src="js/lib.js"></script>
+    <script src="js/mobilelib.js"></script>
+    <script src="js/stories.js"></script>
+    <script src="components/scorm/SCORM_12_APIWrapper.js"> </script>
+    <script src="components/scorm/scorm_api.js"> </script>
+
+    <style type='text/css'>
+
+        body {
+            background-color: rgba(242, 242, 242, 0.7);
+        }
+
+        body.loading {
+            text-align: center;
+        }
+
+        body.loading:after {
+            content: "";
+            background: url(img/loading.gif) no-repeat bottom center;
+            width: 130px;
+            height: 30px;
+            display: block;
+            margin: auto;
+            padding-bottom: 20px;
+        }
+
+        body.loading #body {
+            display: none;
+        }
+    </style>
+
+</head>
+<body class="loading" data-debug="true" data-model="scorm" data-display-mode="onlypages" data-approve-limit="70" data-activities-percentaje="60" data-mobile-mode="512">
+    <div id="body" class="not_print">
+        <div id="not_scorm_msg" style="display: none;"></div>
+
+        <header>
+            <div class="logo">
+                <img src="img/logo.png" alt="Fyco learning" />
+            </div>
+            <nav label="Principal" class="horizontal main" data-offset="true">
+                <menu>
+                    <menuitem label="Contenido">
+                        <menu>
+                            <menuitem label="1. Topologías de red" data-page="pag-topologias"></menuitem>
+                            <menuitem label="2. Splitter óptico y la relación de división de potencias" data-page="pag-splitter"></menuitem>
+                            <menuitem label="3. Aplicación de las topologías en la atención de clientes en unidades residenciales y edificios. Casuística en la atención de usuarios" data-page="pag-aplicacion"></menuitem>
+                            <menuitem label="4. ODF: armario de distribución de fibra óptica" data-page="pag-odf"></menuitem>
+                            <menuitem label="5. Latiguillos, patch cords o jumper y pigtails ópticos" data-page="pag-latiguillos"></menuitem>
+                        </menu>
+                    </menuitem>
+                    <menuitem label="Bibliografía" data-page="pag-bibliografia"></menuitem>
+                    <menuitem label="Créditos" data-page="pag-creditos"></menuitem>
+                </menu>
+            </nav>
+            <h2 class="page-title"></h2>
+        </header>
+
+        <main style="display: none;">
+
+            <section id="pag-topologias" ptitle="1. Topologías de red">
+
+                <div class="subpage">
+                    <div class="box-text connection">
+                        <p>Las topologías hacen referencia a la forma en que está diseñada la red, tanto en el plano físico (define la ubicación espacial de los dispositivos y como se interconectan entre sí) como en el plano lógico (determina la manera en cómo se transmiten los datos, es decir, el trayecto seguido por las señales a través de la topología física). A continuación, vamos a hacer énfasis en los tipos de topologías físicas típicas que se utilizan en las redes FTTH:</p>
+                    </div>
+                    <h3>1.1. Topología en estrella centralizada</h3>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Esta topología consiste en que todos los divisores ópticos se instalan en la oficina central. Un lado del divisor se conecta a un puerto del terminal de línea óptico (OLT), también ubicado en la oficina central, y los otros hilos de fibra del divisor se conectan a la red de distribución óptica (ODN). Cada hilo de fibra llega hasta la ONT ubicada en la vivienda de cada usuario y se debe garantizar que la pérdida óptica total de la red no supere los 25 dB.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box-text note" label="Nota">
+                                <p>Esta topología se caracteriza por la gran cantidad de fibras que salen de la oficina central y por el alto costo económico de implementación de este tipo de red.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box_media">
+                        <img src="content/tema_2-2_imagen1.png" alt="Topología estrella centralizada" />
+                        <div class="about"><strong>Imagen 1.</strong> Topología estrella centralizada.</div>
+                    </div>
+                    <h3>1.2. Topología en estrella distribuida</h3>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Esta topología consiste en la instalación de un terminal de línea óptico (OLT) en la oficina central. A la OLT se conecta el cable de alimentación (feeder) por el lado que inicia la red de distribución óptica (ODN) y comienza su recorrido hacia el terreno donde está la demanda. Normalmente, el alimentador es un cable de gran tamaño que termina en un gabinete o en una cubierta (FDH - <cite>Fiber distribution hub</cite>) y alimenta los primeros divisores ópticos (splitter). En este punto termina la red de alimentación e inicia la red de distribución que continúa su acercamiento a los usuarios y termina en el punto de acceso de red (NAP) o segundo nivel de división. Aquí inicia la red de dispersión o de abonado (ONT) hasta llegar a la salida terminal óptica, donde se conecta el terminal de red óptico (ONT) para iniciar la comunicación con la OLT.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box-text note" label="Nota">
+                                <p>Esta red se caracteriza por tener varios divisores ópticos en cascada.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box_media">
+                        <img src="content/tema_2-2_imagen2.png" alt="Topología divisor distribuido" />
+                        <div class="about"><strong>Imagen 2.</strong> Topología divisor distribuido.</div>
+                    </div>
+                    <h3>1.3. Topología de convergencia local</h3>
+                    <div class="row">
+                        <div class="col-2">
+                            <p>Consiste en la conexión del terminal de línea óptico (OLT) y este hace el papel de nodo, con un divisor óptico a través de un cable de fibra óptica de pocos hilos. Normalmente, el alimentador termina en un gabinete (FDH - <cite>Fiber distribution hub</cite>) y surte varios divisores ópticos (splitters). El divisor es el dispositivo pasivo que por cada una de sus derivaciones se encarga de distribuir la señal a cada usuario final. Es de aclarar que el divisor es el que distribuye la potencia hacia los equipos terminales del cliente, por ello es necesario detallar la relación de división de potencias.</p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box-text note" label="Nota">
+                                <p>Esta red se caracteriza porque el primer nivel de división se realiza en un gabinete de distribución óptico (FDH). Aquí termina la red de alimentación y se inicia la red de distribución.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="instruction">
+                        <span class="notmobile">Pasa el cursor del mouse sobre </span>
+                        <span class="onlymobile">Toca </span>
+                        cada elemento de la imagen para conocer su nombre.
+                    </div>
+                    <div class="genially">
+                        <div style="width: 100%;"><div style="position: relative; padding-bottom: 33.33%; padding-top: 0; height: 0;"><iframe frameborder="0" width="1200" height="400" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/6213e5921797410019aafd3a" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+                    </div>
+                    <div class="about"><strong>Imagen 3.</strong> topología convergencia local.</div>
+                    <div class="box-text connection">
+                        <p>Ya que hemos identificado las arquitecturas de red pasiva óptica (PON) más comunes, como son la centralizada, punto de convergencia y distribuida, pasemos al estudio de los divisores ópticos pasivos que hacen posible la implementación de las redes punto a multipunto sin necesidad de utilizar energía eléctrica.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pag-splitter" ptitle="2. Splitter óptico y la relación de división de potencias">
+                <div class="subpage">
+                    <p>Los divisores ópticos son componentes esenciales para diseñar las topologías de las redes FTTH PON. Son utilizados para dividir una señal entrante en varias señales. Esto es posible al utilizar la tecnología de guía de ondas para dividir la potencia óptica entre varias fibras de salida.</p>
+                    <div class="box-text connection">
+                        <p>Tal como lo mencionamos, son elementos pasivos y existen dos tecnologías de divisores ópticos pasivos, los cuales veremos a continuación.</p>
+                    </div>
+                    <h3>2.1. Divisor bicónico fusionado (FBT - <cite>Fused biconical taper</cite>)</h3>
+                    <p>Son fabricados al fusionar dos fibras envueltas. Las relaciones de división superiores a 1x2 se construyen mediante la conexión en cascada de divisores, cuantas más divisiones necesitemos mayores pérdidas de inserción tendremos. Es posible fabricarlos con dos entradas (en la tabla siguiente se pueden observar las pérdidas por relación de división).</p>
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/tema_2-2_imagen4.png" alt="Divisor óptico fusionado" />
+                                <div class="about"><strong>Imagen 4.</strong> Divisor óptico fusionado.</div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <table class="datatable">
+                                <thead>
+                                    <th>Divisor óptico</th>
+                                    <th>Pérdida (dB)</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Divisor 1x4</td>
+                                        <td>7</td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td>Divisor 1x8</td>
+                                        <td>10,5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Divisor 1x16</td>
+                                        <td>13,8</td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td>Divisor 1x32</td>
+                                        <td>17,4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Divisor 1x64</td>
+                                        <td>20,1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="about"><strong>Tabla 1.</strong> Pérdidas por relación de división.</div>
+                        </div>
+                    </div>
+                    <h3>2.2. Divisor de onda planar</h3>
+                    <p>En estos divisores las fibras van encapsuladas dentro de un chip de sílice. Se fabrican mediante la tecnología de circuitos de guía de ondas planas. Se encuentran disponibles en relaciones de división de 1x2 en adelante. También es posible fabricarlos con doble entrada.</p>
+                    <div class="instruction">
+                        <span class="notmobile">Pasa el cursor del mouse sobre </span>
+                        <span class="onlymobile">Toca </span>
+                        cada elemento de la imagen para conocer su nombre.
+                    </div>
+                    <div class="genially" style="max-width: 70vh; margin: auto;">
+                        <div style="width: 100%;"><div style="position: relative; padding-bottom: 87.50%; padding-top: 0; height: 0;"><iframe frameborder="0" width="800" height="700" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/620fbdc96ad65900195e5b78" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+                    </div>
+                    <!-- <div id="imagen5">
+                        <div class="tooltip luz" title="Luz de entrada"></div>
+                        <div class="tooltip entrada" title="Matriz de fibra de entrada"></div>
+                        <div class="tooltip chip" title="Chip del divisor"></div>
+                        <div class="tooltip cable" title="Cable de cinta de fibra"></div>
+                        <div class="tooltip salida" title="Matriz de fibra de salida"></div>
+                        <div class="tooltip interface" title="Chip del divisor de Interface"></div>
+                    </div> -->
+                    <div class="about"><strong>Imagen 5.</strong> Divisor óptico planar.</div>
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="box-text connection">
+                                <p>Aunque el aspecto exterior y el tamaño de los divisores de fibra FBT y PLC son similares, sus tecnologías y especificaciones internas difieren en muchos aspectos. En los últimos años, la tecnología de los divisores ha dado un gran paso con la introducción del divisor PLC y, hoy en día es el más utilizado debido a diferentes factores: opera en mayor cantidad de longitudes de onda, posee mayor rango de división, atenuación estable y, además, buen rendimiento en temperaturas extremas. Es un tipo de dispositivo más fiable en comparación con el divisor FBT tradicional.</p>
+                                <p>Hasta aquí hemos mencionado las topologías de red más utilizadas y los componentes que las hacen posible. Veamos en el siguiente punto las estrategias que se deben emplear para llegar a las premisas de los usuarios, independientemente de la ubicación geográfica específica, el pueblo o la ciudad en que se encuentren.</p>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img src="content/recurso-03.gif" alt="Estructura del divisor óptico planar" />
+                                <div class="about"><strong>Animación 1.</strong> Estructura del divisor óptico planar.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pag-aplicacion" ptitle="3. Aplicación de las topologías en la atención de clientes en unidades residenciales y edificios. Casuística en la atención de usuarios">
+                <div class="subpage">
+                    <p>Con el fin de desarrollar en el participante una visión práctica con base en las topologías vistas, haremos énfasis en la selección de la topología correcta. Esta selección depende en buena medida de la densidad de las viviendas y de la disponibilidad de infraestructura en las edificaciones. El criterio fundamental es optimizar el tendido de la red y facilitar su operación, conservando siempre los parámetros de calidad de la señal.</p>
+                    <div class="box-text example" label="Por ejemplo,">
+                        <p>para la atención con red GPON en edificios que tienen pocos apartamentos, normalmente se usa una topología en estrella desde la caja terminal hasta los apartamentos (FTTA), y cables de abonado individuales (drop).</p>
+                        <p>Sin embargo, una vez que el número de apartamentos (en vertical) y viviendas (en horizontal) se incrementan, los métodos de implementación de las redes cambian drásticamente. </p>
+                        <p>Para edificios, el método más común de despliegue es el tendido de un cable vertical de subida (riser) multifibra, lo cual implica cajas de distribución en cada planta o en cada dos o tres. Desde estas cajas se instalan cables de abonado horizontales hasta cada usuario final. </p>
+                        <p>Por otro lado, la instalación de las viviendas se extiende desde un poste, pedestal o una caja subterránea hasta una toma óptica (roseta) en las instalaciones del abonado. Este es el modelo típico de la mayoría de las unidades residenciales multivivienda. </p>
+                        <p>En el caso de viviendas individuales, también se puede integrar un terminal óptico de salida (OTO - <cite>Optical Terminal Outlet</cite>) en el punto intermedio donde están ubicadas las viviendas.</p>
+                    </div>
+                    <div class="box-text connection">
+                        <p>A continuación, damos una visión práctica de instalación de la infraestructura de red, analizando casos típicos e identificando la topología usada.</p>
+                    </div>
+                    <div class="instruction">
+                        <span class="notmobile">Haz clic en </span>
+                        <span class="onlymobile">Toca </span>
+                        cada caso para conocer su descripción.
+                    </div>
+                    <div id="imagen6">
+                        <button class="w-content-controler caso1" data-content="#caso1">
+                            Caso1
+                        </button>
+                        <button class="w-content-controler caso2" data-content="#caso2">
+                            Caso
+                        </button>
+                        <button class="w-content-controler caso3" data-content="#caso3">
+                            Caso
+                        </button>
+                        <button class="w-content-controler caso4" data-content="#caso4">
+                            Caso
+                        </button>
+                        <button class="w-content-controler caso5" data-content="#caso5">
+                            Caso
+                        </button>
+                        <button class="w-content-controler caso6" data-content="#caso6">
+                            Caso
+                        </button>
+                    </div>
+                    <div class="modales_casos">
+                        <div id="caso1" class="w-content" data-property-width="95vw">
+                            <h3>3.1. Red GPON para atención zonas residenciales. Caso 1</h3>
+                            <div class="row">
+                                <div class="col-2">
+                                    <p>Edificios pequeños de hasta cinco plantas, con infraestructura para energía y telecomunicaciones hasta el sótano o zona de parqueo (como se observa en la imagen) y sin infraestructura entre el cuarto de comunicaciones y las viviendas. En este tipo de edificaciones es común encontrar un cuarto donde llegan los servicios tradicionales de energía y telecomunicaciones a través de tuberías desde la calle.</p>
+                                    <p>En estos casos llegamos con la red PON hasta donde se encuentre el cuarto de comunicaciones, dejando la caja terminal de distribución óptica en este punto. Según la demanda, aquí inicia el montaje con cable de drop por la tubería individual que va a cada vivienda desde el cuarto de comunicaciones hasta las premisas de los usuarios. Este modelo de atención corresponde a la topología en forma de estrella, una de las variantes de llegada al usuario en fibra hasta el apartamento (FTTA).</p>
+                                    <div class="box_media">
+                                        <img src="content/tema_2-2_imagen7.png" alt="Cable de instalación de abonado (drop)" />
+                                        <div class="about"><strong>Imagen 7.</strong> Cable de instalación de abonado (drop).</div>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="box_media">
+                                        <img src="content/tema_2-2_imagen8.png" alt="Edificio con infraestructura hasta el sótano o parqueadero" />
+                                        <div class="about"><strong>Imagen 8.</strong> Edificio con infraestructura hasta el sótano o parqueadero.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="caso2" class="w-content" data-property-width="95vw">
+                            <h3>3.2. Red GPON para atención zonas residenciales. Caso 2</h3>
+                            <div class="row">
+                                <div class="col-2">
+                                    <p>Edificios pequeños de hasta cinco plantas, con infraestructura para telecomunicaciones hasta la última planta. En este tipo de edificaciones es común encontrar un cuarto donde llegan los servicios tradicionales de telecomunicaciones que luego continúan por tuberías y gabinetes hasta cada planta, desde donde se distribuye la señal a cada apartamento. </p>
+                                    <p>En este modelo podemos construir <strong>un montante o cable vertical de fibra óptica para interiores en un punto intermedio del edificio</strong>, donde dejamos el divisor óptico o punto de distribución de red. En este punto terminamos la red de distribución e iniciamos la instalación del abonado con <strong>cable de drop, en forma horizontal y vertical, por la tubería que va desde la planta donde queda la caja de distribución óptica NAP hasta las premisas de los usuarios. </strong>Con este modelo se pretende evitar la saturación de la infraestructura de cajas y tubos disponibles en el edificio. Al igual que el anterior, es una variante de fibra hasta el apartamento (FTTA).</p>
+                                </div>
+                                <div class="col-2">
+                                    <div class="box_media">
+                                        <img src="content/tema_2-2_imagen9.png" alt="Edificio hasta 5 pisos con infraestructura hasta el último nivel" />
+                                        <div class="about"><strong>Imagen 9.</strong> Edificio hasta 5 pisos con infraestructura hasta el último nivel.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box_media">
+                                <img style="max-height: 50vh;" src="content/nap.gif" alt="Punto de distribución óptica" />
+                                <div class="about"><strong>Animación 2.</strong> Punto de distribución óptica.</div>
+                            </div>
+                        </div>
+                        <div id="caso3" class="w-content" data-property-width="95vw">
+                            <h3>3.3. Red GPON para atención zonas residenciales. Caso 3</h3>
+                            <p>Edificios pequeños de hasta cinco plantas, sin infraestructura para telecomunicaciones. En este tipo de edificaciones la instalación de los usuarios se hace desde el punto de acceso de red (NAP) más cercano a la premisa del cliente, y se realiza a través de la fachada hasta ingresar a la vivienda. También se puede instalar un punto de acceso de red (NAP) de exteriores en la fachada y desde ahí se hace la extensión de la red al usuario en cable de fibra de abonado (drop).</p>
+                            <div class="row">
+                                <div class="col-2">
+                                    <div class="box_media">
+                                        <img src="content/tema_2-2_imagen10.png" alt="Instalación de red de abonado por fachada en edificios inferiores a cinco plantas sin infraestructura de telecomunicaciones" />
+                                        <div class="about"><strong>Imagen 10.</strong> Instalación de red de abonado por fachada en edificios inferiores a cinco plantas sin infraestructura de telecomunicaciones.</div>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="box_media">
+                                        <img src="content/tema_2-2_imagen11.png" alt="Construcción de punto de acceso de red en (NAP) fachada en edificios menores a cinco plantas sin infraestructura de telecomunicaciones." />
+                                        <div class="about"><strong>Imagen 11.</strong> Construcción de punto de acceso de red en (NAP) fachada en edificios menores a cinco plantas sin infraestructura de telecomunicaciones.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="caso4" class="w-content" data-property-width="95vw">
+                            <h3>3.4. Red GPON para atención de edificios mayores a cinco plantas. Caso 4</h3>
+                            <div class="row">
+                                <div class="col-2">
+                                    <p>En edificios mayores a cinco plantas con o sin infraestructura (como se observa en la imagen), la cantidad y capacidad de cajas terminales y los niveles de división se dimensiona en función del número de apartamentos o viviendas de la zona a atender. Si el edificio cuenta con infraestructura disponible, se construye <strong>un montante vertical multifibra o una combinación de montante vertical y horizontal (riser), dejando cajas de distribución óptica en cada nivel o cada dos o tres plantas, de acuerdo con la disposición que tenga el edificio. </strong>Si la construcción no cuenta con infraestructura disponible por la ocupación de redes existentes, se deberá construir un montante vertical multifibra (riser) siguiendo las rutas establecidas para las redes de telecomunicaciones.</p>
+                                    <p>En este modelo podemos construir un montante o cable vertical de fibra óptica de 12 o 24 hilos, dejando los divisores ópticos en cajas de distribución. En este caso, se inicia la instalación con cable de drop desde la caja terminal de cada piso hasta la vivienda del usuario. Este modelo es una variante de fibra hasta el apartamento (FTTA). </p>
+                                </div>
+                                <div class="col-2">
+                                    <div class="box_media">
+                                        <img src="content/tema_2-2_imagen12.png" alt="Edificio con más de cinco plantas con o sin infraestructura" />
+                                        <div class="about"><strong>Imagen 12.</strong> Edificio con más de cinco plantas con o sin infraestructura.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="caso5" class="w-content" data-property-width="95vw">
+                            <h3>3.5. Red GPON para atención zonas residenciales (unidades multifamiliares). Caso 5</h3>
+                            <p>En este tipo de instalación se llega con el cable de alimentación a un punto de distribución de fibra óptica, donde se realiza el primer nivel de división de la red. Allí también comienza la extensión del cable de distribución hasta el punto de acceso de red óptico (NAP) o segundo nivel de división en una arquitectura tipo árbol y ramas hasta alcanzar las premisas de los usuarios. En las imágenes se muestra este caso de instalación:</p>
+                            <div class="row">
+                                <div class="col-2">
+                                    <div class="instruction">
+                                        <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                                        <span class="onlymobile">Toca </span>
+                                        la imagen para conocer su descripción
+                                    </div>
+                                    <div class="view-first">
+                                        <img src="content/tema_2-2_imagen13.png" />
+                                        <div class="view-content">
+                                            <p>El cable de alimentación llega canalizado, se hace una primera división de potencia con splitter óptico ubicado en una cubierta. Sigue canalizado hasta puntos de segunda división en el NAP, ubicados en cubierta, pedestal o caja en piso, y de allí se extiende la red del usuario (drop) que termina en la roseta en la casa del cliente.</p>
+                                        </div>
+                                    </div>
+                                    <div class="about"><strong>Imagen 13.</strong> Atención zonas residenciales abiertas con alimentador canalizado.</div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="instruction">
+                                        <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                                        <span class="onlymobile">Toca </span>
+                                        cada elemento de la imagen para conocer su nombre.
+                                    </div>
+                                    <div id="imagen14">
+                                        <div class="tooltip nap" title="NAP">
+                                            <img src="content/tema_2-2_imagen14-1.png" alt="NAP" />
+                                        </div>
+                                        <div class="tooltip optico" title="Montaje de cable óptico">
+                                            <img src="content/tema_2-2_imagen14-2.png" alt="Montaje de cable óptico" />
+                                        </div>
+                                        <div class="tooltip tubo" title="Tubo subterráneo">
+                                            <img src="content/tema_2-2_imagen14-3.png" alt="Tubo subterráneo" />
+                                        </div>
+                                        <div class="tooltip cajas" title="Cajas adentro de registros"></div>
+                                    </div>
+                                    <div class="about"><strong>Imagen 14.</strong> Atención zonas residenciales cerradas con alimentador aéreo con transición a cable canalizado.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="caso6" class="w-content" data-property-width="95vw">
+                            <h3>3.6. Red GPON para atención zonas residenciales de alta densidad. Caso 6</h3>
+                            <p>En zonas residenciales de alta densidad, la red de distribución inicia desde un gabinete o desde una cubierta tipo domo que se deja en el centro de carga (punto medio de la zona a atender) y de ahí avanza el cable hasta los puntos de distribución de red (NAP). El NAP se ubica lo más cercano posible a los usuarios finales.</p>
+                            <p>La distancia desde el gabinete hasta el NAP más lejano no suele superar 1 km. Los cables de fibra destinados a dar servicio a un número específico de viviendas en una zona definida son de tamaño medio. Estos cables pueden ser canalizados, enterrados directamente, aéreos o montados en la fachada. Los cables de distribución suelen tener un tamaño de entre 12 y 96 fibras. Al igual que en la topología tipo árbol, los cables más grandes de la red se dividen gradualmente en cables más pequeños, hasta llegar al punto de red más lejano.</p>
+                            <div class="box_media">
+                                <div class="instruction">
+                                    <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                                    <span class="onlymobile">Toca </span>
+                                    cada elemento de la imagen para conocer su nombre.
+                                </div>
+                                <div id="imagen15">
+                                    <div class="tooltip olt" title="Puertos de la OLT"></div>
+                                    <div class="tooltip punto" title="Punto de distribución de fibra"></div>
+                                    <div class="tooltip troncal" title="Red troncal"></div>
+                                    <div class="tooltip red" title="Red de distribución"></div>
+                                    <div class="tooltip viviendas" title="Viviendas unifamiliares"></div>
+                                </div>
+                                
+                            </div>
+                            <div class="about"><strong>Imagen 15.</strong> Zonas residenciales de alta densidad.</div>
+                            <p>Se utilizan cubiertas tipo domo o cierres para facilitar los cambios de diámetro. Los cables de fibra de distribución deben ser fácilmente accesibles y las fibras individuales deben quedar bien protegidas, dado que son sistemas que deben funcionar por muchos años sin ningún problema.</p>
+                        </div>
+                    </div>
+                    <div class="about"><strong>Imagen 6.</strong> Casuística en la atención de usuarios.</div>
+                    <div class="box-text connection">
+                        <p>Uno de los elementos principales en la instalación de infraestructura de red óptica es el armario de distribución óptica, el cual permite la transición ordenada y segura de cables de alimentación a cables de menos fibras o de distribución e, incluso, a cables individuales para atención de cada usuario. Un detalle de este elemento se presenta en el siguiente apartado.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pag-odf" ptitle="4. ODF: armario de distribución de fibra óptica">
+                <div class="subpage">
+                    <div class="row">
+                        <div class="col-2">
+                            <p>La red de fibra óptica necesita flexibilidad para poder hacer una distribución eficiente, que permita llegar a los edificios, unidades de viviendas múltiples y hogares. Por tanto, el cable de alimentación debe convertirse en varios cables más pequeños que puedan adentrarse en los barrios y llegar a los hogares de los usuarios finales. </p>
+                            <p>Esto se asemeja a una topología de árbol en la que un tronco principal común se divide gradualmente en más y más pequeñas ramas para llegar a cada hoja. </p>
+                        </div>
+                        <div class="col-2">
+                            <div class="box_media">
+                                <img style="max-height: 50vh;" src="content/tema_2-2_foto1.png" alt="Distribuidor de fibra óptica." />
+                            </div>
+                            <div class="about"><strong>Foto 1.</strong> distribuidor de fibra óptica.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="instruction">
+                                Desplaza la línea divisora con 
+                                <span class="notmobile">clic </span>
+                                <span class="onlymobile">toque </span>
+                                sostenido (de derecha e izquierda y viceversa) para comparar las dos imágenes.
+                            </div>
+                            <div class="box_media">
+                                <div class="after-before">
+                                    <img src="content/tema_2-2_foto2.png" />
+                                    <img src="content/tema_2-2_foto3.png" />
+                                </div>
+                            </div>
+                            <div class="about"><strong>Foto 2.</strong> Parte frontal del distribuidor (izquierda).</div>
+                            <div class="about"><strong>Foto 3.</strong> Parte interna del distribuidor (derecha).</div>
+                            <div class="about">Alojan paneles de interconexión y divisores ópticos.</div>
+                        </div>
+                        <div class="col-2">
+                            <p>Este primer punto de división hacia las ramas se conoce como punto de distribución de fibra y se suele apostar por el uso de un armario, situado en el terreno o en una cubierta tipo domo multifuncional bajo tierra. </p>
+                            <p>El área cubierta por este armario puede variar desde menos de 100 hasta 800 o más hogares, de acuerdo con la planificación del operador de red que implementa la red FTTH. Dependiendo del área a cubrir, dependerá el tamaño y la cantidad de gabinetes, obras civiles y, por supuesto, la inversión a utilizar.</p>
+                            <p>Los puntos de distribución (gabinetes) son un elemento muy importante ya que contienen uno, dos o incluso hasta tres niveles de división en una topología en cascada, permitiendo optimizar la utilización de las fibras y de la OLT. Además, pueden actuar como puntos de conexión cruzada para alimentar los cables de distribución de diferentes rutas. </p>
+                        </div>
+                    </div>
+                    <div class="box-text connection">
+                        <p>Un elemento esencial que se observa en los ODF y en las instalaciones de interiores (centrales del operador y en la casa del cliente), son los cables individuales de fibra denominados latiguillos, patch cords o jumpers de fibra óptica. En el siguiente apartado ampliaremos la descripción de estos elementos, que juegan un papel importante en las topologías que comúnmente nos encontramos en las redes PON. </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pag-latiguillos" ptitle="5. Latiguillos, patch cords o jumper y pigtails ópticos">
+                <div class="subpage">
+                    <p>De acuerdo al país, los latiguillos, patch cords o jumpers son cables de fibra óptica conectorizados en sus dos extremos y el pigtail solamente en uno de ellos. Dependiendo del tipo de conector utilizado, el tipo de fibra y el número de fibras, existe una extensa gama de alternativas (las tablas 2 y 3 hacen referencia a las características de estos materiales).</p>
+                    <p>Suelen estar disponibles en construcciones diferentes:</p>
+                    <div class="row">
+                        <div class="col-2">
+                            <ul class="data_list">
+                                <li><strong>Pigtails:</strong> son de 900µm de diámetro y una longitud típica de 2,5 mm.</li>
+                                <li><strong>Patch cords:</strong> con cubierta de baja emisión de humo y cero alógenos (LSZH), con diámetros entre 1,6 - 3,0 mm, con hilos de aramida como miembros de resistencia y diferentes longitudes y configuraciones.</li>
+                            </ul>
+                            <div class="box-text connection">
+                                <p>Todos los cables de fibra óptica de la red PON que terminan en la oficina central deben conectarse al distribuidor de fibra óptica (ODF), y luego al equipo activo terminal de línea óptico (OLT) con el fin de garantizar continuidad entre la misma OLT y la red de distribución óptica. Estas conexiones se logran utilizando latiguillos, patch cords y pigtails ópticos de la siguiente manera:</p>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <table class="datatable">
+                                <thead>
+                                    <th>Color</th>
+                                    <th>Tipo de fibra</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="background-color: #ff6600";>Naranja</td>
+                                        <td>MM (OM 1 u OM2)</td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td style="background-color: #00ffff;">Aqua</td>
+                                        <td>MM (OM3 u OM4)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #ff33cc;">Violeta</td>
+                                        <td>MM OM 4 (algunos fabricantes)</td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td style="background-color: #808080;">Gris</td>
+                                        <td>MM obsoleto</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #ffff00">Amarillo</td>
+                                        <td>SM (monomodo)</td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td style="background-color: #0000ff; color: #fff;">Azul</td>
+                                        <td>Fibra que mantiene la polarización (aplicaciones especiales)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-color: #000; color: #fff;">Negro</td>
+                                        <td>Fibra exterior de cualquier tipo (protección radiación UV)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="about"><strong>Tabla 2.</strong> Código de colores de los latiguillos.</div>
+                        </div>
+                    </div>
+                    <ul class="data_list">
+                        <li>Los cables alimentadores que llegan del campo se extienden hasta el ODF por las canastillas o por la infraestructura que se tenga disponible. El extremo de los cables de fibra normalmente se empalma con la punta de un pigtail; la cantidad de pigtails a utilizar dependerá del número de hilos del cable. Una vez realizada esta actividad, la parte conectorizada del pigtail se conecta al ODF.</li>
+                        <li>Del ODF a la OLT se utilizan latiguillos para dar continuidad al circuito óptico. También es común su utilización en los gabinetes de distribución y en la vivienda del cable para conectar la ONT con la roseta.</li>
+                        <li>Los pigtails y patch cords también se usan en los gabinetes de distribución cuando la topología de red cuenta con un gabinete intermedio (primer nivel de división), o al final de la red en edificio y andenes (último nivel de división). </li>
+                    </ul>
+                    <div class="box-text connection">
+                        <p>En la siguiente imagen se muestra un diagrama que resume el uso de esos elementos en la red PON.</p>
+                    </div>
+                    <div class="instruction">
+                        <span class="notmobile">Pasa el cursor del <cite>mouse</cite> sobre </span>
+                        <span class="onlymobile">Toca </span>
+                        cada elemento de la imagen para conocer su nombre.
+                    </div>
+                    <div class="genially">
+                        <div style="width: 100%;"><div style="position: relative; padding-bottom: 34.88%; padding-top: 0; height: 0;"><iframe frameborder="0" width="2580" height="900" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/620fc094bf7eee0011f37ea9" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+                    </div>
+                    <!-- <div id="imagen18">
+                        <div class="tooltip olt" title="OLT"></div>
+                        <div class="tooltip fibra1" data-position-at="top" title="<img src='content/tema_2-2-22.png' style='width: 20px;' /> Fibra troncal"></div>
+                        <div class="tooltip odf" title="ODF"></div>
+                        <div class="tooltip fibra2" title="Fibra troncal"></div>
+                        <div class="tooltip fibra3" data-position-at="top" title="<img src='content/tema_2-2-23.png' style='width: 20px;' /> Fibra troncal"></div>
+                        <div class="tooltip splitter" title="<img src='content/tema_2-2-21.png' style='width: 20px;' /> Splitter / Divisor"></div>
+                        <div class="tooltip gabinete" title="Gabinete de distribución"></div>
+                        <div class="tooltip caja" title="Caja de empalme"></div>
+                        <div class="tooltip nap" title="NAP"></div>
+                        <div class="tooltip drop" title="Fibra drop"></div>
+                        <div class="tooltip roseta" title="Roseta óptica" data-position-at="left top"></div>
+                        <div class="tooltip ont" title="ONT" data-position-at="right top"></div>
+                    </div> -->
+                    <div class="about"><strong>Imagen 18.</strong> Puntos de uso de pigtails y patch cords.</div>
+                    <table class="datatable">
+                        <tbody>
+                            <tr>
+                                <td>Tipo de producto</td>
+                                <td colspan="30">Patchcord</td>
+                                <td colspan="30">Pigtail</td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Número de fibras</td>
+                                <td colspan="30">Una fibra</td>
+                                <td colspan="30">Dos fibras</td>
+                            </tr>
+                            <tr>
+                                <td>Diámetro de fibra en mm</td>
+                                <td colspan="20">0,9</td>
+                                <td colspan="20">2</td>
+                                <td colspan="20">3</td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Longitud de fibra en metros</td>
+                                <td colspan="60">Según usuario:</td>
+                            </tr>
+                            <tr>
+                                <td>Tipo de fibra</td>
+                                <td colspan="15">SM (G.652)</td>
+                                <td colspan="15">SM (G.655)</td>
+                                <td colspan="15">MM (50/125)</td>
+                                <td colspan="15">MM (62,5/125)</td>
+                            </tr>
+                            <tr class="odd">
+                                <td>Tipo de conexión</td>
+                                <td colspan="20">PC</td>
+                                <td colspan="20">UPC</td>
+                                <td colspan="20">APC</td>
+                            </tr>
+                            <tr>
+                                <td>Tipo de conector</td>
+                                <td colspan="12">FC</td>
+                                <td colspan="12">SC</td>
+                                <td colspan="12">ST</td>
+                                <td colspan="12">LC</td>
+                                <td colspan="12">MU</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="about"><strong>Tabla 3.</strong> Características de construcción de los patch cords y pigtails.</div>
+                </div>
+            </section>
+
+            <!--Bibliografía-->
+            <section id="pag-bibliografia" ptitle="Bibliografía">
+                <div class="subpage">
+                    <ul class="data_list">
+                        <li>Fibre to the Home Council Europe, (2018). FTTH Handbook. Recuperado el 20 de febrero 2021 de <a href="https://www.ftthcouncil.eu/documents/Publications/FTTH%20Handbook_2017_V8_FINAL.pdf" target="_blank">https://www.ftthcouncil.eu/[...]</a></li>
+                        <li>Cisco, (2020). Understand GPON Technology. Recuperado el 20 de febrero 2021 de <a href="https://www.cisco.com/c/en/us/support/docs/switches/catalyst-pon-series/216230-understand-gpon-technology.html" target="_blank">https://www.cisco.com/[...]</a></li>
+                    </ul>
+                    <h4>Imágenes</h4>
+                    <ul class="data_list">
+                        <li><strong>Imagen 4.</strong> NTDhoy, (s.f.). Divisor óptico fusionado. [Imagen]. Adaptada el 22 de febrero 2021 de: <a href="https://www.instaladoresdetelecomhoy.com/imagenes/2013/07/Divisor-FBT.jpg" target="_blank">https://www.instaladoresdetelecomhoy.com/[...]</a></li>
+                    </ul>
+                    <h4>Fotos</h4>
+                    <ul class="data_list">
+                        <li><strong>Foto 1.</strong> CommScope, (s.f.). Distribuidor de fibra óptica. [Fotografía]. Recuperado el 24 de febrero 2021 de: <a href="https://es.commscope.com/globalassets/digizuite/29470-fd3-ae-cabinet-image-1-jpg.jpg/medium?mediaformatid=50055" target="_blank">https://es.commscope.com/[...]</a></li>
+                        <li><strong>Foto 2.</strong> CommScope, (s.f.). Parte frontal del distribuidor (izquierda). [Fotografía]. Recuperada el 24 de febrero 2021 de: <a href="https://es.commscope.com/globalassets/digizuite/29468-fd3-ac-cabinet-image-1-jpg.jpg/medium?mediaformatid=50055" target="_blank">https://es.commscope.com/[...]</a></li>
+                        <li><strong>Foto 3.</strong> CommScope, (s.f.). Parte interna del distribuidor (derecha). [Fotografía]. Recuperada el 24 de febrero 2021 de: <a href="https://es.commscope.com/globalassets/digizuite/29469-fd3-ac-cabinet-image-2-jpg.jpg/medium?mediaformatid=50055" target="_blank">https://es.commscope.com/</a></li>
+                    </ul>
+                </div>
+            </section>  
+
+            <!--Créditos-->
+            <section id="pag-creditos" ptitle="Créditos">
+                <div class="subpage" id="credits_subpage">
+                    <div>
+                        <h3>Desarrollo de contenidos</h3>
+                        <cite>John Jairo Jaramillo Rodríguez<br />
+                            <strong>Experto Temático</strong><br />
+                            Ana María Cárdenas Soto<br />
+                            <strong>Experta Temática</strong></cite>
+                    </div>
+                    <div>
+                        <h3>Asesoría pedagógica y diseño instruccional</h3>
+                        <cite>Carolina Llanos Tobón</cite>
+                    </div>
+                    <div>
+                        <h3>Corrección de estilo</h3>
+                        <cite>Felipe Sosa Vargas</cite>
+                    </div>
+                    <div>
+                        <h3>Diseño gráfico</h3>
+                        <cite>Elizabeth Hernandez González</cite>
+                    </div>
+                    <div>
+                        <h3>Integración de contenidos</h3>
+                        <cite>Santiago Bernal García</cite>
+                    </div>
+                    <div>
+                        <h3>Revisión de calidad</h3>
+                        <cite>Lorena Guarín Herrera</cite>
+                    </div>
+
+                    <div>
+                        <h3>Producción, gestión técnica y administrativa</h3>
+                        <p class="logos">
+                            <a href="http://bambuco.co/" target="_blank"><img src="img/logo_bambuco.png" alt="BambuColectivo" /></a>
+                            <a href="https://fycolearning.com/" target="_blank"><img src="img/logo_azul.png" alt="Fyco Telecomunicaciones" /></a>
+                        </p>
+                    </div>
+
+                    <div class="editions">
+                        1ª edición: abril 2021
+                    </div>
+                    <div>
+                        <br />
+                        <!-- <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Obra publicada bajo licencia:<br />Creative Commons Atribución-Compartir Igual 4.0 Internacional<br /><br />
+                        <img src="img/cc.png" alt="Creative Commons" /></a> -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="not_print">
+            <div class="measuring-progress" data-type="horizontal"></div>
+
+            <nav label="Características globales" class="globals">
+                <menu>
+                    <menuitem data-global-id="results"><i title="Progreso" class="ion-clipboard " data-position-at="top"></i></menuitem>
+                    <menuitem data-global-id="return">
+                        <i title="Maximizar" class="ion-arrow-expand  maximize" data-position-at="top"></i>
+                        <i title="Minimizar" class="ion-arrow-shrink  minimize" data-position-at="top"></i>
+                    </menuitem>
+                    <menuitem data-global-id="close_all"><i title="Regresar" class="ion-reply " data-position-at="top"></i></menuitem>
+                </menu>
+            </nav>
+
+            <div id="subpages_menu">
+                <div class="button" previous-page></div>
+                <ul class="button" subpages-menu></ul>
+                <div id="page_number"></div>
+                <div class="button" next-page></div>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <div id="results_page" style="display:none;">
+        <h2>Resumen de su avance en la lectura del documento</h2>
+        <h3>Páginas visitadas</h3>
+        <p>En verde, aquellas páginas que ya ha visitado.</p>
+        <div id="results_page_visited" class="container"></div>
+        <br class="clear" />
+    </div>
+
+    <div id="printent_content" style="display:none;">
+        <div class="content"></div>
+        <div class="button_container">
+            <button class="general button" onclick="window.print();">Imprimir</button>
+            <button id="printent_back" class="general button" >Volver</button>
+        </div>
+    </div>
+
+</body>
+</html>
